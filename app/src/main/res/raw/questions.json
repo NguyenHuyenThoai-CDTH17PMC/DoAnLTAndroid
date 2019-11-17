@@ -1,0 +1,30 @@
+[
+  {
+    "cauhoi" : "Giải Grand Slam đầu tiên trong năm là giải nào?",
+    "pA": "Austrlia mở rộng",
+    "pB": "Wimbledon",
+    "pC": "Roland Garos",
+    "pD": "Mỹ mở rộng",
+    "dapan": "A"
+  },
+
+  {
+    "cauhoi" : "Cùng với Hà Nội T&T (vô địch V-League 2010), CLB nào của Việt Nam tham dự AFC Cup 2011?",
+    "pA": "Sông Lam Nghệ An",
+    "pB": "SHB Đà Nẵng",
+    "pC": "Hoàng Anh Gia Lai",
+    "pD": "Becamex Bình Dương",
+    "dapan": "A"
+  },
+
+
+  {
+    "cauhoi" : "AFC Asian Cup 2011 được tổ chức tại quốc gia nào?",
+    "pA": "Qatar",
+    "pB": "Hàn Quốc",
+    "pC": "Nhật Bản",
+    "pD": "Iraq",
+    "dapan": "A"
+  }
+
+]
