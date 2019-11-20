@@ -67,7 +67,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/txtstt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="150dp"
@@ -79,7 +79,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/txtcauhoi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="150dp"
@@ -102,48 +102,10 @@
             android:text="Chọn lĩnh vực"
             android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/btnKHKT"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewdslinhvuc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="50dp"
-            android:background="#03A9F4"
-            android:text="Khoa học kỹ thuật"
-            android:textColor="#FCF9FA" />
+            android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btnVHXHNT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="50dp"
-            android:background="#03A9F4"
-            android:text="Văn hóa - xã hội - nghệ thuật"
-            android:textColor="#FCF9FA" />
-
-        <Button
-            android:id="@+id/btnLSDL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="50dp"
-            android:background="#03A9F4"
-            android:text="Lịch sử - Địa lý"
-            android:textColor="#FCF9FA" />
-
-        <Button
-            android:id="@+id/btnTT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="50dp"
-            android:background="#03A9F4"
-            android:text="Thể thao"
-            android:textColor="#FCF9FA" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
