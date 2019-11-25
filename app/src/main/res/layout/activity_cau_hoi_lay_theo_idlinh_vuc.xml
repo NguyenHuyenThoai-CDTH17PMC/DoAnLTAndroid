@@ -79,7 +79,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtcauhoi"
+            android:id="@+id/cauhoi_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="150dp"
@@ -148,7 +148,7 @@
             android:orientation="horizontal" >
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnNEXT"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -156,7 +156,7 @@
                 android:layout_marginRight="50dp"
                 android:layout_weight="1"
                 android:background="#F44336"
-                android:onClick="OnNext"
+                android:onClick="NEXT"
                 android:text="Next"
                 android:textColor="#FAF7F7" />
         </LinearLayout>

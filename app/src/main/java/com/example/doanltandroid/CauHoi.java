@@ -1,83 +1,87 @@
 package com.example.doanltandroid;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 public class CauHoi {
+    private int id;
+    private String noi_dung;
+    private int linh_vuc_id;
+    private String phuong_an_a;
+    private String phuong_an_b;
+    private String phuong_an_c;
+    private String phuong_an_d;
+    private String dap_an;
 
-    private String cauhoi;
-    private String panA;
-    private String panB;
-    private String panC;
-    private String panD;
-    private String dapan;
-
-    public CauHoi(String cauhoi, String panA, String panB, String panC, String panD, String dapan) {
-        this.cauhoi = cauhoi;
-        this.panA = panA;
-        this.panB = panB;
-        this.panC = panC;
-        this.panD = panD;
-        this.dapan = dapan;
+    public CauHoi(int id, String noi_dung, int linh_vuc_id, String phuong_an_a, String phuong_an_b, String phuong_an_c, String phuong_an_d, String dap_an) {
+        this.id = id;
+        this.noi_dung = noi_dung;
+        this.linh_vuc_id = linh_vuc_id;
+        this.phuong_an_a = phuong_an_a;
+        this.phuong_an_b = phuong_an_b;
+        this.phuong_an_c = phuong_an_c;
+        this.phuong_an_d = phuong_an_d;
+        this.dap_an = dap_an;
     }
 
-    public String getCauhoi() {
-        return cauhoi;
+    public int getId() {
+        return id;
     }
 
-    public void setCauhoi(String cauhoi) {
-        this.cauhoi = cauhoi;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getPanA() {
-        return panA;
+    public String getNoi_dung() {
+        return noi_dung;
     }
 
-    public void setPanA(String panA) {
-        this.panA = panA;
+    public void setNoi_dung(String noi_dung) {
+        this.noi_dung = noi_dung;
     }
 
-    public String getPanB() {
-        return panB;
+    public int getLinh_vuc_id() {
+        return linh_vuc_id;
     }
 
-    public void setPanB(String panB) {
-        this.panB = panB;
+    public void setLinh_vuc_id(int linh_vuc_id) {
+        this.linh_vuc_id = linh_vuc_id;
     }
 
-    public String getPanC() {
-        return panC;
+    public String getPhuong_an_a() {
+        return phuong_an_a;
     }
 
-    public void setPanC(String panC) {
-        this.panC = panC;
+    public void setPhuong_an_a(String phuong_an_a) {
+        this.phuong_an_a = phuong_an_a;
     }
 
-    public String getPanD() {
-        return panD;
+    public String getPhuong_an_b() {
+        return phuong_an_b;
     }
 
-    public void setPanD(String panD) {
-        this.panD = panD;
+    public void setPhuong_an_b(String phuong_an_b) {
+        this.phuong_an_b = phuong_an_b;
     }
 
-    public String getDapan() {
-        return dapan;
+    public String getPhuong_an_c() {
+        return phuong_an_c;
     }
 
-    public void setDapan(String dapan) {
-        this.dapan = dapan;
+    public void setPhuong_an_c(String phuong_an_c) {
+        this.phuong_an_c = phuong_an_c;
     }
 
-    public static CauHoi ParseJSON(JSONObject job) throws JSONException {
-        return  new CauHoi(
-                job.getString("cauhoi"),
-                job.getString("pA"),
-                job.getString("pB"),
-                job.getString("pC"),
-                job.getString("pD"),
-                job.getString("dapan")
-        );
+    public String getPhuong_an_d() {
+        return phuong_an_d;
     }
 
+    public void setPhuong_an_d(String phuong_an_d) {
+        this.phuong_an_d = phuong_an_d;
+    }
+
+    public String getDap_an() {
+        return dap_an;
+    }
+
+    public void setDap_an(String dap_an) {
+        this.dap_an = dap_an;
+    }
 }
