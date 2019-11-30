@@ -4,10 +4,16 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btntenlinhvuc"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_gravity="center"
+        android:paddingBottom="5dp"
+        android:id="@+id/txttenlinhvuc"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="ChonLinhVuc_LayCauHoi"
-        android:text="Button" />
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
 </LinearLayout>

@@ -27,7 +27,6 @@
         <activity android:name=".DangKy_form" />
         <activity android:name=".QuenMatKhau_form" />
         <activity android:name=".Login_form" />
-        <activity android:name=".HienThiCauHoi_form"></activity>
     </application>
 
 </manifest>
