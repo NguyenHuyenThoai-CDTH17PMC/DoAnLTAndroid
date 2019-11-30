@@ -16,7 +16,6 @@ public class LinhVuc {
     public void setId(int id) {
         this.id = id;
     }
-
     public String getTenlinhvuc() {
         return tenlinhvuc;
     }
