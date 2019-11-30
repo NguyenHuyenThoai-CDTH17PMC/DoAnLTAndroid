@@ -28,7 +28,6 @@ import java.util.Iterator;
 
 public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
 
-
     private RequestQueue requestQueue;
     String url="http://192.168.1.6/Do_An_PHP/public/api/cau-hoi?linh_vuc=1";
 
