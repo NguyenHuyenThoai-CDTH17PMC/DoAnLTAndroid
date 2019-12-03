@@ -1,16 +1,17 @@
 package com.example.doanltandroid;
 
 public class CauHoi {
-    private int id;
+    private String id;
     private String noi_dung;
-    private int linh_vuc_id;
+    private String linh_vuc_id;
     private String phuong_an_a;
     private String phuong_an_b;
     private String phuong_an_c;
     private String phuong_an_d;
     private String dap_an;
 
-    public CauHoi(int id, String noi_dung, int linh_vuc_id, String phuong_an_a, String phuong_an_b, String phuong_an_c, String phuong_an_d, String dap_an) {
+
+    public CauHoi(String id, String noi_dung, String linh_vuc_id, String phuong_an_a, String phuong_an_b, String phuong_an_c, String phuong_an_d, String dap_an) {
         this.id = id;
         this.noi_dung = noi_dung;
         this.linh_vuc_id = linh_vuc_id;
@@ -21,11 +22,11 @@ public class CauHoi {
         this.dap_an = dap_an;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -37,11 +38,11 @@ public class CauHoi {
         this.noi_dung = noi_dung;
     }
 
-    public int getLinh_vuc_id() {
+    public String getLinh_vuc_id() {
         return linh_vuc_id;
     }
 
-    public void setLinh_vuc_id(int linh_vuc_id) {
+    public void setLinh_vuc_id(String linh_vuc_id) {
         this.linh_vuc_id = linh_vuc_id;
     }
 

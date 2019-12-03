@@ -61,14 +61,15 @@ public class LinhVucAdapter extends  RecyclerView.Adapter<LinhVucAdapter.ViewHol
         @Override
         public void onClick(View v) {
             LinhVuc currentLinhvuc=linhVucs.get(getAdapterPosition());
+
             for (int i=0;i<linhVucs.size();i++){
                 if(currentLinhvuc.getTenlinhvuc().equals(linhVucs.get(i).getTenlinhvuc())){
-                    Intent intent=new Intent(context,CauHoiLayTheoIDLinhVuc.class);
-                    i=i+1;
-                    intent.putExtra("id",String.valueOf(i));
-                    context.startActivity(intent);
-                }
 
+
+                    i=i+1;
+                    new GetAPICauHoi(context).execute("http://192.168.1.7:8080/Do_An_PHP/public/api/cau-hoi?linh_vuc="+i);
+                    break;
+                }
             }
 
         }

@@ -21,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtTendangnhap" />
 
     <EditText
-        android:id="@+id/edtXacnhan"
+        android:id="@+id/edtXacnhanLaiMatKhau"
         android:layout_width="298dp"
         android:layout_height="46dp"
         android:layout_marginStart="50dp"
@@ -63,6 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
     <Button
+        android:onClick="DangKi"
         android:id="@+id/btnLayMk3"
         android:layout_width="298dp"
         android:layout_height="46dp"
@@ -74,7 +75,7 @@
         android:textColor="#FCF8F8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtXacnhan" />
+        app:layout_constraintTop_toBottomOf="@+id/edtXacnhanLaiMatKhau" />
 
     <EditText
         android:id="@+id/edtTendangnhap"

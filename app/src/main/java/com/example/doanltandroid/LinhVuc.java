@@ -1,19 +1,20 @@
 package com.example.doanltandroid;
 
 public class LinhVuc {
-  private int id;
+  private String id;
   private String tenlinhvuc;
 
-    public LinhVuc(int id, String tenlinhvuc) {
+
+    public LinhVuc(String id, String tenlinhvuc) {
         this.id = id;
         this.tenlinhvuc = tenlinhvuc;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

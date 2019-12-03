@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,13 +26,15 @@ import java.util.ArrayList;
 
 public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private  TextView cauhoi_id;
-    private  Button panA;
-    private  Button panB;
-    private  Button panC;
-    private  Button panD;
+
+    private RadioButton radioButton1;
+    private RadioButton radioButton2;
+    private RadioButton radioButton3;
+    private RadioButton radioButton4;
     private  TextView cauhoi;
     private ArrayList<CauHoi>cauHois;
-    private  int i=0;
+    private int vitri=0;
+    private int socaudung=0;
 
 
     public CauHoiLayTheoIDLinhVuc() {
@@ -45,102 +48,111 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         setContentView(R.layout.activity_cau_hoi_lay_theo_idlinh_vuc);
         cauhoi_id=findViewById(R.id.cauhoi_id);
         cauhoi=findViewById(R.id.cauhoi);
-        panA=findViewById(R.id.panA);
-        panB=findViewById(R.id.panB);
-        panC=findViewById(R.id.panC);
-        panD=findViewById(R.id.panD);
+        radioButton1=findViewById(R.id.radA);
+        radioButton2=findViewById(R.id.radB);
+        radioButton3=findViewById(R.id.radC);
+        radioButton4=findViewById(R.id.radD
+        );
         Intent intent=getIntent();
-        String id = intent.getStringExtra("id");
-        new LOADJSON_CAU_HOI().execute("http://192.168.1.19:8080/Do_An_PHP/public/api/cau-hoi?linh_vuc="+id);
-        Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
-
-
-
-    }
-
-    public void NEXT(View view){
-        cauhoi_id = findViewById(R.id.cauhoi_id);
-        cauhoi=findViewById(R.id.cauhoi);
-        panA = findViewById(R.id.panA);
-        panB = findViewById(R.id.panB);
-        panC = findViewById(R.id.panC);
-        panD = findViewById(R.id.panD);
-        i=i+1;
-        if(i<cauHois.size())
-        {
-            cauhoi_id.setText(String.valueOf(cauHois.get(i).getId()));
-            cauhoi.setText(cauHois.get(i).getNoi_dung());
-            panA.setText(cauHois.get(i).getPhuong_an_a());
-            panB.setText(cauHois.get(i).getPhuong_an_b());
-            panC.setText(cauHois.get(i).getPhuong_an_c());
-            panD.setText(cauHois.get(i).getPhuong_an_d());
-        }
-        else {
-            Toast.makeText(this, "Hết câu hỏi rồi", Toast.LENGTH_SHORT).show();
+        String JSON = intent.getStringExtra("JSON");
+        if(kiemtraJSON(JSON)==true){
+           cauhoi_id.setText(cauHois.get( vitri).getId());
+           cauhoi.setText(cauHois.get( vitri).getNoi_dung());
+           radioButton1.setText(cauHois.get( vitri).getPhuong_an_a());
+           radioButton2.setText(cauHois.get( vitri).getPhuong_an_b());
+           radioButton3.setText(cauHois.get( vitri).getPhuong_an_c());
+           radioButton4.setText(cauHois.get( vitri).getPhuong_an_d());
+           vitri++;
         }
 
     }
-    public class LOADJSON_CAU_HOI extends AsyncTask<String,Void,String>{
-
-        @Override
-        protected String doInBackground(String... strings) {
-            StringBuilder stringBuilder=new StringBuilder();
+    public  void Tieptuc(View view){
+        if(view.getId()==R.id.btnNEXT){
+            if(ChonDung(vitri-1)==true){
+                Toast.makeText(this, ""+socaudung, Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(this, "Bạn chọn sai", Toast.LENGTH_SHORT).show();
+            }
             try {
-                URL url=new URL(strings[0]);
-                URLConnection urlConnection=url.openConnection();
-                InputStream inputStream=urlConnection.getInputStream();
-                InputStreamReader inputStreamReader=new InputStreamReader(inputStream);
-                BufferedReader bufferedReader=new BufferedReader(inputStreamReader);
-                String line="";
-                while ((line=bufferedReader.readLine())!=null){
-                    stringBuilder.append(line);
-                }
-                bufferedReader.close();
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+                cauhoi_id.setText(cauHois.get( vitri).getId());
+                cauhoi.setText(cauHois.get( vitri).getNoi_dung());
+                radioButton1.setText(cauHois.get( vitri).getPhuong_an_a());
+                radioButton2.setText(cauHois.get( vitri).getPhuong_an_b());
+                radioButton3.setText(cauHois.get( vitri).getPhuong_an_c());
+                radioButton4.setText(cauHois.get( vitri).getPhuong_an_d());
+                vitri++;
+
+            }catch (Exception e){
+                Toast.makeText(this, "Bạn chọn sai", Toast.LENGTH_SHORT).show();
             }
 
-            return stringBuilder.toString();
         }
 
-        @Override
-        protected void onPostExecute(String s) {
-            try {
-                JSONObject jsonObject=new JSONObject(s);
-                JSONArray jsonArray=jsonObject.getJSONArray("data");
-                for(int i=0;i<jsonArray.length();i++){
-                    JSONObject object_data=jsonArray.getJSONObject(i);
-                    int id=object_data.getInt("id");
-                    String noi_dung=object_data.getString("noi_dung");
-                    int linh_vuc_id=object_data.getInt("linh_vuc_id");
-                    String phuong_an_a=object_data.getString("phuong_an_a");
-                    String phuong_an_b=object_data.getString("phuong_an_b");
-                    String phuong_an_c=object_data.getString("phuong_an_c");
-                    String phuong_an_d=object_data.getString("phuong_an_d");
-                    String dap_an=object_data.getString("dap_an");
-                    cauHois.add(new CauHoi(id,noi_dung,linh_vuc_id,phuong_an_a,phuong_an_b,phuong_an_c,phuong_an_d,dap_an));
-
-                }
-
-                        cauhoi_id.setText(String.valueOf(cauHois.get(0).getId()));
-                        cauhoi.setText(cauHois.get(0).getNoi_dung());
-                        panA.setText(cauHois.get(0).getPhuong_an_a());
-                        panB.setText(cauHois.get(0).getPhuong_an_b());
-                        panC.setText(cauHois.get(0).getPhuong_an_c());
-                        panD.setText(cauHois.get(0).getPhuong_an_d());
-
-
-
-
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            super.onPostExecute(s);
-        }
     }
+    public boolean ChonDung(int vitri){
+       String chon="";
+        if(radioButton1.isChecked()){
+            chon="A";
+            if(chon.equals(cauHois.get(vitri).getDap_an())){
+                socaudung++;
+                return true;
+            }
+
+        }
+        if(radioButton2.isChecked()){
+            chon="B";
+            if(chon.equals(cauHois.get(vitri).getDap_an())){
+                socaudung++;
+                return true;
+            }
+
+        }
+        if(radioButton3.isChecked()){
+            chon="C";
+            if(chon.equals(cauHois.get(vitri).getDap_an())){
+                socaudung++;
+                return true;
+            }
+
+        }
+        if(radioButton4.isChecked()){
+            chon="D";
+            if(chon.equals(cauHois.get(vitri).getDap_an())){
+                socaudung++;
+                return true;
+            }
+
+        }
+        return true;
+    }
+    public boolean kiemtraJSON(String JSON){
+        try {
+            JSONObject jsonObjectLInhVuc=new JSONObject(JSON);
+            JSONArray jsonArraydata=jsonObjectLInhVuc.getJSONArray("data");
+            for(int i=0;i<jsonArraydata.length();i++){
+                JSONObject object=jsonArraydata.getJSONObject(i);
+               String id= String.valueOf(object.getInt("id"));
+               String noi_dung= object.getString("noi_dung");
+               String linh_vuc_id=String.valueOf(object.getInt("linh_vuc_id"));
+               String phuong_an_a= object.getString("phuong_an_a");
+               String phuong_an_b= object.getString("phuong_an_b");
+               String phuong_an_c=object.getString("phuong_an_c");
+               String phuong_an_d= object.getString("phuong_an_d");
+               String dap_an= object.getString("dap_an");
+               cauHois.add(new CauHoi(id,noi_dung,linh_vuc_id,phuong_an_a,phuong_an_b,phuong_an_c,phuong_an_d,dap_an));
+
+
+            }
+
+            return true;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
 
 
 
