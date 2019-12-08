@@ -2,11 +2,13 @@ package com.example.doanltandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,109 +24,102 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private  TextView cauhoi_id;
-
-    private RadioButton radioButton1;
-    private RadioButton radioButton2;
-    private RadioButton radioButton3;
-    private RadioButton radioButton4;
+    private Button Button1;
+    private Button Button2;
+    private Button Button3;
+    private Button Button4;
     private  TextView cauhoi;
     private ArrayList<CauHoi>cauHois;
     private int vitri=0;
     private int socaudung=0;
+    private String chon;
+    private  TextView txtscore;
 
 
     public CauHoiLayTheoIDLinhVuc() {
         this.cauHois =new ArrayList<>();
-
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cau_hoi_lay_theo_idlinh_vuc);
-        cauhoi_id=findViewById(R.id.cauhoi_id);
-        cauhoi=findViewById(R.id.cauhoi);
-        radioButton1=findViewById(R.id.radA);
-        radioButton2=findViewById(R.id.radB);
-        radioButton3=findViewById(R.id.radC);
-        radioButton4=findViewById(R.id.radD
-        );
+        txtscore=findViewById(R.id.txtScore);
+        cauhoi_id=findViewById(R.id.txtid);
+        cauhoi=findViewById(R.id.txtCauHoi);
+        Button1=findViewById(R.id.btnA);
+        Button2=findViewById(R.id.btnB);
+        Button3=findViewById(R.id.btnC);
+        Button4=findViewById(R.id.btnD);
         Intent intent=getIntent();
         String JSON = intent.getStringExtra("JSON");
         if(kiemtraJSON(JSON)==true){
            cauhoi_id.setText(cauHois.get( vitri).getId());
            cauhoi.setText(cauHois.get( vitri).getNoi_dung());
-           radioButton1.setText(cauHois.get( vitri).getPhuong_an_a());
-           radioButton2.setText(cauHois.get( vitri).getPhuong_an_b());
-           radioButton3.setText(cauHois.get( vitri).getPhuong_an_c());
-           radioButton4.setText(cauHois.get( vitri).getPhuong_an_d());
+           Button1.setText("A: "+cauHois.get( vitri).getPhuong_an_a());
+           Button2.setText("B: "+cauHois.get( vitri).getPhuong_an_b());
+           Button3.setText("C: "+cauHois.get( vitri).getPhuong_an_c());
+           Button4.setText("D: "+cauHois.get( vitri).getPhuong_an_d());
            vitri++;
         }
-
+        txtscore.setText(String.valueOf(socaudung));
     }
     public  void Tieptuc(View view){
-        if(view.getId()==R.id.btnNEXT){
-            if(ChonDung(vitri-1)==true){
-                Toast.makeText(this, ""+socaudung, Toast.LENGTH_SHORT).show();
-            }
-            else {
-                Toast.makeText(this, "Bạn chọn sai", Toast.LENGTH_SHORT).show();
-            }
-            try {
-                cauhoi_id.setText(cauHois.get( vitri).getId());
+        if(ChonDung(vitri-1,view)==true){
+            Toast.makeText(this, ""+chon+" "+socaudung, Toast.LENGTH_SHORT).show();
+            txtscore.setText(String.valueOf(socaudung));
+        }
+        try {
+                cauhoi_id.setText(cauHois.get(vitri).getId());
                 cauhoi.setText(cauHois.get( vitri).getNoi_dung());
-                radioButton1.setText(cauHois.get( vitri).getPhuong_an_a());
-                radioButton2.setText(cauHois.get( vitri).getPhuong_an_b());
-                radioButton3.setText(cauHois.get( vitri).getPhuong_an_c());
-                radioButton4.setText(cauHois.get( vitri).getPhuong_an_d());
+                Button1.setText("A: "+cauHois.get( vitri).getPhuong_an_a());
+                Button2.setText("B: "+cauHois.get( vitri).getPhuong_an_b());
+                Button3.setText("C: "+cauHois.get( vitri).getPhuong_an_c());
+                Button4.setText("D: "+cauHois.get( vitri).getPhuong_an_d());
                 vitri++;
-
             }catch (Exception e){
-                Toast.makeText(this, "Bạn chọn sai", Toast.LENGTH_SHORT).show();
+               dialogketthuc();
             }
-
-        }
-
     }
-    public boolean ChonDung(int vitri){
-       String chon="";
-        if(radioButton1.isChecked()){
-            chon="A";
-            if(chon.equals(cauHois.get(vitri).getDap_an())){
-                socaudung++;
-                return true;
-            }
 
+    public boolean ChonDung(int vitri,View view){
+        switch (view.getId()){
+            case R.id.btnA:
+                chon="A";
+                if(chon.equals(cauHois.get(vitri).getDap_an())) {
+                    socaudung++;
+                    return true;
+                }
+                break;
+            case R.id.btnB:
+                chon="B";
+                if(chon.equals(cauHois.get(vitri).getDap_an())) {
+                    socaudung++;
+                    return true;
+                }
+                break;
+            case R.id.btnC:
+                chon="C";
+                if(chon.equals(cauHois.get(vitri).getDap_an())) {
+                    socaudung++;
+                    return true;
+                }
+                break;
+            case R.id.btnD:
+                chon="D";
+                if(chon.equals(cauHois.get(vitri).getDap_an())) {
+                    socaudung++;
+                    return true;
+                }
+                break;
         }
-        if(radioButton2.isChecked()){
-            chon="B";
-            if(chon.equals(cauHois.get(vitri).getDap_an())){
-                socaudung++;
-                return true;
-            }
 
-        }
-        if(radioButton3.isChecked()){
-            chon="C";
-            if(chon.equals(cauHois.get(vitri).getDap_an())){
-                socaudung++;
-                return true;
-            }
-
-        }
-        if(radioButton4.isChecked()){
-            chon="D";
-            if(chon.equals(cauHois.get(vitri).getDap_an())){
-                socaudung++;
-                return true;
-            }
-
-        }
-        return true;
+        return false;
     }
     public boolean kiemtraJSON(String JSON){
         try {
@@ -141,8 +136,6 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                String phuong_an_d= object.getString("phuong_an_d");
                String dap_an= object.getString("dap_an");
                cauHois.add(new CauHoi(id,noi_dung,linh_vuc_id,phuong_an_a,phuong_an_b,phuong_an_c,phuong_an_d,dap_an));
-
-
             }
 
             return true;
@@ -150,6 +143,38 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
             e.printStackTrace();
         }
         return false;
+    }
+    public void dialogketthuc(){
+        Dialog dialog=new Dialog(this);
+        dialog.setContentView(R.layout.dialog_ketthucluotchoi);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+        //ánh xạ
+        TextView txtdiem=dialog.findViewById(R.id.txtDiem);
+        Button btnthemluotmoi=dialog.findViewById(R.id.btnThemLuotMoi);
+        Button btnketthuc=dialog.findViewById(R.id.btnKetThucLuot);
+        //gán dữ liệu
+
+        txtdiem.setText(String.valueOf(socaudung));
+
+        btnketthuc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Luuluotchoi_chitietluotchoi();
+                Intent intent=new Intent(CauHoiLayTheoIDLinhVuc.this,ManHinhChinh_form.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+    }
+    public  void Luuluotchoi_chitietluotchoi(){
+        String thoigianhientai;
+        SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        thoigianhientai=laythoigianhientai.format(new Date());
+        String duongdan="http://192.168.1.20:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
+        PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdan,"1",String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
     }
 
 

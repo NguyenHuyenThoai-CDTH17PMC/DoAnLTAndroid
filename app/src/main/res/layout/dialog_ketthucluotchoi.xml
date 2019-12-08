@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AFEEEE"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Lượt chơi kết thúc"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="Xin chúc mừng bạn đã đạt được"
+        android:textColor="#FF1493"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:id="@+id/txtDiem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="10"
+        android:textColor="#A20855"
+        android:textSize="70dp" />
+
+    <Button
+        android:layout_marginTop="50dp"
+        android:id="@+id/btnThemLuotMoi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#008000"
+        android:text="Thêm 1 lượt chơi mới"
+        android:textColor="#FFD700"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnKetThucLuot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DA0479"
+        android:text="Kết thúc"
+        android:textColor="#FFD700"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+</LinearLayout>

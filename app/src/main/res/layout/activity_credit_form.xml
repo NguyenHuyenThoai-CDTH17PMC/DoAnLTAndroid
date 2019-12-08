@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Credit_form">
+
+    <TextView
+        android:id="@+id/txtUsername"
+        android:layout_width="243dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
+        android:background="#03A9F4"
+        android:text="nguyenvantan"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtCredit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCredit"
+        android:layout_width="79dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="#FF9800"
+        android:text="2000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/txtUsername"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imgbtnBuycredit"
+        android:layout_width="0dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="1dp"
+        android:background="#FF9800"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/txtCredit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/diamond" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mua thêm Credit"
+        android:textSize="40dp"
+        android:textColor="#E91E63"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="88dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="109dp"
+        android:layout_height="56dp"
+        android:text="$500"
+        android:textColor="#673AB7"
+        android:textSize="40dp"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="302dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="109dp"
+        android:layout_height="56dp"
+        android:text="$100"
+        android:textColor="#4CAF50"
+        android:textSize="40dp"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="532dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="109dp"
+        android:layout_height="56dp"
+        android:text="$300"
+        android:textColor="#E91E63"
+        android:textSize="40dp"
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="302dp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="109dp"
+        android:layout_height="56dp"
+        android:text="$50"
+        android:textColor="#FFEB3B"
+        android:textSize="40dp"
+        tools:layout_editor_absoluteX="238dp"
+        tools:layout_editor_absoluteY="532dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="115dp"
+        android:layout_height="103dp"
+        android:background="#03A9F4"
+        app:srcCompat="@drawable/credit"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="188dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="115dp"
+        android:layout_height="103dp"
+        android:background="#4CAF50"
+        app:srcCompat="@drawable/credit"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="409dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="115dp"
+        android:layout_height="103dp"
+        android:background="#E91E63"
+        app:srcCompat="@drawable/credit"
+        tools:layout_editor_absoluteX="238dp"
+        tools:layout_editor_absoluteY="188dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="115dp"
+        android:layout_height="103dp"
+        android:background="#FFEB3B"
+        app:srcCompat="@drawable/credit"
+        tools:layout_editor_absoluteX="238dp"
+        tools:layout_editor_absoluteY="409dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
