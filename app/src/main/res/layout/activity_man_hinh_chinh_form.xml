@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ManHinhChinh_form">
+
     <Button
         android:id="@+id/btnBuycredit"
         android:layout_width="187dp"
         android:layout_height="42dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="112dp"
         android:background="#FFC107"
         android:text="Mua thêm Credit"
@@ -23,7 +24,7 @@
         android:layout_width="187dp"
         android:layout_height="42dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="112dp"
         android:background="#E91E63"
         android:text="Bảng xếp hạng"
@@ -36,12 +37,12 @@
         android:layout_width="174dp"
         android:layout_height="154dp"
         android:layout_marginStart="118dp"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="119dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@mipmap/ic_launcher" />
+        tools:srcCompat="@drawable/c3" />
 
     <TextView
         android:id="@+id/txtUsername"
@@ -50,7 +51,6 @@
         android:layout_marginStart="143dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="143dp"
-        android:text="nguyenvantan"
         android:textColor="#2196F3"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,11 +62,11 @@
         android:layout_width="36dp"
         android:layout_height="21dp"
         android:layout_marginStart="143dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="11dp"
         app:layout_constraintEnd_toStartOf="@+id/txtCredit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsername"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:srcCompat="@drawable/ruby" />
 
     <TextView
@@ -74,13 +74,13 @@
         android:layout_width="109dp"
         android:layout_height="25dp"
         android:layout_marginStart="11dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="112dp"
         android:text="2000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
         android:id="@+id/btnAccountmanagerment"
@@ -100,7 +100,7 @@
         android:layout_width="187dp"
         android:layout_height="42dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="112dp"
         android:background="#03A9F4"
         android:text="Trò chơi mới"
@@ -113,7 +113,7 @@
         android:layout_width="187dp"
         android:layout_height="42dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="112dp"
         android:background="#673AB7"
         android:text="Lịch sử chơi"

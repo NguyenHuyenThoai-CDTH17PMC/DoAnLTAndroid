@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -41,6 +42,9 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private String chon;
     private  TextView txtscore;
 
+    private ProgressBar progressBar;
+    private TextView txtTongThoiGian;
+    CountDownTimer countDownTimer;
 
     public CauHoiLayTheoIDLinhVuc() {
         this.cauHois =new ArrayList<>();
@@ -58,6 +62,22 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         Button4=findViewById(R.id.btnD);
         Intent intent=getIntent();
         String JSON = intent.getStringExtra("JSON");
+        progressBar=findViewById(R.id.progressBar);
+        final CountDownTimer countDownTimer=new CountDownTimer(60000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                progressBar.setMax(60);
+                progressBar.setProgress((int) (millisUntilFinished / 1000));
+                txtTongThoiGian=findViewById(R.id.txttongthoigian);
+                txtTongThoiGian.setText(String.valueOf(millisUntilFinished / 1000));
+            }
+            @Override
+            public void onFinish() {
+
+                Toast.makeText(CauHoiLayTheoIDLinhVuc.this, "Over time !", Toast.LENGTH_SHORT).show();
+                dialogketthuc();
+            }
+        }.start();
         if(kiemtraJSON(JSON)==true){
            cauhoi_id.setText(cauHois.get( vitri).getId());
            cauhoi.setText(cauHois.get( vitri).getNoi_dung());
@@ -71,7 +91,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     }
     public  void Tieptuc(View view){
         if(ChonDung(vitri-1,view)==true){
-            Toast.makeText(this, ""+chon+" "+socaudung, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, ""+chon+""+socaudung, Toast.LENGTH_SHORT).show();
             txtscore.setText(String.valueOf(socaudung));
         }
         try {
@@ -173,7 +193,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String thoigianhientai;
         SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         thoigianhientai=laythoigianhientai.format(new Date());
-        String duongdan="http://192.168.1.20:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
+        String duongdan="http://192.168.56.1/Do_An_PHP/public/api/luot-choi/them-luot-choi";
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdan,"1",String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
     }
 
