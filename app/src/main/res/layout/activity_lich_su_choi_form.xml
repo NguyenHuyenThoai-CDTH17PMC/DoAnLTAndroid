@@ -46,7 +46,7 @@
         app:srcCompat="@drawable/diamond" />
 
     <TextView
-        android:id="@+id/txtScore"
+        android:id="@+id/txtdiem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lịch sử chơi"

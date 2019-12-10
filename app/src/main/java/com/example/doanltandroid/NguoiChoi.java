@@ -1,13 +1,13 @@
 package com.example.doanltandroid;
 
 public class NguoiChoi {
+    String id;
     String ten_dang_nhap;
     String mat_khau;
     String email;
     String hinh_dai_dien;
     String diem_cao_nhat;
     String credit;
-
 
     public String getTen_dang_nhap() {
         return ten_dang_nhap;
@@ -55,5 +55,13 @@ public class NguoiChoi {
 
     public void setCredit(String credit) {
         this.credit = credit;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

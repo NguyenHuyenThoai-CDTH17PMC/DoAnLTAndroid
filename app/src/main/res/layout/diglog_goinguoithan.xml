@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Câu trả lời từ người thân" />
+
+    <TextView
+        android:id="@+id/txtrandomdapan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="70sp" />
+
+    <Button
+        android:id="@+id/btnend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xin cảm ơn!!!" />
+</LinearLayout>
