@@ -4,12 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,16 +14,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private  TextView cauhoi_id;
@@ -40,7 +31,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private int socaudung=0;
     private String chon;
     private  TextView txtscore;
-
+    final String jokes[] = {"A","B","C","D"};
 
     public CauHoiLayTheoIDLinhVuc() {
         this.cauHois =new ArrayList<>();
@@ -68,6 +59,26 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
            vitri++;
         }
         txtscore.setText(String.valueOf(socaudung));
+    }
+    public void trogiup(View view){
+        dialog_goinguoithan();
+    }
+    public void dialog_goinguoithan(){
+        final Dialog dialog=new Dialog(this);
+        dialog.setContentView(R.layout.diglog_goinguoithan);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+        Random random =new Random();
+        int num = random.nextInt(4);
+        TextView txt = dialog.findViewById(R.id.txtrandomdapan);
+        txt.setText(jokes[num]);
+        Button btnend = dialog.findViewById(R.id.btnend);
+        btnend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
     }
     public  void Tieptuc(View view){
         if(ChonDung(vitri-1,view)==true){
@@ -173,7 +184,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String thoigianhientai;
         SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         thoigianhientai=laythoigianhientai.format(new Date());
-        String duongdan="http://192.168.1.20:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
+        String duongdan="http://172.19.200.255:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdan,"1",String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
     }
 

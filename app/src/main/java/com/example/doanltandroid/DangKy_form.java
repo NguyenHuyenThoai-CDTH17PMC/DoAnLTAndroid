@@ -24,7 +24,6 @@ public class DangKy_form extends AppCompatActivity {
         edit_matkhau=findViewById(R.id.edtMatkhau);
         edit_xacnhanmatkhau=findViewById(R.id.edtXacnhanLaiMatKhau);
     }
-
     public void DangKi(View view) {
        String makhau=edit_matkhau.getText().toString();
        String xacnhanlaimatkhau=edit_xacnhanmatkhau.getText().toString();
