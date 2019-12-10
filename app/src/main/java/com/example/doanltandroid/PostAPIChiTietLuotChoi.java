@@ -52,7 +52,7 @@ public class PostAPIChiTietLuotChoi extends AsyncTask<Void,Void,String> {
                 Toast.makeText(context, "Không thành công", Toast.LENGTH_SHORT).show();
             }
             else {
-                Toast.makeText(context, "Đã lưu lượt chơi thành công", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Đã lưu chi tiết lượt chơi thành công", Toast.LENGTH_SHORT).show();
             }
         }
     }

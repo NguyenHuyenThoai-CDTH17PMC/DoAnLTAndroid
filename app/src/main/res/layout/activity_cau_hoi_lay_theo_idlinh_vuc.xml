@@ -112,7 +112,7 @@
             android:text="Một con vịt xòe ra bao nhiêu cái cánh ?"
             android:textSize="20dp" />
 
-<<<<<<< HEAD
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -159,43 +159,8 @@
                 android:text="D. Bốn cái" />
         </LinearLayout>
 =======
-        <Button
-            android:id="@+id/btnA"
-            android:layout_width="275dp"
-            android:layout_height="46dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="#2196F3"
-            android:onClick="Tieptuc"
-            android:text="A. Một cái" />
 
-        <Button
-            android:id="@+id/btnB"
-            android:layout_width="275dp"
-            android:layout_height="46dp"
-            android:layout_gravity="center"
-            android:background="#2196F3"
-            android:onClick="Tieptuc"
-            android:text="B. Hai cái" />
 
-        <Button
-            android:id="@+id/btnC"
-            android:layout_width="275dp"
-            android:layout_height="46dp"
-            android:layout_gravity="center"
-            android:background="#2196F3"
-            android:onClick="Tieptuc"
-            android:text="C. Ba cái" />
-
-        <Button
-            android:id="@+id/btnD"
-            android:layout_width="275dp"
-            android:layout_height="46dp"
-            android:layout_gravity="center"
-            android:background="#2196F3"
-            android:onClick="Tieptuc"
-            android:text="D. Bốn cái" />
->>>>>>> 322431a1e85e1b2f0e769a186e60350a41d9225b
 
         <LinearLayout
             android:layout_width="match_parent"

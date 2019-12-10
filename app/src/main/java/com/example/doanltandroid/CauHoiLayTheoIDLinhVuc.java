@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +21,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private  TextView cauhoi_id;
@@ -32,10 +35,12 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private int socaudung=0;
     private String chon;
     private  TextView txtscore;
-
+    final String jokes[] = {"A","B","C","D"};
     private ProgressBar progressBar;
     private TextView txtTongThoiGian;
     CountDownTimer countDownTimer;
+    SharedPreferences sharedPreferences;
+
 
     public CauHoiLayTheoIDLinhVuc() {
         this.cauHois =new ArrayList<>();
@@ -80,11 +85,29 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         }
         txtscore.setText(String.valueOf(socaudung));
     }
+    public void trogiup(View view){
+        dialog_goinguoithan();
+    }
+    public void dialog_goinguoithan(){
+        final Dialog dialog=new Dialog(this);
+        dialog.setContentView(R.layout.diglog_goinguoithan);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+        Random random =new Random();
+        int num = random.nextInt(4);
+        TextView txt = dialog.findViewById(R.id.txtrandomdapan);
+        txt.setText(jokes[num]);
+        Button btnend = dialog.findViewById(R.id.btnend);
+        btnend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+    }
     public  void Tieptuc(View view){
         if(ChonDung(vitri-1,view)==true){
-            Toast.makeText(this, ""+chon+""+socaudung, Toast.LENGTH_SHORT).show();
             txtscore.setText(String.valueOf(socaudung));
-
         }
         LuuChiTietLuotChoi(cauHois.get(vitri-1).getId(),chon);
         try {
@@ -184,22 +207,20 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
 
     }
     public  void Luuluotchoi(){
+        sharedPreferences=getSharedPreferences("nguoichoi",MODE_PRIVATE);
+        String nguoichoi_id= sharedPreferences.getString("id_nguoichoi","");
         String thoigianhientai;
         SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         thoigianhientai=laythoigianhientai.format(new Date());
-        String duongdanluotchoi="http://192.168.1.19:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
-        PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,"1",String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
+        String duongdanluotchoi="http://192.168.1.17:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
+        PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
 
     }
     public void LuuChiTietLuotChoi(String cauhoi_id,String phuong_an){
-        String duongdanchitietluotchoi="http://192.168.1.19:8080/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
+        String duongdanchitietluotchoi="http://192.168.1.17:8080/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
         String diem_cau_nay="0";
         String luot_choi_id="12";
-
-
         PostAPIChiTietLuotChoi postAPIChiTietLuotChoi= (PostAPIChiTietLuotChoi) new PostAPIChiTietLuotChoi(CauHoiLayTheoIDLinhVuc.this, duongdanchitietluotchoi,luot_choi_id,cauhoi_id,phuong_an,diem_cau_nay).execute();
-        Toast.makeText(this,  cauhoi_id+" "+phuong_an+" "+diem_cau_nay, Toast.LENGTH_SHORT).show();
-
     }
 
 

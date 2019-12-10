@@ -3,6 +3,7 @@ package com.example.doanltandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -16,6 +17,9 @@ public class ManHinhChinh_form extends AppCompatActivity {
     String id;
     String hinh_dai_dien;
     String diem_cao_nhat;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,12 @@ public class ManHinhChinh_form extends AppCompatActivity {
         txt.setText(ten_dang_nhap);
         txt2.setText(credit);
         id = intent.getStringExtra("id");
+        sharedPreferences=getSharedPreferences("nguoichoi",MODE_PRIVATE);
+        editor=sharedPreferences.edit();
+        editor.putString("id_nguoichoi",id);
+        editor.commit();
+
+
     }
     public void QuanLiTaiKhoan(View view){
         Intent intent = new Intent(ManHinhChinh_form.this,QuanLyTaiKhoan_form.class);
@@ -41,6 +51,10 @@ public class ManHinhChinh_form extends AppCompatActivity {
         intent.putExtra("diem_cao_nhat",diem_cao_nhat);
         intent.putExtra("hinh_dai_dien",hinh_dai_dien);
         intent.putExtra("credit",credit);
+        startActivity(intent);
+    }
+    public void TroChoiMoi(View view){
+        Intent intent=new Intent(ManHinhChinh_form.this,LinhVucCauHoi_form.class);
         startActivity(intent);
     }
 }
