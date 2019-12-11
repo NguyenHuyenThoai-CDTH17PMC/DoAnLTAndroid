@@ -59,14 +59,30 @@
                 app:srcCompat="@drawable/diamond" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/txtScore"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Điểm : 1.150"
-            android:textColor="#F44336"
-            android:textSize="40dp" />
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtdiem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Điểm : "
+                android:textColor="#F44336"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/txtScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2000"
+                android:textColor="#F44336"
+                android:textSize="40dp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView6"
@@ -110,42 +126,55 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnA"
-            android:layout_width="275dp"
-            android:layout_height="46dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="#2196F3"
-            android:onClick="Tieptuc"
-            android:text="A. Một cái" />
 
-        <Button
-            android:id="@+id/btnB"
-            android:layout_width="275dp"
-            android:layout_height="46dp"
-            android:layout_gravity="center"
-            android:background="#2196F3"
-            android:onClick="Tieptuc"
-            android:text="B. Hai cái" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnC"
-            android:layout_width="275dp"
-            android:layout_height="46dp"
-            android:layout_gravity="center"
-            android:background="#2196F3"
-            android:onClick="Tieptuc"
-            android:text="C. Ba cái" />
+            <Button
+                android:id="@+id/btnA"
+                android:layout_width="208dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="#2196F3"
+                android:onClick="Tieptuc"
+                android:text="A. Một cái" />
 
-        <Button
-            android:id="@+id/btnD"
-            android:layout_width="275dp"
-            android:layout_height="46dp"
-            android:layout_gravity="center"
-            android:background="#2196F3"
-            android:onClick="Tieptuc"
-            android:text="D. Bốn cái" />
+            <Button
+                android:id="@+id/btnB"
+                android:layout_width="208dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="#2196F3"
+                android:onClick="Tieptuc"
+                android:text="B. Hai cái" />
+
+            <Button
+                android:id="@+id/btnC"
+                android:layout_width="208dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="#2196F3"
+                android:onClick="Tieptuc"
+                android:text="C. Ba cái" />
+
+            <Button
+                android:id="@+id/btnD"
+                android:layout_width="208dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="#2196F3"
+                android:onClick="Tieptuc"
+                android:text="D. Bốn cái" />
+        </LinearLayout>
+=======
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -172,45 +201,47 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="bottom|center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp">
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="43dp"
-                android:layout_height="39dp"
-                android:background="#FF9800"
-                android:text="50:50" />
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="15dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_rotate" />
 
             <ImageButton
                 android:id="@+id/imageButton5"
-                android:layout_width="43dp"
-                android:layout_height="40dp"
-                android:background="#FF9800"
-                app:srcCompat="@drawable/back" />
+                android:layout_width="15dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@mipmap/ic_launcher_50" />
 
             <ImageButton
-                android:id="@+id/imageButton8"
-                android:layout_width="52dp"
-                android:layout_height="40dp"
-                android:background="#FF9800"
-                app:srcCompat="@drawable/person" />
+                android:id="@+id/imageButton4"
+                android:layout_width="15dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@mipmap/ic_launcher_people" />
 
             <ImageButton
-                android:id="@+id/imageButton9"
-                android:layout_width="49dp"
-                android:layout_height="39dp"
-                android:background="#FF9800"
-                app:srcCompat="@drawable/phone" />
+                android:id="@+id/imageButton6"
+                android:layout_width="15dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@mipmap/ic_launcher_call"
+                android:onClick="trogiup" />
 
             <ImageButton
-                android:id="@+id/imageButton10"
-                android:layout_width="86dp"
-                android:layout_height="41dp"
-                android:background="#FF9800"
-                android:text="100"
-                app:srcCompat="@drawable/diamond" />
+                android:id="@+id/imageButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@mipmap/ic_launcher_cong" />
+
         </LinearLayout>
 
     </LinearLayout>

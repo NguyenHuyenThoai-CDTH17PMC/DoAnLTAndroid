@@ -36,6 +36,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
         android:background="#4375F0"
+        android:onClick="Login"
         android:text="Đăng nhập"
         android:textColor="#FCF8F8"
         app:layout_constraintEnd_toEndOf="parent"
