@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ManHinhChinh_form">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"></LinearLayout>
+
     <Button
         android:id="@+id/btnBuycredit"
         android:layout_width="187dp"

@@ -3,9 +3,9 @@ package com.example.doanltandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.RelativeLayout;
 
 public class QuanLyTaiKhoan_form extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,43 +18,55 @@
 
             <TextView
                 android:id="@+id/txtUsername2"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:background="#03A9F4"
                 android:text="legendary"
+                android:textColor="#F6F3F7"
                 android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/imgLife2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/heart" />
 
             <TextView
                 android:id="@+id/txtHP2"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
+                android:layout_width="15dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="5X" />
+                android:text="5X"
+                android:textColor="#131213" />
 
             <TextView
                 android:id="@+id/txtCredit2"
-                android:layout_width="79dp"
-                android:layout_height="29dp"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:background="#8BC34A"
                 android:text="2000"
+                android:textColor="#F6F3F7"
                 android:textSize="18sp" />
 
             <ImageButton
                 android:id="@+id/imgbtnBuycredit2"
-                android:layout_width="88dp"
+                android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:background="#FF9800"
                 app:srcCompat="@drawable/diamond" />
+
+            <ImageButton
+                android:id="@+id/btnplay"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:onClick="play"
+                app:srcCompat="@drawable/mute" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -125,6 +137,7 @@
             android:layout_marginTop="30dp"
             android:gravity="center"
             android:text="Chọn lĩnh vực"
+            android:textColor="#2196F3"
             android:textSize="20dp" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -135,4 +148,4 @@
             android:scrollbarDefaultDelayBeforeFade="400" />
 
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
