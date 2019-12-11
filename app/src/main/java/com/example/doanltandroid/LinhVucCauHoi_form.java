@@ -35,7 +35,12 @@ public class LinhVucCauHoi_form extends AppCompatActivity {
     private RecyclerView recyclerView;
     private LinhVucAdapter linhVucAdapter;
     private ArrayList<LinhVuc>linhVucs;
+<<<<<<< HEAD
     private String đuongdan="http://192.168.56.1/Do_An_PHP/public/api/linh-vuc";
+=======
+    private String đuongdan="http://192.168.1.17:8080/Do_An_PHP/public/api/linh-vuc";
+    private String id_nguoichoi;
+>>>>>>> f5e41092b76e7abf278e7dd8b7a93a267ea5865d
 
 
 
