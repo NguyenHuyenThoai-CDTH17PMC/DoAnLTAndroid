@@ -6,40 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ManHinhChinh_form">
 
-<<<<<<< HEAD
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"></LinearLayout>
-
-    <Button
-        android:id="@+id/btnBuycredit"
-        android:layout_width="187dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="112dp"
-        android:background="#FFC107"
-        android:text="Mua thêm Credit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRanking" />
-
-    <Button
-        android:id="@+id/btnRanking"
-        android:layout_width="187dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="112dp"
-        android:background="#E91E63"
-        android:text="Bảng xếp hạng"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnHistory" />
-=======
->>>>>>> f5e41092b76e7abf278e7dd8b7a93a267ea5865d
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -139,7 +105,7 @@
             android:text="Mua thêm Credit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnRanking" />
+            app:layout_constraintTop_toBottomOf="@+id/btnBuycredit" />
 
         <Button
             android:id="@+id/btnRanking"
@@ -152,7 +118,7 @@
             android:text="Bảng xếp hạng"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnHistory" />
+            app:layout_constraintTop_toBottomOf="@+id/btnRanking" />
 
     </LinearLayout>
 
