@@ -1,10 +1,12 @@
 package com.example.doanltandroid;
 
 public class LuotChoi {
+    String id;
     String nguoi_choi_id;
     String so_cau;
     String diem;
     String ngay_gio;
+
 
 
 
@@ -38,5 +40,13 @@ public class LuotChoi {
 
     public void setNgay_gio(String ngay_gio) {
         this.ngay_gio = ngay_gio;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

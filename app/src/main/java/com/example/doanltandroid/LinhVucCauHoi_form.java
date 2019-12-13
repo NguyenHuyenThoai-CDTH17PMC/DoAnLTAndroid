@@ -35,22 +35,8 @@ public class LinhVucCauHoi_form extends AppCompatActivity {
     private RecyclerView recyclerView;
     private LinhVucAdapter linhVucAdapter;
     private ArrayList<LinhVuc>linhVucs;
-<<<<<<< HEAD
-    private String đuongdan="http://192.168.43.63:8080/Do_An_PHP/public/api/linh-vuc";
-=======
-<<<<<<< HEAD
-    private String đuongdan="http://192.168.56.1:8080/Do_An_PHP/public/api/linh-vuc";
-=======
-<<<<<<< HEAD
-    private String đuongdan="http://192.168.56.1/Do_An_PHP/public/api/linh-vuc";
-=======
-    private String đuongdan="http://192.168.1.17:8080/Do_An_PHP/public/api/linh-vuc";
->>>>>>> c2523779ad3ef135d39fd380c11840f999f99cf3
+    private String đuongdan="http://192.168.1.18:8080/Do_An_PHP/public/api/linh-vuc";
     private String id_nguoichoi;
->>>>>>> f5e41092b76e7abf278e7dd8b7a93a267ea5865d
-
-
->>>>>>> 00519d1d2e366700e4c3a13fe538add506b60ad4
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-=======
-<<<<<<< HEAD
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,37 +16,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             >
-=======
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> b6fa5d53261a42e64110993747f11c8d5bcec882
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".CauHoiLayTheoIDLinhVuc">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg4"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/txtUsername3"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#03A9F4"
-                android:text="legendary"
-                android:textSize="18sp" />
-
->>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -82,7 +47,6 @@
         </RelativeLayout>
         <RelativeLayout
             android:layout_weight="1"
-
             android:id="@+id/rl_time"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -208,11 +172,6 @@
             />
     </FrameLayout>
 
-<<<<<<< HEAD
-        <LinearLayout
-            android:layout_width="match_parent"
-=======
-<<<<<<< HEAD
     <LinearLayout
         android:id="@+id/ll_dapdan"
         android:layout_width="match_parent"
@@ -228,49 +187,7 @@
         <Button
             android:id="@+id/btnA"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/level_click_bg"
-            android:gravity="center"
-            android:onClick="Tieptuc"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-=======
-        <TextView
-            android:id="@+id/txtCauHoi"
-            android:layout_width="wrap_content"
->>>>>>> b6fa5d53261a42e64110993747f11c8d5bcec882
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-<<<<<<< HEAD
-                <TextView
-                    android:id="@+id/txtCauHoi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:text="Một con vịt xòe ra bao nhiêu cái cánh ?"
-                    android:textSize="20dp" />
-            </FrameLayout>
-
-        </LinearLayout>
-=======
->>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
->>>>>>> b6fa5d53261a42e64110993747f11c8d5bcec882
-
-        <Button
-            android:id="@+id/btnB"
-            android:layout_width="match_parent"
-<<<<<<< HEAD
-            android:layout_height="30dp"
+            android:layout_height="0dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -280,65 +197,25 @@
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
-=======
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnA"
-                android:layout_width="208dp"
-                android:layout_height="46dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:background="#2196F3"
-                android:onClick="Tieptuc"
-                android:text="A. Một cái" />
+        <Button
+            android:id="@+id/btnB"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/level_click_bg"
+            android:gravity="center"
+            android:onClick="Tieptuc"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnB"
-                android:layout_width="208dp"
-                android:layout_height="46dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:background="#2196F3"
-                android:onClick="Tieptuc"
-                android:text="B. Hai cái" />
-
-            <Button
-                android:id="@+id/btnC"
-                android:layout_width="208dp"
-                android:layout_height="46dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:background="#2196F3"
-                android:onClick="Tieptuc"
-                android:text="C. Ba cái" />
-
-            <Button
-                android:id="@+id/btnD"
-                android:layout_width="208dp"
-                android:layout_height="46dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:background="#2196F3"
-                android:onClick="Tieptuc"
-                android:text="D. Bốn cái" />
-        </LinearLayout>
-<<<<<<< HEAD
-
-
->>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
-
-<<<<<<< HEAD
-=======
->>>>>>> c2523779ad3ef135d39fd380c11840f999f99cf3
-        <LinearLayout
-=======
         <Button
             android:id="@+id/btnC"
->>>>>>> b6fa5d53261a42e64110993747f11c8d5bcec882
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="0dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -352,7 +229,7 @@
         <Button
             android:id="@+id/btnD"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="0dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -364,12 +241,4 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-<<<<<<< HEAD
-</LinearLayout>
-=======
-<<<<<<< HEAD
 </RelativeLayout>
-=======
-</androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
->>>>>>> b6fa5d53261a42e64110993747f11c8d5bcec882

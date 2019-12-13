@@ -13,16 +13,11 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.widget.RelativeLayout;
-=======
 
 import android.os.Environment;
 import android.provider.MediaStore;
-
 import android.widget.RelativeLayout;
-
->>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,14 +50,11 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
     String diem_cao_nhat;
     String credit;
     Button btnCN;
-<<<<<<< HEAD
-=======
     ImageView img;
     TextView imgdoianh;
     String imageFilePath;
     int REQUEST_CODE_CAMERA=123;
     int REQUEST_CODE_FOLDER=456;
->>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,11 +81,9 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
         btnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
+
                 String duongdan = "http://192.168.56.1/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
-=======
-                String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
->>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
+
                 matkhau=mk.getText().toString();
                 xn_maukhau=mknew.getText().toString();
                if(matkhau.equals(xn_maukhau)){
