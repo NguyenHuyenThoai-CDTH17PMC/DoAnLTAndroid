@@ -86,6 +86,32 @@
                 android:text="Trò chơi mới" />
 
         <Button
+<<<<<<< HEAD
+            android:id="@+id/btnBuycredit"
+            android:layout_width="187dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="112dp"
+            android:background="#FFC107"
+            android:text="Mua thêm Credit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnBuycredit" />
+
+        <Button
+            android:id="@+id/btnRanking"
+            android:layout_width="187dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="112dp"
+            android:background="#E91E63"
+            android:text="Bảng xếp hạng"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnRanking" />
+=======
                 android:id="@+id/btnAccountmanagerment"
                 android:layout_width="187dp"
                 android:layout_height="42dp"
@@ -97,6 +123,7 @@
                 android:text="Quản lí tài khoản" />
 
         <Button
+>>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
 
                 android:layout_width="187dp"
                 android:layout_height="42dp"

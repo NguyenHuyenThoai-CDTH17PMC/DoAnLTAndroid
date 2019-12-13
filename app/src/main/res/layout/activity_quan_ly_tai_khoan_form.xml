@@ -23,6 +23,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/c3" />
 
+<<<<<<< HEAD
+=======
         <Button
             android:id="@+id/btnalbum"
             android:layout_width="wrap_content"
@@ -45,6 +47,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imghinhdaidienql" />
+>>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
 
         <EditText
             android:id="@+id/edtTendangnhap"
