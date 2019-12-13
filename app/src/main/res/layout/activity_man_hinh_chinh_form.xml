@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ManHinhChinh_form">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
 
         <ImageView
             android:id="@+id/imghinhdaidienql"
@@ -21,10 +24,10 @@
 
         <TextView
             android:id="@+id/txtUsername"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="nguyenvantan"
+            android:layout_marginStart="143dp"
+            android:layout_marginEnd="143dp"
             android:textColor="#2196F3"
             android:textSize="20dp" />
 
@@ -54,55 +57,55 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btnRanking"
             android:layout_width="187dp"
             android:layout_height="42dp"
             android:layout_marginStart="112dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="112dp"
-            android:background="#FFC107"
-            android:text="Mua thêm Credit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnRanking" />
-
-        <Button
-            android:layout_width="187dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="112dp"
-            android:background="#03A9F4"
-            android:text="Trò chơi mới" />
-
-        <Button
-            android:id="@+id/btnAccountmanagerment"
-            android:layout_width="187dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="112dp"
-            android:background="#4CAF50"
-            android:onClick="QuanLiTaiKhoan"
-            android:text="Quản lí tài khoản" />
-
-        <Button
-            android:layout_width="187dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="112dp"
-            android:background="#673AB7"
-            android:text="Lịch sử chơi" />
-
-        <Button
-            android:id="@+id/btnRanking"
-            android:layout_width="187dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="112dp"
             android:background="#E91E63"
             android:text="Bảng xếp hạng" />
+
+        <Button
+            android:id="@+id/btnBuycredit"
+            android:layout_width="187dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="112dp"
+            android:layout_marginEnd="112dp"
+            android:background="#FFC107"
+            android:text="Mua thêm Credit" />
+
+        <Button
+                android:layout_width="187dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="112dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="112dp"
+                android:background="#03A9F4"
+                android:onClick="TroChoiMoi"
+                android:text="Trò chơi mới" />
+
+        <Button
+                android:id="@+id/btnAccountmanagerment"
+                android:layout_width="187dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="112dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="112dp"
+                android:background="#4CAF50"
+                android:onClick="QuanLiTaiKhoan"
+                android:text="Quản lí tài khoản" />
+
+        <Button
+
+                android:layout_width="187dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="112dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="112dp"
+                android:background="#673AB7"
+                android:text="Lịch sử chơi" />
+
 
     </LinearLayout>
 

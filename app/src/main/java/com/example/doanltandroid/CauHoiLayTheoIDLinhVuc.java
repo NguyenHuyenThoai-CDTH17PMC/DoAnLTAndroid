@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +47,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private ProgressBar progressBar;
     private TextView txtTongThoiGian;
     CountDownTimer countDownTimer;
+    SharedPreferences sharedPreferences;
 
     public CauHoiLayTheoIDLinhVuc() {
         this.cauHois =new ArrayList<>();
@@ -149,9 +152,9 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     }
     public  void Tieptuc(View view){
         if(ChonDung(vitri-1,view)==true){
-            Toast.makeText(this, ""+chon+""+socaudung, Toast.LENGTH_SHORT).show();
             txtscore.setText(String.valueOf(socaudung));
         }
+        LuuChiTietLuotChoi(cauHois.get(vitri-1).getId(),chon);
         try {
                 cauhoi_id.setText(cauHois.get(vitri).getId());
                 cauhoi.setText(cauHois.get( vitri).getNoi_dung());
@@ -159,12 +162,12 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 Button2.setText("B: "+cauHois.get( vitri).getPhuong_an_b());
                 Button3.setText("C: "+cauHois.get( vitri).getPhuong_an_c());
                 Button4.setText("D: "+cauHois.get( vitri).getPhuong_an_d());
+
                 vitri++;
             }catch (Exception e){
                dialogketthuc();
             }
     }
-
     public boolean ChonDung(int vitri,View view){
         switch (view.getId()){
             case R.id.btnA:
@@ -173,6 +176,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                     socaudung++;
                     return true;
                 }
+
                 break;
             case R.id.btnB:
                 chon="B";
@@ -238,7 +242,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         btnketthuc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Luuluotchoi_chitietluotchoi();
+                Luuluotchoi();
                 Intent intent=new Intent(CauHoiLayTheoIDLinhVuc.this,ManHinhChinh_form.class);
                 startActivity(intent);
             }
@@ -247,7 +251,9 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
 
 
     }
-    public  void Luuluotchoi_chitietluotchoi(){
+    public  void Luuluotchoi(){
+        sharedPreferences=getSharedPreferences("nguoichoi",MODE_PRIVATE);
+        String nguoichoi_id= sharedPreferences.getString("id_nguoichoi","");
         String thoigianhientai;
         SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         thoigianhientai=laythoigianhientai.format(new Date());
@@ -255,6 +261,13 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String duongdan="http://192.168.1.156:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
 
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdan,"1",String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
+
+    }
+    public void LuuChiTietLuotChoi(String cauhoi_id,String phuong_an){
+        String duongdanchitietluotchoi="http://192.168.1.17:8080/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
+        String diem_cau_nay="0";
+        String luot_choi_id="12";
+        PostAPIChiTietLuotChoi postAPIChiTietLuotChoi= (PostAPIChiTietLuotChoi) new PostAPIChiTietLuotChoi(CauHoiLayTheoIDLinhVuc.this, duongdanchitietluotchoi,luot_choi_id,cauhoi_id,phuong_an,diem_cau_nay).execute();
     }
 
 
