@@ -16,6 +16,7 @@
         <activity android:name=".BangXepHang_form"></activity>
         <activity android:name=".LichSuChoi_form" />
         <activity android:name=".Credit_form" />
+        <activity android:name=".LinhVucCauHoi_form" />
         <activity android:name=".CauHoiLayTheoIDLinhVuc" />
         <activity android:name=".MainActivity" />
         <activity android:name=".QuanLyTaiKhoan_form" />

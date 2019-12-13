@@ -97,7 +97,7 @@
         tools:layout_editor_absoluteY="532dp" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btnstop"
         android:layout_width="115dp"
         android:layout_height="103dp"
         android:background="#03A9F4"
