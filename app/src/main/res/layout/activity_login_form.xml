@@ -107,6 +107,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
         android:background="#EB291A"
+        android:onClick="Dangky"
         android:text="Đăng ký"
         android:textColor="#FCF8F8"
         app:layout_constraintEnd_toEndOf="parent"

@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class DangKy_form extends AppCompatActivity {
-    private String duongdan="http://192.168.1.3:8080/Do_An_PHP/public/api/nguoi-choi/them-nguoi-choi";
+    private String duongdan="http://192.168.43.63:8080/Do_An_PHP/public/api/nguoi-choi/them-nguoi-choi";
     private EditText edit_tendangnhap;
     private EditText edit_email;
     private EditText edit_matkhau;
