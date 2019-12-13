@@ -11,20 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:text="Đổi hình đại diện"
-            android:textAlignment="center"
-            android:textColor="#3B51CA"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="170dp"
@@ -37,6 +23,31 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/c3" />
 
+<<<<<<< HEAD
+=======
+        <Button
+            android:id="@+id/btnalbum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="chonanh"
+            android:text="Album"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txtdoianh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="150dp"
+            android:onClick="chupanh"
+            android:text="Đổi hình đại diện"
+            android:textColor="#3B51CA"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imghinhdaidienql" />
+>>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
 
         <EditText
             android:id="@+id/edtTendangnhap"
@@ -45,15 +56,13 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="50dp"
-            android:background="#00817676"
             android:ems="10"
             android:hint="Tên đăng nhập"
             android:inputType="textPersonName"
-            android:textColor="#FBFAFC"
-            android:textColorHint="#F7F3F5"
+            android:textColor="#233ED5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/txtdoianh" />
 
         <EditText
             android:id="@+id/edtEmail"
@@ -70,7 +79,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtTendangnhap" />
-=======
     <EditText
         android:id="@+id/edtdoimatkhau"
         android:layout_width="298dp"
@@ -116,4 +124,6 @@
             app:layout_constraintTop_toBottomOf="@+id/edtXacnhanMK" />
     </LinearLayout>
 
-</RelativeLayout>
+    </RelativeLayout>
+
+
