@@ -47,25 +47,18 @@ public class LinhVucAdapter extends  RecyclerView.Adapter<LinhVucAdapter.ViewHol
 
         public ViewHoler(@NonNull View itemView) {
             super(itemView);
-
-
             this.tenlinhvuc=itemView.findViewById(R.id.txttenlinhvuc);
             itemView.setOnClickListener(this);
-
          }
          void BindTo(LinhVuc currentLinhvuc){
                tenlinhvuc.setText(currentLinhvuc.getTenlinhvuc());
-
          }
-
         @Override
         public void onClick(View v) {
             LinhVuc currentLinhvuc=linhVucs.get(getAdapterPosition());
-
             for (int i=0;i<linhVucs.size();i++){
                 if(currentLinhvuc.getTenlinhvuc().equals(linhVucs.get(i).getTenlinhvuc())){
                     i=i+1;
-
                     break;
                 }
             }

@@ -162,7 +162,6 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 Button2.setText("B: "+cauHois.get( vitri).getPhuong_an_b());
                 Button3.setText("C: "+cauHois.get( vitri).getPhuong_an_c());
                 Button4.setText("D: "+cauHois.get( vitri).getPhuong_an_d());
-
                 vitri++;
             }catch (Exception e){
                dialogketthuc();
@@ -176,7 +175,6 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                     socaudung++;
                     return true;
                 }
-
                 break;
             case R.id.btnB:
                 chon="B";
@@ -200,7 +198,6 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 }
                 break;
         }
-
         return false;
     }
     public boolean kiemtraJSON(String JSON){
@@ -219,7 +216,6 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                String dap_an= object.getString("dap_an");
                cauHois.add(new CauHoi(id,noi_dung,linh_vuc_id,phuong_an_a,phuong_an_b,phuong_an_c,phuong_an_d,dap_an));
             }
-
             return true;
         } catch (JSONException e) {
             e.printStackTrace();
@@ -236,9 +232,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         Button btnthemluotmoi=dialog.findViewById(R.id.btnThemLuotMoi);
         Button btnketthuc=dialog.findViewById(R.id.btnKetThucLuot);
         //gán dữ liệu
-
         txtdiem.setText(String.valueOf(socaudung));
-
         btnketthuc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -257,23 +251,22 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String thoigianhientai;
         SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         thoigianhientai=laythoigianhientai.format(new Date());
+<<<<<<< HEAD
+        String duongdanluotchoi="http://192.168.43.63:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
+        PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
+=======
 
         String duongdan="http://192.168.1.156:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
 
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdan,"1",String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
+>>>>>>> c2523779ad3ef135d39fd380c11840f999f99cf3
 
     }
     public void LuuChiTietLuotChoi(String cauhoi_id,String phuong_an){
-        String duongdanchitietluotchoi="http://192.168.1.17:8080/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
+        String duongdanchitietluotchoi="http://192.168.43.63:8080/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
         String diem_cau_nay="0";
         String luot_choi_id="12";
         PostAPIChiTietLuotChoi postAPIChiTietLuotChoi= (PostAPIChiTietLuotChoi) new PostAPIChiTietLuotChoi(CauHoiLayTheoIDLinhVuc.this, duongdanchitietluotchoi,luot_choi_id,cauhoi_id,phuong_an,diem_cau_nay).execute();
     }
-
-
-
-
-
-
 
 }

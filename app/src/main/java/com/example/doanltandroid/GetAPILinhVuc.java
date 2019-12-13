@@ -41,7 +41,7 @@ public class GetAPILinhVuc extends AsyncTask<String,String,String> {
              JSONObject jsonObject=jsonarraydata.getJSONObject(i);
              String ten_linh_vuc=jsonObject.getString("ten_linh_vuc");
              String id=String.valueOf(jsonObject.getInt("id"));
-             linhVucs.add(new LinhVuc(id,ten_linh_vuc));
+             linhVucs.add(new LinhVuc(id, ten_linh_vuc));
             }
             LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);
             recyclerView.setLayoutManager(linearLayoutManager);
@@ -49,7 +49,8 @@ public class GetAPILinhVuc extends AsyncTask<String,String,String> {
             recyclerView.setAdapter(linhVucAdapter);
 
             //Làm đẹp recyclerview
-            DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(recyclerView.getContext(),linearLayoutManager.getOrientation());
+            DividerItemDecoration dividerItemDecoration=new
+            DividerItemDecoration(recyclerView.getContext(),linearLayoutManager.getOrientation());
             recyclerView.addItemDecoration(dividerItemDecoration);
 
 
