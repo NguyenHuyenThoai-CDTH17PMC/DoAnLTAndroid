@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 public class ManHinhChinh_form extends AppCompatActivity {
     TextView txt;
@@ -17,9 +20,9 @@ public class ManHinhChinh_form extends AppCompatActivity {
     String id;
     String hinh_dai_dien;
     String diem_cao_nhat;
+    ImageView img;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +39,13 @@ public class ManHinhChinh_form extends AppCompatActivity {
         txt.setText(ten_dang_nhap);
         txt2.setText(credit);
         id = intent.getStringExtra("id");
+        img = findViewById(R.id.imghinhdaidienql);
+        String url = "http://172.19.200.255:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
+        Picasso.with(this).load(url).into(img);
         sharedPreferences=getSharedPreferences("nguoichoi",MODE_PRIVATE);
         editor=sharedPreferences.edit();
         editor.putString("id_nguoichoi",id);
         editor.commit();
-
-
     }
     public void QuanLiTaiKhoan(View view){
         Intent intent = new Intent(ManHinhChinh_form.this,QuanLyTaiKhoan_form.class);

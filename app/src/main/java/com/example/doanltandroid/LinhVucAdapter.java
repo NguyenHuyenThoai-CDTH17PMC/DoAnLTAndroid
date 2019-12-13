@@ -47,29 +47,19 @@ public class LinhVucAdapter extends  RecyclerView.Adapter<LinhVucAdapter.ViewHol
 
         public ViewHoler(@NonNull View itemView) {
             super(itemView);
-
-
             this.tenlinhvuc=itemView.findViewById(R.id.txttenlinhvuc);
             itemView.setOnClickListener(this);
-
          }
          void BindTo(LinhVuc currentLinhvuc){
                tenlinhvuc.setText(currentLinhvuc.getTenlinhvuc());
-
          }
-
         @Override
         public void onClick(View v) {
             LinhVuc currentLinhvuc=linhVucs.get(getAdapterPosition());
-
             for (int i=0;i<linhVucs.size();i++){
                 if(currentLinhvuc.getTenlinhvuc().equals(linhVucs.get(i).getTenlinhvuc())){
                     i=i+1;
-<<<<<<< HEAD
-                    new GetAPICauHoi(context).execute("http://192.168.56.1/Do_An_PHP/public/api/cau-hoi?linh_vuc="+i);
-=======
-                    new GetAPICauHoi(context).execute("http://192.168.1.17:8080/Do_An_PHP/public/api/cau-hoi?linh_vuc="+i);
->>>>>>> f5e41092b76e7abf278e7dd8b7a93a267ea5865d
+                    new GetAPICauHoi(context).execute("http://192.168.43.63:8080/Do_An_PHP/public/api/cau-hoi?linh_vuc="+i);
                     break;
                 }
             }

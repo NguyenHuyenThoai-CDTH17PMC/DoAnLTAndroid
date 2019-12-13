@@ -2,6 +2,7 @@ package com.example.doanltandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -9,7 +10,7 @@ import android.widget.EditText;
 public class Login_form extends AppCompatActivity {
     EditText edt;
     EditText edt2;
-    String đuongdan="http://192.168.1.17:8080/Do_An_PHP/public/api/nguoi-choi";
+    String đuongdan="http://192.168.43.63:8080/Do_An_PHP/public/api/nguoi-choi";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,5 +22,9 @@ public class Login_form extends AppCompatActivity {
         String tendn = edt.getText().toString();
         String mk = edt2.getText().toString();
         GetAPINguoiChoi nguoiChoi = (GetAPINguoiChoi) new GetAPINguoiChoi(this,tendn,mk).execute(đuongdan);
+    }
+    public void Dangky(View view){
+        Intent intent=new Intent(Login_form.this,DangKy_form.class);
+        startActivity(intent);
     }
 }
