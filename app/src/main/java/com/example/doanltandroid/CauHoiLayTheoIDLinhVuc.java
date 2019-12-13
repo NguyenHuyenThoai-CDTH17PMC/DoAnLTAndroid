@@ -14,6 +14,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,11 +43,11 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private String chon;
     private  TextView txtscore;
     final String jokes[] = {"A","B","C","D"};
+
     private ProgressBar progressBar;
     private TextView txtTongThoiGian;
     CountDownTimer countDownTimer;
     SharedPreferences sharedPreferences;
-
 
     public CauHoiLayTheoIDLinhVuc() {
         this.cauHois =new ArrayList<>();
@@ -88,6 +95,9 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     public void trogiup(View view){
         dialog_goinguoithan();
     }
+
+    public void trogiupkhangia(View view){ dialog_khangia(); }
+
     public void dialog_goinguoithan(){
         final Dialog dialog=new Dialog(this);
         dialog.setContentView(R.layout.diglog_goinguoithan);
@@ -104,6 +114,41 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 dialog.cancel();
             }
         });
+    }
+    public void dialog_khangia(){
+        final Dialog dialog=new Dialog(this);
+        dialog.setContentView(R.layout.dialog_khangia);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+
+        BarChart barChart = dialog.findViewById(R.id.barchart);
+
+        Random random = new Random();
+        int a = random.nextInt(100);
+        int b = random.nextInt(100);
+        int c = random.nextInt(100);
+        int d = random.nextInt(100);
+
+        ArrayList<BarEntry> entries = new ArrayList<>();
+
+        entries.add(new BarEntry(a, 0));
+        entries.add(new BarEntry(b, 1));
+        entries.add(new BarEntry(c, 2));
+        entries.add(new BarEntry(d, 3));
+
+        BarDataSet bardataset = new BarDataSet(entries, "Cells");
+
+        ArrayList<String> labels = new ArrayList<String>();
+
+        labels.add("A");
+        labels.add("B");
+        labels.add("C");
+        labels.add("D");
+
+        BarData data = new BarData(labels,bardataset);
+        barChart.setData(data);
+        bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
+        barChart.animateY(10000);
     }
     public  void Tieptuc(View view){
         if(ChonDung(vitri-1,view)==true){
@@ -206,8 +251,15 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String thoigianhientai;
         SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         thoigianhientai=laythoigianhientai.format(new Date());
+<<<<<<< HEAD
         String duongdanluotchoi="http://192.168.43.63:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
+=======
+
+        String duongdan="http://192.168.1.156:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
+
+        PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdan,"1",String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
+>>>>>>> c2523779ad3ef135d39fd380c11840f999f99cf3
 
     }
     public void LuuChiTietLuotChoi(String cauhoi_id,String phuong_an){
