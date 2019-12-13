@@ -20,7 +20,7 @@
         <activity android:name=".CauHoiLayTheoIDLinhVuc" />
         <activity android:name=".MainActivity" />
         <activity android:name=".QuanLyTaiKhoan_form" />
-        <activity android:name=".Login_form">
+        <activity android:name=".LinhVucCauHoi_form">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
