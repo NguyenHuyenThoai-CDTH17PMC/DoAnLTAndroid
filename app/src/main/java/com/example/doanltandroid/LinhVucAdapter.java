@@ -59,6 +59,7 @@ public class LinhVucAdapter extends  RecyclerView.Adapter<LinhVucAdapter.ViewHol
             for (int i=0;i<linhVucs.size();i++){
                 if(currentLinhvuc.getTenlinhvuc().equals(linhVucs.get(i).getTenlinhvuc())){
                     i=i+1;
+                    new GetAPICauHoi(context).execute("http://192.168.56.1/Do_An_PHP/public/api/cau-hoi?linh_vuc="+i);
                     break;
                 }
             }

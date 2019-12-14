@@ -3,18 +3,19 @@ package com.example.doanltandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import com.google.android.gms.common.SignInButton;
 
 public class Login_form extends AppCompatActivity {
     EditText edt;
     EditText edt2;
-<<<<<<< HEAD
-    String đuongdan="http://192.168.43.63:8080/Do_An_PHP/public/api/nguoi-choi";
-=======
-    String đuongdan="http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi";
->>>>>>> c2523779ad3ef135d39fd380c11840f999f99cf3
+    String đuongdan="http://192.168.56.1/Do_An_PHP/public/api/nguoi-choi";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,4 +32,5 @@ public class Login_form extends AppCompatActivity {
         Intent intent=new Intent(Login_form.this,DangKy_form.class);
         startActivity(intent);
     }
+
 }
