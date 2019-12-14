@@ -51,9 +51,7 @@ public class PostAPIChiTietLuotChoi extends AsyncTask<Void,Void,String> {
             if(s=="error"){
                 Toast.makeText(context, "Không thành công", Toast.LENGTH_SHORT).show();
             }
-            else {
-                Toast.makeText(context, "Đã lưu chi tiết lượt chơi thành công", Toast.LENGTH_SHORT).show();
-            }
+
         }
     }
     private String send(){

@@ -173,28 +173,28 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     public boolean ChonDung(int vitri,View view){
         switch (view.getId()){
             case R.id.btnA:
-                chon="A";
+                chon="1";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
                     return true;
                 }
                 break;
             case R.id.btnB:
-                chon="B";
+                chon="2";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
                     return true;
                 }
                 break;
             case R.id.btnC:
-                chon="C";
+                chon="3";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
                     return true;
                 }
                 break;
             case R.id.btnD:
-                chon="D";
+                chon="4";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
                     return true;
@@ -254,7 +254,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String thoigianhientai;
         SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         thoigianhientai=laythoigianhientai.format(new Date());
-        String duongdanluotchoi="http://192.168.1.18:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
+        String duongdanluotchoi="http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
 
         //Lấy danh sách lượt chơi của người này -- sau đó duyệt lấy lượt chơi cuối cùng là lượt chơi vừa chơi xong post từng cái chi tiết lên
@@ -295,16 +295,14 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                     luotChoi.setNgay_gio(ngay_gio);
                     list_luotchoi.add(luotChoi);
                 }
-                String duongdanthemchitiet="http://192.168.1.18:8080/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
+                String duongdanthemchitiet="http://10.0.2.2:8080/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
                 String luot_choi_id=list_luotchoi.get(list_luotchoi.size()-1).getId();
                 for (int i=0;i<luuChiTietLuotChois.size();i++){
                     PostAPIChiTietLuotChoi postAPIChiTietLuotChoi= (PostAPIChiTietLuotChoi) new PostAPIChiTietLuotChoi(context,duongdanthemchitiet,luot_choi_id,luuChiTietLuotChois.get(i).getCauhoi_id(),luuChiTietLuotChois.get(i).getPhuong_an(),luuChiTietLuotChois.get(i).getDiem()).execute();
-                    Toast.makeText(context, duongdanthemchitiet+""+ luot_choi_id+" "+luuChiTietLuotChois.get(i).getCauhoi_id()+" "+luuChiTietLuotChois.get(i).getPhuong_an()+" "+luuChiTietLuotChois.get(i).getDiem(), Toast.LENGTH_SHORT).show();
                 }
             }catch (JSONException e) {
                 e.printStackTrace();
             }
         }
     }
-
 }

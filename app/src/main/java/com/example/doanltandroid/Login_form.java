@@ -10,7 +10,7 @@ import android.widget.EditText;
 public class Login_form extends AppCompatActivity {
     EditText edt;
     EditText edt2;
-    String đuongdan="http://192.168.1.18:8080/Do_An_PHP/public/api/nguoi-choi";
+    String đuongdan="http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
