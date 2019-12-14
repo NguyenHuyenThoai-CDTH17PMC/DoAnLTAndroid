@@ -17,9 +17,11 @@ import android.widget.RelativeLayout;
 
 import android.os.Environment;
 import android.provider.MediaStore;
-
 import android.widget.RelativeLayout;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -78,12 +80,18 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
         diem_cao_nhat = intent.getStringExtra("diem_cao_nhat");
         credit = intent.getStringExtra("credit");
         img = findViewById(R.id.imghinhdaidienql);
-        String url = "http://192.168.56.1:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
+        String url = "http://10.0.2.2:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
         Picasso.with(this).load(url).into(img);
         btnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 String duongdan = "http://192.168.56.1/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
+=======
+
+                String duongdan = "http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
+
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
                 matkhau=mk.getText().toString();
                 xn_maukhau=mknew.getText().toString();
                if(matkhau.equals(xn_maukhau)){

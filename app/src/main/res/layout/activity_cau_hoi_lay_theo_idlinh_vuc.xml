@@ -17,6 +17,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
+<<<<<<< HEAD
             android:background="@drawable/level_dung" />
 
         <ImageView
@@ -67,6 +68,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
+=======
+            >
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
             <ImageView
                 android:id="@+id/ic_play"
                 android:layout_width="30dp"
@@ -95,9 +99,15 @@
                 android:textSize="12dp"
                 android:textStyle="bold" />
         </RelativeLayout>
+<<<<<<< HEAD
 
         <RelativeLayout
             android:id="@+id/RLThoigian"
+=======
+        <RelativeLayout
+            android:layout_weight="1"
+            android:id="@+id/rl_time"
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -190,7 +200,11 @@
         <Button
             android:id="@+id/btnA"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="20dp"
+=======
+            android:layout_height="0dp"
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -204,7 +218,11 @@
         <Button
             android:id="@+id/btnB"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="20dp"
+=======
+            android:layout_height="0dp"
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -218,7 +236,11 @@
         <Button
             android:id="@+id/btnC"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="20dp"
+=======
+            android:layout_height="0dp"
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -232,7 +254,11 @@
         <Button
             android:id="@+id/btnD"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="20dp"
+=======
+            android:layout_height="0dp"
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
