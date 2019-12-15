@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "969181969102",
+    "firebase_url": "https://doanltandroid-bfc48.firebaseio.com",
+    "project_id": "doanltandroid-bfc48",
+    "storage_bucket": "doanltandroid-bfc48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969181969102:android:c38647cb12f4be85b2ee9f",
+        "android_client_info": {
+          "package_name": "com.example.doanltandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969181969102-7mgi4rqp2fpru7mmlmluv0voj5hjonqh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.doanltandroid",
+            "certificate_hash": "606eac73e154815cf141a389e931ff2cd10b802c"
+          }
+        },
+        {
+          "client_id": "969181969102-q3t2nq7ueufr4m70pp1dra1u1512sr14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTEFk8UEXlUpq_sQpvQ5dvROMNZgscfSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969181969102-q3t2nq7ueufr4m70pp1dra1u1512sr14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

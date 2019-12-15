@@ -13,16 +13,13 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.widget.RelativeLayout;
-=======
 
 import android.os.Environment;
 import android.provider.MediaStore;
 
 import android.widget.RelativeLayout;
 
->>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,14 +52,11 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
     String diem_cao_nhat;
     String credit;
     Button btnCN;
-<<<<<<< HEAD
-=======
     ImageView img;
     TextView imgdoianh;
     String imageFilePath;
     int REQUEST_CODE_CAMERA=123;
     int REQUEST_CODE_FOLDER=456;
->>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,16 +78,12 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
         diem_cao_nhat = intent.getStringExtra("diem_cao_nhat");
         credit = intent.getStringExtra("credit");
         img = findViewById(R.id.imghinhdaidienql);
-        String url = "http://192.168.56.1:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
+        //String url = "http://192.168.56.1:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
         Picasso.with(this).load(url).into(img);
         btnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
-                String duongdan = "http://192.168.56.1/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
-=======
-                String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
->>>>>>> 17dd568c1efbf8e577df22dba8b2b50c721093ab
+                //String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
                 matkhau=mk.getText().toString();
                 xn_maukhau=mknew.getText().toString();
                if(matkhau.equals(xn_maukhau)){
