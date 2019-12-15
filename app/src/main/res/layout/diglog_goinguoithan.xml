@@ -1,25 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="350dp"
+    android:layout_height="400dp"
+    android:layout_gravity="center"
+    >
 
-    <TextView
-        android:id="@+id/textView22"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Câu trả lời từ người thân" />
+        android:layout_height="match_parent"
+        android:background="@drawable/atp__activity_player_layout_help_call_audience_background">
 
-    <TextView
-        android:id="@+id/txtrandomdapan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="70sp" />
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|top"
+            android:background="@drawable/atp__activity_player_layout_help_call_title_background"
+            android:gravity="center"
+            android:text="Câu trả lời từ người thân"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnend"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Xin cảm ơn!!!" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtrandomdapan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="false"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/show_question"
+                android:gravity="center"
+                android:text="A"
+                android:textAlignment="center"
+                android:textColor="#F0B810"
+                android:textSize="100sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="300dp"
+                android:background="@drawable/atp__dialog_confirm_background_button_active"
+                android:gravity="center"
+                android:text="Đóng"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </FrameLayout>
+
 </LinearLayout>

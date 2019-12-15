@@ -41,7 +41,7 @@ public class ManHinhChinh_form extends AppCompatActivity {
         txt2.setText(credit);
         id = intent.getStringExtra("id");
         img = findViewById(R.id.imghinhdaidienql);
-        String url = "http://172.19.200.255:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
+        String url = "http://10.0.2.2:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
         Picasso.with(this).load(url).into(img);
         sharedPreferences=getSharedPreferences("nguoichoi",MODE_PRIVATE);
         editor=sharedPreferences.edit();

@@ -17,9 +17,7 @@ import android.widget.RelativeLayout;
 
 import android.os.Environment;
 import android.provider.MediaStore;
-
 import android.widget.RelativeLayout;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -83,7 +81,6 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
         btnCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
                 matkhau=mk.getText().toString();
                 xn_maukhau=mknew.getText().toString();
                if(matkhau.equals(xn_maukhau)){

@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +27,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import android.text.InputType;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.google.android.gms.common.SignInButton;
 
 public class Login_form extends AppCompatActivity {
     int RC_SIGN_IN = 0;
@@ -41,7 +48,6 @@ public class Login_form extends AppCompatActivity {
         setContentView(R.layout.activity_login_form);
         edt = findViewById(R.id.edtTendangnhap);
         edt2 = findViewById(R.id.edtMatkhau);
-        txt = findViewById(R.id.txtgg);
         SignInButton signInButton = findViewById(R.id.sign_in_button);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))

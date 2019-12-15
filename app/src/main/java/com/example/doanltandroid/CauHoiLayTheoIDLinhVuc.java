@@ -3,8 +3,10 @@ package com.example.doanltandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -18,7 +20,6 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import org.json.JSONArray;
@@ -43,14 +44,18 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private String chon;
     private  TextView txtscore;
     final String jokes[] = {"A","B","C","D"};
-
     private ProgressBar progressBar;
     private TextView txtTongThoiGian;
     CountDownTimer countDownTimer;
     SharedPreferences sharedPreferences;
 
+    ArrayList<LuuChiTietLuotChoi>luuChiTietLuotChois;
+    ArrayList<LuotChoi>luotChois;
+
+
     public CauHoiLayTheoIDLinhVuc() {
         this.cauHois =new ArrayList<>();
+        this.luuChiTietLuotChois=new ArrayList<>();
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,9 +100,16 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     public void trogiup(View view){
         dialog_goinguoithan();
     }
+<<<<<<< HEAD
+    public void trogiupkhangia(View view)
+    {
+        dialog_khangia();
+    }
 
+    //trợ giúp từ người thân
+=======
     public void trogiupkhangia(View view){ dialog_khangia(); }
-
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
     public void dialog_goinguoithan(){
         final Dialog dialog=new Dialog(this);
         dialog.setContentView(R.layout.diglog_goinguoithan);
@@ -115,46 +127,80 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
             }
         });
     }
+    //trợ giúp khán giả
     public void dialog_khangia(){
         final Dialog dialog=new Dialog(this);
         dialog.setContentView(R.layout.dialog_khangia);
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
-
         BarChart barChart = dialog.findViewById(R.id.barchart);
-
         Random random = new Random();
         int a = random.nextInt(100);
         int b = random.nextInt(100);
         int c = random.nextInt(100);
         int d = random.nextInt(100);
-
         ArrayList<BarEntry> entries = new ArrayList<>();
-
         entries.add(new BarEntry(a, 0));
         entries.add(new BarEntry(b, 1));
         entries.add(new BarEntry(c, 2));
         entries.add(new BarEntry(d, 3));
-
         BarDataSet bardataset = new BarDataSet(entries, "Cells");
-
         ArrayList<String> labels = new ArrayList<String>();
-
         labels.add("A");
         labels.add("B");
         labels.add("C");
         labels.add("D");
-
         BarData data = new BarData(labels,bardataset);
         barChart.setData(data);
         bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
-        barChart.animateY(10000);
+        barChart.animateY(7000);
+        Button btnendkhangia = dialog.findViewById(R.id.btnendkhangia);
+        btnendkhangia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
     }
+    //trợ giúp 50/50
+    public void TroGiup5050(View view){
+        int chondung=Integer.parseInt(cauHois.get(vitri-1).getDap_an());
+        Random random =new Random();
+        int so_dap_an_muon_an=2;
+        do {
+            int vitridapAnAn=random.nextInt(4);
+            if(vitridapAnAn!= chondung){
+                if(vitridapAnAn==0 && vitridapAnAn!= chondung && Button4.getVisibility()==View.VISIBLE ){
+                    vitridapAnAn=4;
+                    Button4.setVisibility(View.INVISIBLE );
+                    so_dap_an_muon_an--;
+
+                }
+                if(vitridapAnAn==1 && vitridapAnAn!= chondung && Button1.getVisibility()==View.VISIBLE){
+                    Button1.setVisibility(View.INVISIBLE );
+                    so_dap_an_muon_an--;
+                }
+                if(vitridapAnAn==2 && vitridapAnAn!= chondung && Button2.getVisibility()==View.VISIBLE){
+                    Button2.setVisibility(View.INVISIBLE );
+                    so_dap_an_muon_an--;
+                }
+                if(vitridapAnAn==3 && vitridapAnAn!= chondung && Button3.getVisibility()==View.VISIBLE){
+                    Button3.setVisibility(View.INVISIBLE );
+                    so_dap_an_muon_an--;
+                }
+            }
+        }while (so_dap_an_muon_an>0);
+    }
+    //xử lý câu trả lời
     public  void Tieptuc(View view){
+        Button1.setVisibility(View.VISIBLE);
+        Button2.setVisibility(View.VISIBLE);
+        Button3.setVisibility(View.VISIBLE);
+        Button4.setVisibility(View.VISIBLE);
         if(ChonDung(vitri-1,view)==true){
             txtscore.setText(String.valueOf(socaudung));
         }
-        LuuChiTietLuotChoi(cauHois.get(vitri-1).getId(),chon);
+        luuChiTietLuotChois.add(new LuuChiTietLuotChoi(cauHois.get(vitri-1).getId(),chon,String.valueOf(socaudung)));
         try {
                 cauhoi_id.setText(cauHois.get(vitri).getId());
                 cauhoi.setText(cauHois.get( vitri).getNoi_dung());
@@ -170,28 +216,28 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     public boolean ChonDung(int vitri,View view){
         switch (view.getId()){
             case R.id.btnA:
-                chon="A";
+                chon="1";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
                     return true;
                 }
                 break;
             case R.id.btnB:
-                chon="B";
+                chon="2";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
                     return true;
                 }
                 break;
             case R.id.btnC:
-                chon="C";
+                chon="3";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
                     return true;
                 }
                 break;
             case R.id.btnD:
-                chon="D";
+                chon="4";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
                     return true;
@@ -241,9 +287,6 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 startActivity(intent);
             }
         });
-
-
-
     }
     public  void Luuluotchoi(){
         sharedPreferences=getSharedPreferences("nguoichoi",MODE_PRIVATE);
@@ -252,21 +295,66 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         thoigianhientai=laythoigianhientai.format(new Date());
 <<<<<<< HEAD
-        String duongdanluotchoi="http://192.168.43.63:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
+        String duongdanluotchoi="http://192.168.56.1/Do_An_PHP/public/api/luot-choi/them-luot-choi";
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
-=======
-
-        String duongdan="http://192.168.1.156:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
-
-        PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdan,"1",String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
->>>>>>> c2523779ad3ef135d39fd380c11840f999f99cf3
 
     }
     public void LuuChiTietLuotChoi(String cauhoi_id,String phuong_an){
-        String duongdanchitietluotchoi="http://192.168.43.63:8080/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
+        String duongdanchitietluotchoi="http://192.168.56.1/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
         String diem_cau_nay="0";
         String luot_choi_id="12";
         PostAPIChiTietLuotChoi postAPIChiTietLuotChoi= (PostAPIChiTietLuotChoi) new PostAPIChiTietLuotChoi(CauHoiLayTheoIDLinhVuc.this, duongdanchitietluotchoi,luot_choi_id,cauhoi_id,phuong_an,diem_cau_nay).execute();
-    }
+=======
+        String duongdanluotchoi="http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
+        PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
 
+        //Lấy danh sách lượt chơi của người này -- sau đó duyệt lấy lượt chơi cuối cùng là lượt chơi vừa chơi xong post từng cái chi tiết lên
+        GetAPILuotChoiTheoNguoiChoi layid= (GetAPILuotChoiTheoNguoiChoi) new GetAPILuotChoiTheoNguoiChoi(CauHoiLayTheoIDLinhVuc.this,luotChois).execute("http://192.168.1.18:8080/Do_An_PHP/public/api/luot-choi/lay-luot-choi?nguoichoi_id="+nguoichoi_id);
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
+    }
+    public class GetAPILuotChoiTheoNguoiChoi extends AsyncTask<String,String,String> {
+        ArrayList<LuotChoi> list_luotchoi;
+        LuotChoi luotChoi;
+        Context context;
+        public GetAPILuotChoiTheoNguoiChoi(Context context,ArrayList<LuotChoi>list_luotchoi) {
+            this.context=context;
+            this.list_luotchoi=list_luotchoi;
+        }
+        @Override
+        protected String doInBackground(String... strings) {
+            return ReadAPI.GetJSON(strings[0]);
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            try {
+                JSONObject jsonnguoichoi = new JSONObject(s);
+                JSONArray jsonarraydata = jsonnguoichoi.getJSONArray("data");
+                list_luotchoi=new ArrayList<>();
+                for (int i = 0; i < jsonarraydata.length(); i++) {
+                    JSONObject jsonObject = jsonarraydata.getJSONObject(i);
+                    String id = String.valueOf(jsonObject.getInt("id"));
+                    String nguoi_choi_id = String.valueOf(jsonObject.getInt("nguoi_choi_id"));
+                    String so_cau = String.valueOf(jsonObject.getInt("so_cau"));
+                    String diem = String.valueOf(jsonObject.getInt("diem"));
+                    String ngay_gio = jsonObject.getString("ngay_gio");
+                    luotChoi=new LuotChoi();
+                    luotChoi.setId(id);
+                    luotChoi.setNguoi_choi_id(nguoi_choi_id);
+                    luotChoi.setSo_cau(so_cau);
+                    luotChoi.setDiem(diem);
+                    luotChoi.setNgay_gio(ngay_gio);
+                    list_luotchoi.add(luotChoi);
+                }
+                String duongdanthemchitiet="http://10.0.2.2:8080/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
+                String luot_choi_id=list_luotchoi.get(list_luotchoi.size()-1).getId();
+                for (int i=0;i<luuChiTietLuotChois.size();i++){
+                    PostAPIChiTietLuotChoi postAPIChiTietLuotChoi= (PostAPIChiTietLuotChoi) new PostAPIChiTietLuotChoi(context,duongdanthemchitiet,luot_choi_id,luuChiTietLuotChois.get(i).getCauhoi_id(),luuChiTietLuotChois.get(i).getPhuong_an(),luuChiTietLuotChois.get(i).getDiem()).execute();
+                }
+            }catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
