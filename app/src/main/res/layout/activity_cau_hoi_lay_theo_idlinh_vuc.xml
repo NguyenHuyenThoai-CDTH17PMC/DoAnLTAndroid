@@ -2,141 +2,52 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/atp__activity_player_background"
-    >
+    android:background="@drawable/atp__activity_player_layout_money_background">
+
     <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:id="@+id/play_layout_actionbar"
-        android:background="@drawable/atp__dialog_confirm_background"
-        android:weightSum="3"
-        >
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            >
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_no_image"
-                android:layout_centerVertical="true"
-                android:id="@+id/ic_play"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Khách"
-                android:textSize="16dp"
-                android:textColor="@android:color/white"
-                android:layout_toRightOf="@+id/ic_play"
-                android:layout_marginTop="5dp"
-                android:textStyle="bold"
-                android:id="@+id/name_play"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Thí Sinh"
-                android:textSize="12dp"
-                android:textColor="@android:color/white"
-                android:layout_toRightOf="@+id/ic_play"
-                android:layout_below="@+id/name_play"
-                android:textStyle="bold"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_weight="1"
-            android:id="@+id/rl_time"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            >
-            <ProgressBar
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/progressBar"
-                style="@style/RtlOverlay.Widget.AppCompat.DialogTitle.Icon"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="30"
-                android:textStyle="bold"
-                android:textSize="24dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:textColor="@android:color/white"
-                android:id="@+id/txttongthoigian"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            >
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/atp__activity_profile_icon_money"
-                android:layout_toLeftOf="@+id/txtScore"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:textSize="20dp"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:layout_centerVertical="true"
-                android:id="@+id/txtScore"
-                />
-        </RelativeLayout>
-    </TableRow>
-    <TableRow
+        android:id="@+id/TR_TroGiup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="5"
-        android:id="@+id/play_layout_table1"
-        android:layout_below="@+id/play_layout_actionbar"
-        >
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/level_dung"
-            android:id="@+id/play_layout_btnStop"
-            android:layout_margin="10dp"
-            />
+        android:layout_below="@+id/TableRow"
+        android:weightSum="5">
 
         <ImageView
+            android:id="@+id/btnStop"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/level_chuyencau"
-            android:id="@+id/play_layout_btnchuyencau"
             android:layout_margin="10dp"
-            />
+            android:layout_weight="1"
+<<<<<<< HEAD
+            android:background="@drawable/level_dung" />
+
         <ImageView
+            android:id="@+id/btnchuyencau"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/level_chuyencau" />
+
+        <ImageView
+            android:id="@+id/btn50_50"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@drawable/drawlevel_5050"
-            android:id="@+id/play_layout_btn50_50"
-            android:layout_margin="10dp"
-            />
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/atp__activity_player_button_image_help_audience"
-            android:id="@+id/play_layout_Audience"
-            android:layout_margin="10dp"
-            />
+            android:onClick="TroGiup5050" />
 
         <ImageView
-            android:id="@+id/play_layout_btnCall"
+            android:id="@+id/btnpeople"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/atp__activity_player_button_image_help_audience"
+            android:onClick="trogiupkhangia" />
+
+        <ImageView
+            android:id="@+id/btnCall"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -144,39 +55,141 @@
             android:background="@drawable/level_call"
             android:onClick="trogiup" />
     </TableRow>
-    <FrameLayout android:layout_width="match_parent"
+
+    <TableRow
+        android:id="@+id/TableRow"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/atp__dialog_confirm_background"
+        android:weightSum="3">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+=======
+            >
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
+            <ImageView
+                android:id="@+id/ic_play"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_no_image" />
+
+            <TextView
+                android:id="@+id/name_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/ic_play"
+                android:text="Member"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_play"
+                android:layout_toRightOf="@+id/ic_play"
+                android:text="Nam"
+                android:textColor="@android:color/white"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+<<<<<<< HEAD
+
+        <RelativeLayout
+            android:id="@+id/RLThoigian"
+=======
+        <RelativeLayout
+            android:layout_weight="1"
+            android:id="@+id/rl_time"
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/RtlOverlay.Widget.AppCompat.DialogTitle.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/txttongthoigian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="60"
+                android:textColor="@android:color/white"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/txtScore"
+                android:src="@drawable/atp__activity_profile_icon_money" />
+
+            <TextView
+                android:id="@+id/txtScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="9999"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </TableRow>
+
+    <FrameLayout
+        android:id="@+id/FrameLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/play_layout_table1"
-        android:id="@+id/play_layout_frameLayout"
-        >
-        <TextView android:layout_width="match_parent"
-            android:padding="15dp"
+        android:layout_below="@+id/TR_TroGiup">
+
+        <TextView
+            android:id="@+id/txtCauHoi"
+            android:layout_width="match_parent"
             android:layout_height="250dp"
             android:background="@drawable/atp__activity_player_layout_play_question_background"
-            android:id="@+id/txtCauHoi"
             android:gravity="center"
-            android:textStyle="bold"
+            android:padding="15dp"
             android:textColor="@android:color/holo_orange_light"
             android:textSize="18sp"
-            />
-        <TextView android:layout_width="200dp"
-            android:layout_marginTop="10dp"
-            android:layout_height="35dp"
-            android:textSize="24sp"
-            android:gravity="center"
-            android:layout_gravity="center|top"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/txtid"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="10dp"
             android:background="@drawable/atp__activity_player_layout_play_order_question"
-            />
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
     </FrameLayout>
 
     <LinearLayout
         android:id="@+id/ll_dapdan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/play_layout_frameLayout"
+        android:layout_below="@+id/FrameLayout"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="20dp"
@@ -187,7 +200,11 @@
         <Button
             android:id="@+id/btnA"
             android:layout_width="match_parent"
+<<<<<<< HEAD
+            android:layout_height="20dp"
+=======
             android:layout_height="0dp"
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -201,7 +218,11 @@
         <Button
             android:id="@+id/btnB"
             android:layout_width="match_parent"
+<<<<<<< HEAD
+            android:layout_height="20dp"
+=======
             android:layout_height="0dp"
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -215,7 +236,11 @@
         <Button
             android:id="@+id/btnC"
             android:layout_width="match_parent"
+<<<<<<< HEAD
+            android:layout_height="20dp"
+=======
             android:layout_height="0dp"
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -229,7 +254,11 @@
         <Button
             android:id="@+id/btnD"
             android:layout_width="match_parent"
+<<<<<<< HEAD
+            android:layout_height="20dp"
+=======
             android:layout_height="0dp"
+>>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"

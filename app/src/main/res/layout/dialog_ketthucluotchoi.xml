@@ -1,59 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#AFEEEE"
-    android:orientation="vertical">
+    android:layout_width="350dp"
+    android:layout_height="500dp"
+    android:layout_gravity="center"
+    android:background="@drawable/atp__activity_player_layout_help_call_audience_background">
 
-    <TextView
-        android:id="@+id/textView4"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Lượt chơi kết thúc"
-        android:textSize="30dp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:text="Xin chúc mừng bạn đã đạt được"
-        android:textColor="#FF1493"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Lượt chơi kết thúc"
+            android:textColor="#FFC107"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:layout_marginTop="50dp"
-        android:id="@+id/txtDiem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="10"
-        android:textColor="#A20855"
-        android:textSize="70dp" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Xin chúc mừng số điểm của bạn là"
+            android:textColor="#FF1493"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
-    <Button
-        android:layout_marginTop="50dp"
-        android:id="@+id/btnThemLuotMoi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#008000"
-        android:text="Thêm 1 lượt chơi mới"
-        android:textColor="#FFD700"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txtDiem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp"
+            android:background="@drawable/show_question"
+            android:gravity="center"
+            android:text="9999"
+            android:textColor="#FF9800"
+            android:textSize="70dp" />
 
-    <Button
-        android:layout_marginTop="10dp"
-        android:id="@+id/btnKetThucLuot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#DA0479"
-        android:text="Kết thúc"
-        android:textColor="#FFD700"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnThemLuotMoi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/btnKetThucLuot"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/atp__dialog_confirm_background_button_active"
+                android:text="Thêm 1 lượt chơi mới"
+                android:textColor="#FFD700"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnKetThucLuot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/atp__btn_template_active"
+                android:text="Kết thúc"
+                android:textColor="#FFD700"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </FrameLayout>
+
 </LinearLayout>

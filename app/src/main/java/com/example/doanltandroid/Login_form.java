@@ -3,14 +3,21 @@ package com.example.doanltandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import com.google.android.gms.common.SignInButton;
 
 public class Login_form extends AppCompatActivity {
     EditText edt;
     EditText edt2;
+
     String đuongdan="http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,4 +34,5 @@ public class Login_form extends AppCompatActivity {
         Intent intent=new Intent(Login_form.this,DangKy_form.class);
         startActivity(intent);
     }
+
 }

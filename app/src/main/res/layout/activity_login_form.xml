@@ -1,139 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/atp__activity_player_background"
     tools:context=".Login_form">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="119dp"
-        android:text="Đăng nhập với Google"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imggg"
-        app:layout_constraintTop_toBottomOf="@+id/txttongthoigian" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1">
 
-    <ImageView
-        android:id="@+id/imggg"
-        android:layout_width="53dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgfb"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            app:srcCompat="@drawable/c3" />
 
-    <Button
-        android:id="@+id/btnDangnhap"
-        android:layout_width="298dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        android:background="#4375F0"
-        android:onClick="Login"
-        android:text="Đăng nhập"
-        android:textColor="#FCF8F8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtMatkhau" />
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="350dp"
+            android:layout_weight="1"
+            android:background="@drawable/mute" />
 
-    <Button
-        android:id="@+id/btnQuenmatkhau"
-        android:layout_width="298dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        android:background="#9E2DB1"
-        android:text="Quên mật khẩu"
-        android:textColor="#FCF8F8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDangnhap" />
+    </FrameLayout>
 
-    <EditText
-        android:id="@+id/edtMatkhau"
-        android:layout_width="298dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:hint="Mật khẩu"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtTendangnhap" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edtTendangnhap"
-        android:hint="Tên đăng nhập"
-        android:layout_width="298dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <EditText
+            android:id="@+id/edtTendangnhap"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/atp__activity_player_layout_play_order_question"
+            android:hint="Tên đăng nhập"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="170dp"
-        android:layout_height="139dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="120dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/c3" />
+        <EditText
+            android:id="@+id/edtMatkhau"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/atp__activity_player_layout_play_order_question"
+            android:hint="Mật khẩu"
+            android:inputType="textPersonName"
+            android:password="true"
+            android:textAlignment="center" />
 
-    <Button
-        android:id="@+id/btnDangky"
-        android:layout_width="298dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        android:background="#EB291A"
-        android:onClick="Dangky"
-        android:text="Đăng ký"
-        android:textColor="#FCF8F8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnQuenmatkhau" />
+        <Button
+            android:id="@+id/btnDangnhap"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/atp__activity_player_layout_play_answer_background_selected"
+            android:onClick="Login"
+            android:text="Đăng nhập"
+            android:textColor="#FCF8F8"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imgfb"
-        android:layout_width="53dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDangky"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        <Button
+            android:id="@+id/btnQuenmatkhau"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/atp__activity_player_layout_play_answer_background_true"
+            android:text="Quên mật khẩu"
+            android:textColor="#FCF8F8"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txttongthoigian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="100dp"
-        android:text="Đăng nhập với Facebook"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgfb"
-        app:layout_constraintTop_toBottomOf="@+id/btnDangky" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnDangky"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/atp__activity_player_layout_play_answer_background_wrong"
+            android:onClick="Dangky"
+            android:text="Đăng ký"
+            android:textColor="#FCF8F8"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/sign_in_button"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center">
+
+            </com.google.android.gms.common.SignInButton>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

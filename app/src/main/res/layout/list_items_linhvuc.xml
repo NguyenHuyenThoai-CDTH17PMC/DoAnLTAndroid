@@ -5,7 +5,7 @@
     android:layout_marginLeft="60dp"
     android:layout_marginTop="5dp"
     android:layout_marginRight="60dp"
-    android:background="#2196F3"
+    android:background="@drawable/atp__dialog_confirm_background_button"
     android:orientation="vertical">
 
     <TextView
@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="9dp"
         android:paddingBottom="10dp"
         android:text="TextView"
         android:textAlignment="center"
