@@ -5,96 +5,6 @@
     android:background="@drawable/atp__activity_player_layout_money_background">
 
     <TableRow
-        android:id="@+id/TableRow"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/atp__dialog_confirm_background"
-        android:weightSum="3">
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/ic_play"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_no_image" />
-
-            <TextView
-                android:id="@+id/name_play"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_toRightOf="@+id/ic_play"
-                android:text="Member"
-                android:textColor="@android:color/white"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/name_play"
-                android:layout_toRightOf="@+id/ic_play"
-                android:text="Nam"
-                android:textColor="@android:color/white"
-                android:textSize="12dp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_time"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="@style/RtlOverlay.Widget.AppCompat.DialogTitle.Icon"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true" />
-
-            <TextView
-                android:id="@+id/txttongthoigian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="60"
-                android:textColor="@android:color/white"
-                android:textSize="24dp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/txtScore"
-                android:src="@drawable/atp__activity_profile_icon_money" />
-
-            <TextView
-                android:id="@+id/txtScore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:text="9999"
-                android:textColor="@android:color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-    </TableRow>
-
-    <TableRow
         android:id="@+id/TR_TroGiup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -145,6 +55,94 @@
             android:onClick="trogiup" />
     </TableRow>
 
+    <TableRow
+        android:id="@+id/TableRow"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/atp__dialog_confirm_background"
+        android:weightSum="3">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/ic_play"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_no_image" />
+
+            <TextView
+                android:id="@+id/name_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/ic_play"
+                android:text="Member"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_play"
+                android:layout_toRightOf="@+id/ic_play"
+                android:text="Nam"
+                android:textColor="@android:color/white"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RLThoigian"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/RtlOverlay.Widget.AppCompat.DialogTitle.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/txttongthoigian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="60"
+                android:textColor="@android:color/white"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/txtScore"
+                android:src="@drawable/atp__activity_profile_icon_money" />
+
+            <TextView
+                android:id="@+id/txtScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="9999"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </TableRow>
+
     <FrameLayout
         android:id="@+id/FrameLayout"
         android:layout_width="match_parent"
@@ -190,7 +188,7 @@
         <Button
             android:id="@+id/btnA"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="20dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -204,7 +202,7 @@
         <Button
             android:id="@+id/btnB"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="20dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -218,7 +216,7 @@
         <Button
             android:id="@+id/btnC"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="20dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
@@ -232,7 +230,7 @@
         <Button
             android:id="@+id/btnD"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="20dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:layout_weight="1"

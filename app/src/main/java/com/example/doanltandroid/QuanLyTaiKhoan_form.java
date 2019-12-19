@@ -76,7 +76,7 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
         diem_cao_nhat = intent.getStringExtra("diem_cao_nhat");
         credit = intent.getStringExtra("credit");
         img = findViewById(R.id.imghinhdaidienql);
-        String url = "http://10.0.2.2:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
+        String url = "http://192.168.56.1:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
         Picasso.with(this).load(url).into(img);
         btnCN.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.squareup.picasso.Picasso;
 
 public class ManHinhChinh_form extends AppCompatActivity {
@@ -36,7 +38,6 @@ public class ManHinhChinh_form extends AppCompatActivity {
         ten_dang_nhap = intent.getStringExtra("ten_dang_nhap");
         email = intent.getStringExtra("email");
         credit = intent.getStringExtra("credit");
-        txt.setText(ten_dang_nhap);
         txt2.setText(credit);
         id = intent.getStringExtra("id");
         img = findViewById(R.id.imghinhdaidienql);
@@ -46,6 +47,12 @@ public class ManHinhChinh_form extends AppCompatActivity {
         editor=sharedPreferences.edit();
         editor.putString("id_nguoichoi",id);
         editor.commit();
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+        if (acct != null) {
+            String personName = acct.getDisplayName();
+            txt.setText(personName);
+        }
+
     }
     public void QuanLiTaiKhoan(View view){
         Intent intent = new Intent(ManHinhChinh_form.this,QuanLyTaiKhoan_form.class);

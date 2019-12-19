@@ -307,11 +307,12 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         thoigianhientai=laythoigianhientai.format(new Date());
         String duongdanluotchoi="http://192.168.56.1/Do_An_PHP/public/api/luot-choi/them-luot-choi";
 
+        //String duongdanluotchoi="http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
         //Lấy danh sách lượt chơi của người này -- sau đó duyệt lấy lượt chơi cuối cùng là lượt chơi vừa chơi xong post từng cái chi tiết lên
         GetAPILuotChoiTheoNguoiChoi layid= (GetAPILuotChoiTheoNguoiChoi) new GetAPILuotChoiTheoNguoiChoi(CauHoiLayTheoIDLinhVuc.this,luotChois).execute("http://192.168.1.18:8080/Do_An_PHP/public/api/luot-choi/lay-luot-choi?nguoichoi_id="+nguoichoi_id);
 
-    }
+}
     public class GetAPILuotChoiTheoNguoiChoi extends AsyncTask<String,String,String> {
         ArrayList<LuotChoi> list_luotchoi;
         LuotChoi luotChoi;

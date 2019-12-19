@@ -20,7 +20,6 @@
             android:layout_gravity="center"
             app:srcCompat="@drawable/atp__activity_player_layout_help_call_04_active" />
 
-
         <TextView
             android:id="@+id/txtdoianh"
             android:layout_width="wrap_content"
