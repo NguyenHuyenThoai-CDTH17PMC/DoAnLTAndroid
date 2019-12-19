@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import android.widget.TextView;
@@ -52,7 +54,6 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     ArrayList<LuuChiTietLuotChoi>luuChiTietLuotChois;
     ArrayList<LuotChoi>luotChois;
 
-
     public CauHoiLayTheoIDLinhVuc() {
         this.cauHois =new ArrayList<>();
         this.luuChiTietLuotChois=new ArrayList<>();
@@ -78,6 +79,8 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 progressBar.setProgress((int) (millisUntilFinished / 1000));
                 txtTongThoiGian=findViewById(R.id.txttongthoigian);
                 txtTongThoiGian.setText(String.valueOf(millisUntilFinished / 1000));
+
+
             }
             @Override
             public void onFinish() {
@@ -98,18 +101,22 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         txtscore.setText(String.valueOf(socaudung));
     }
     public void trogiup(View view){
+
         dialog_goinguoithan();
+        ImageView img = (ImageView) findViewById(R.id.btnCall);
+        img.setImageResource(R.drawable.atp__activity_player_button_image_help_call_x);
+        img.setEnabled(false);
+
     }
-<<<<<<< HEAD
     public void trogiupkhangia(View view)
     {
         dialog_khangia();
+        ImageView img = (ImageView) findViewById(R.id.btnpeople);
+        img.setImageResource(R.drawable.atp__activity_player_button_image_help_audience_x);
+        img.setEnabled(false);
     }
 
     //trợ giúp từ người thân
-=======
-    public void trogiupkhangia(View view){ dialog_khangia(); }
->>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
     public void dialog_goinguoithan(){
         final Dialog dialog=new Dialog(this);
         dialog.setContentView(R.layout.diglog_goinguoithan);
@@ -190,6 +197,10 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 }
             }
         }while (so_dap_an_muon_an>0);
+        ImageView img = (ImageView) findViewById(R.id.btn50_50);
+        img.setImageResource(R.drawable.atp__activity_player_button_image_help_5050_x);
+        img.setEnabled(false);
+
     }
     //xử lý câu trả lời
     public  void Tieptuc(View view){
@@ -294,23 +305,12 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String thoigianhientai;
         SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         thoigianhientai=laythoigianhientai.format(new Date());
-<<<<<<< HEAD
         String duongdanluotchoi="http://192.168.56.1/Do_An_PHP/public/api/luot-choi/them-luot-choi";
-        PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
 
-    }
-    public void LuuChiTietLuotChoi(String cauhoi_id,String phuong_an){
-        String duongdanchitietluotchoi="http://192.168.56.1/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
-        String diem_cau_nay="0";
-        String luot_choi_id="12";
-        PostAPIChiTietLuotChoi postAPIChiTietLuotChoi= (PostAPIChiTietLuotChoi) new PostAPIChiTietLuotChoi(CauHoiLayTheoIDLinhVuc.this, duongdanchitietluotchoi,luot_choi_id,cauhoi_id,phuong_an,diem_cau_nay).execute();
-=======
-        String duongdanluotchoi="http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
-
         //Lấy danh sách lượt chơi của người này -- sau đó duyệt lấy lượt chơi cuối cùng là lượt chơi vừa chơi xong post từng cái chi tiết lên
         GetAPILuotChoiTheoNguoiChoi layid= (GetAPILuotChoiTheoNguoiChoi) new GetAPILuotChoiTheoNguoiChoi(CauHoiLayTheoIDLinhVuc.this,luotChois).execute("http://192.168.1.18:8080/Do_An_PHP/public/api/luot-choi/lay-luot-choi?nguoichoi_id="+nguoichoi_id);
->>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
+
     }
     public class GetAPILuotChoiTheoNguoiChoi extends AsyncTask<String,String,String> {
         ArrayList<LuotChoi> list_luotchoi;
@@ -347,7 +347,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                     luotChoi.setNgay_gio(ngay_gio);
                     list_luotchoi.add(luotChoi);
                 }
-                String duongdanthemchitiet="http://10.0.2.2:8080/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
+                String duongdanthemchitiet="http://192.168.56.1/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
                 String luot_choi_id=list_luotchoi.get(list_luotchoi.size()-1).getId();
                 for (int i=0;i<luuChiTietLuotChois.size();i++){
                     PostAPIChiTietLuotChoi postAPIChiTietLuotChoi= (PostAPIChiTietLuotChoi) new PostAPIChiTietLuotChoi(context,duongdanthemchitiet,luot_choi_id,luuChiTietLuotChois.get(i).getCauhoi_id(),luuChiTietLuotChois.get(i).getPhuong_an(),luuChiTietLuotChois.get(i).getDiem()).execute();

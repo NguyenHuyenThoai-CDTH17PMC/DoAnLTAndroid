@@ -15,11 +15,8 @@ import com.google.android.gms.common.SignInButton;
 public class Login_form extends AppCompatActivity {
     EditText edt;
     EditText edt2;
-<<<<<<< HEAD
     String đuongdan="http://192.168.56.1/Do_An_PHP/public/api/nguoi-choi";
-=======
-    String đuongdan="http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi";
->>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
+   // String đuongdan="http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

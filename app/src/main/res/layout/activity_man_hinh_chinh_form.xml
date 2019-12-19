@@ -68,7 +68,6 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-<<<<<<< HEAD
             <Button
                 android:id="@+id/btnAccountmanagerment"
                 android:layout_width="300dp"
@@ -87,11 +86,6 @@
                 android:background="@drawable/atp__activity_player_layout_play_answer_background_selected"
                 android:onClick="TroChoiMoi"
                 android:text="Trò chơi mới" />
-=======
-
-        <Button
-
->>>>>>> 9a5a42354d74516161ac0d67409cd62dd374ec8d
 
             <Button
                 android:id="@+id/btnRanking"
