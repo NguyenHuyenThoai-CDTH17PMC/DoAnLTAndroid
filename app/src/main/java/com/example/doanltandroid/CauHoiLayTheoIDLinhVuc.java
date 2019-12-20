@@ -1,7 +1,5 @@
 package com.example.doanltandroid;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -11,12 +9,12 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
@@ -305,12 +303,12 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String thoigianhientai;
         SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         thoigianhientai=laythoigianhientai.format(new Date());
-        String duongdanluotchoi="http://192.168.56.1/Do_An_PHP/public/api/luot-choi/them-luot-choi";
 
-        //String duongdanluotchoi="http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
+
+        String duongdanluotchoi="http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
         //Lấy danh sách lượt chơi của người này -- sau đó duyệt lấy lượt chơi cuối cùng là lượt chơi vừa chơi xong post từng cái chi tiết lên
-        GetAPILuotChoiTheoNguoiChoi layid= (GetAPILuotChoiTheoNguoiChoi) new GetAPILuotChoiTheoNguoiChoi(CauHoiLayTheoIDLinhVuc.this,luotChois).execute("http://192.168.1.18:8080/Do_An_PHP/public/api/luot-choi/lay-luot-choi?nguoichoi_id="+nguoichoi_id);
+        GetAPILuotChoiTheoNguoiChoi layid= (GetAPILuotChoiTheoNguoiChoi) new GetAPILuotChoiTheoNguoiChoi(CauHoiLayTheoIDLinhVuc.this,luotChois).execute("http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/lay-luot-choi?nguoichoi_id="+nguoichoi_id);
 
 }
     public class GetAPILuotChoiTheoNguoiChoi extends AsyncTask<String,String,String> {
@@ -348,7 +346,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                     luotChoi.setNgay_gio(ngay_gio);
                     list_luotchoi.add(luotChoi);
                 }
-                String duongdanthemchitiet="http://192.168.56.1/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
+                String duongdanthemchitiet="http://10.0.2.2:8080/Do_An_PHP/public/api/chi-tiet-luot-choi/them-chi-tiet-luot-choi";
                 String luot_choi_id=list_luotchoi.get(list_luotchoi.size()-1).getId();
                 for (int i=0;i<luuChiTietLuotChois.size();i++){
                     PostAPIChiTietLuotChoi postAPIChiTietLuotChoi= (PostAPIChiTietLuotChoi) new PostAPIChiTietLuotChoi(context,duongdanthemchitiet,luot_choi_id,luuChiTietLuotChois.get(i).getCauhoi_id(),luuChiTietLuotChois.get(i).getPhuong_an(),luuChiTietLuotChois.get(i).getDiem()).execute();

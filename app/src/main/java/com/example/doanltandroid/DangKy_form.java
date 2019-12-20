@@ -1,14 +1,16 @@
 package com.example.doanltandroid;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.security.NoSuchAlgorithmException;
+
 public class DangKy_form extends AppCompatActivity {
-    private String duongdan="http://192.168.56.1/Do_An_PHP/public/api/nguoi-choi/them-nguoi-choi";
+    private String duongdan="http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi/them-nguoi-choi";
     private EditText edit_tendangnhap;
     private EditText edit_email;
     private EditText edit_matkhau;
@@ -24,10 +26,12 @@ public class DangKy_form extends AppCompatActivity {
         edit_matkhau=findViewById(R.id.edtMatkhau);
         edit_xacnhanmatkhau=findViewById(R.id.edtXacnhanLaiMatKhau);
     }
-    public void DangKi(View view) {
-       String makhau=edit_matkhau.getText().toString();
+    public void DangKi(View view) throws NoSuchAlgorithmException {
+       String  makhau= edit_matkhau.getText().toString();
+
        String xacnhanlaimatkhau=edit_xacnhanmatkhau.getText().toString();
        if(makhau.equals(xacnhanlaimatkhau)){
+
            PostAPINguoiChoi postAPINguoiChoi= (PostAPINguoiChoi) new PostAPINguoiChoi(DangKy_form.this,duongdan,edit_tendangnhap,edit_email,edit_matkhau).execute();
        }
        else {
@@ -35,4 +39,5 @@ public class DangKy_form extends AppCompatActivity {
        }
 
     }
+
 }

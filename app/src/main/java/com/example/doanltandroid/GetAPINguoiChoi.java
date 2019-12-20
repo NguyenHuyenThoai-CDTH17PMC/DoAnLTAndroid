@@ -3,8 +3,6 @@ package com.example.doanltandroid;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -55,6 +53,7 @@ public class GetAPINguoiChoi extends AsyncTask<String,String,String> {
                 nguoiChoi.setHinh_dai_dien(hinh_dai_dien);
                 nguoiChois.add(nguoiChoi);
             }
+
             for(int i=0;i<nguoiChois.size();i++){
                     if(ten_dap_nhap.equals(nguoiChois.get(i).ten_dang_nhap) && mat_khau.equals(nguoiChois.get(i).mat_khau)){
                         Intent intent = new Intent(context,ManHinhChinh_form.class);
@@ -67,6 +66,8 @@ public class GetAPINguoiChoi extends AsyncTask<String,String,String> {
                         intent.putExtra("credit",nguoiChois.get(i).credit);
                         context.startActivity(intent);
                     }
+
+
 
                 }
 

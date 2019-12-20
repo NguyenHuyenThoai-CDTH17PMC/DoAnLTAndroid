@@ -13,6 +13,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
+import java.security.NoSuchAlgorithmException;
 
 public class PostAPINguoiChoi extends AsyncTask<Void,Void,String> {
      Context context;
@@ -26,7 +27,7 @@ public class PostAPINguoiChoi extends AsyncTask<Void,Void,String> {
     ProgressDialog progressDialog;
 
 
-    public PostAPINguoiChoi(Context context, String duongdan, EditText edtTendangnhap, EditText edtEmail, EditText edtMatkhau) {
+    public PostAPINguoiChoi(Context context, String duongdan, EditText edtTendangnhap, EditText edtEmail, EditText edtMatkhau) throws NoSuchAlgorithmException {
         this.context = context;
         this.duongdan = duongdan;
         this.edtTendangnhap = edtTendangnhap;
@@ -34,7 +35,7 @@ public class PostAPINguoiChoi extends AsyncTask<Void,Void,String> {
         this.edtMatkhau = edtMatkhau;
         nguoiChoi=new NguoiChoi();
         nguoiChoi.setTen_dang_nhap(edtTendangnhap.getText().toString());
-        nguoiChoi.setMat_khau(edtMatkhau.getText().toString());
+        nguoiChoi.setMat_khau(StringMD5.convertHashToString(edtMatkhau.getText().toString()));
         nguoiChoi.setEmail(edtEmail.getText().toString());
         nguoiChoi.setHinh_dai_dien("Chưa có");
         nguoiChoi.setDiem_cao_nhat("0");
@@ -103,4 +104,5 @@ public class PostAPINguoiChoi extends AsyncTask<Void,Void,String> {
         }
         return  null;
     }
+
 }
