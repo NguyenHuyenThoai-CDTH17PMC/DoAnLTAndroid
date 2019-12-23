@@ -1,23 +1,12 @@
 package com.example.doanltandroid;
 
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.documentfile.provider.DocumentFile;
-
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.RelativeLayout;
-
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.widget.RelativeLayout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,16 +14,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.documentfile.provider.DocumentFile;
+
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FilenameFilter;
-import java.io.IOException;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 public class QuanLyTaiKhoan_form extends AppCompatActivity {
     EditText ten_dang_nhap;
@@ -76,7 +63,7 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
         diem_cao_nhat = intent.getStringExtra("diem_cao_nhat");
         credit = intent.getStringExtra("credit");
         img = findViewById(R.id.imghinhdaidienql);
-        String url = "http://10.0.0.2:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
+        String url = "http://10.0.2.2:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
         Picasso.with(this).load(url).into(img);
         btnCN.setOnClickListener(new View.OnClickListener() {
             @Override

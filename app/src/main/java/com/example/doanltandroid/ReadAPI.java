@@ -1,6 +1,10 @@
 package com.example.doanltandroid;
 
+import android.graphics.Bitmap;
+import android.util.Base64;
+
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -65,4 +69,16 @@ public class ReadAPI {
         return null;
 
     }
+    // Encode Bitmap --> Base64 string
+    public static String encodeBitmapToString(Bitmap bmp){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
+    }
+
+
+
+
 }

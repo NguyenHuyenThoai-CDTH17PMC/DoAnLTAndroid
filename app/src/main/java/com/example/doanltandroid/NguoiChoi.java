@@ -33,13 +33,6 @@ public class NguoiChoi {
         this.email = email;
     }
 
-    public String getHinh_dai_dien() {
-        return hinh_dai_dien;
-    }
-
-    public void setHinh_dai_dien(String hinh_dai_dien) {
-        this.hinh_dai_dien = hinh_dai_dien;
-    }
 
     public String getDiem_cao_nhat() {
         return diem_cao_nhat;
@@ -63,5 +56,14 @@ public class NguoiChoi {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+
+    public String getHinh_dai_dien() {
+        return hinh_dai_dien;
+    }
+
+    public void setHinh_dai_dien(String hinh_dai_dien) {
+        this.hinh_dai_dien = hinh_dai_dien;
     }
 }

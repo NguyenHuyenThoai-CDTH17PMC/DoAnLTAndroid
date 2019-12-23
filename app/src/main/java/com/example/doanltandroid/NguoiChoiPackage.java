@@ -1,5 +1,9 @@
 package com.example.doanltandroid;
 
+
+
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -20,9 +24,10 @@ public class NguoiChoiPackage {
             jsonNguoiChoi.put("ten_dang_nhap",nguoiChoi.getTen_dang_nhap());
             jsonNguoiChoi.put("mat_khau",nguoiChoi.getMat_khau());
             jsonNguoiChoi.put("email",nguoiChoi.getEmail());
-            jsonNguoiChoi.put("hinh_dai_dien",nguoiChoi.getHinh_dai_dien());
+            jsonNguoiChoi.put("hinh_dai_dien", nguoiChoi.getHinh_dai_dien());
             jsonNguoiChoi.put("diem_cao_nhat",nguoiChoi.getDiem_cao_nhat());
             jsonNguoiChoi.put("credit",nguoiChoi.getCredit());
+            Log.d("hinhanh",nguoiChoi.getHinh_dai_dien());
             Boolean giatridau=true;
             Iterator iterator=jsonNguoiChoi.keys();
              do {

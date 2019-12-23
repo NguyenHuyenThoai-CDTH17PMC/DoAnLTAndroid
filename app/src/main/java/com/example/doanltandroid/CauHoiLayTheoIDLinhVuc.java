@@ -40,6 +40,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private  TextView cauhoi;
     private ArrayList<CauHoi>cauHois;
     private int vitri=0;
+    private  int stt =1;
     private int socaudung=0;
     private String chon;
     private  TextView txtscore;
@@ -88,13 +89,14 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
             }
         }.start();
         if(kiemtraJSON(JSON)==true){
-           cauhoi_id.setText(cauHois.get( vitri).getId());
+           cauhoi_id.setText(""+stt);
            cauhoi.setText(cauHois.get( vitri).getNoi_dung());
            Button1.setText("A: "+cauHois.get( vitri).getPhuong_an_a());
            Button2.setText("B: "+cauHois.get( vitri).getPhuong_an_b());
            Button3.setText("C: "+cauHois.get( vitri).getPhuong_an_c());
            Button4.setText("D: "+cauHois.get( vitri).getPhuong_an_d());
            vitri++;
+           stt++;
         }
         txtscore.setText(String.valueOf(socaudung));
     }
@@ -158,7 +160,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         BarData data = new BarData(labels,bardataset);
         barChart.setData(data);
         bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
-        barChart.animateY(7000);
+        barChart.animateY(1000);
         Button btnendkhangia = dialog.findViewById(R.id.btnendkhangia);
         btnendkhangia.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -211,13 +213,14 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         }
         luuChiTietLuotChois.add(new LuuChiTietLuotChoi(cauHois.get(vitri-1).getId(),chon,String.valueOf(socaudung)));
         try {
-                cauhoi_id.setText(cauHois.get(vitri).getId());
+                cauhoi_id.setText(""+stt);
                 cauhoi.setText(cauHois.get( vitri).getNoi_dung());
                 Button1.setText("A: "+cauHois.get( vitri).getPhuong_an_a());
                 Button2.setText("B: "+cauHois.get( vitri).getPhuong_an_b());
                 Button3.setText("C: "+cauHois.get( vitri).getPhuong_an_c());
                 Button4.setText("D: "+cauHois.get( vitri).getPhuong_an_d());
                 vitri++;
+                stt++;
             }catch (Exception e){
                dialogketthuc();
             }
