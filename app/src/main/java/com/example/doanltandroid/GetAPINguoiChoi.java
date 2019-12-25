@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -38,6 +37,7 @@ public class GetAPINguoiChoi extends AsyncTask<String,String,String> {
         try {
             JSONObject jsonnguoichoi = new JSONObject(s);
             JSONArray jsonarraydata = jsonnguoichoi.getJSONArray("data");
+
             for (int i = 0; i < jsonarraydata.length(); i++) {
 
                 NguoiChoi nguoiChoi = new NguoiChoi();
@@ -62,7 +62,6 @@ public class GetAPINguoiChoi extends AsyncTask<String,String,String> {
             }
             int x=0;
             for(int i=0;i<nguoiChois.size();i++){
-
                     if(ten_dap_nhap.equals(nguoiChois.get(i).ten_dang_nhap) && mat_khau.equals(nguoiChois.get(i).mat_khau)){
                         sharedPreferences=context.getSharedPreferences("nguoichoi",context.MODE_PRIVATE);
                         editor=sharedPreferences.edit();

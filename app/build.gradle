@@ -52,6 +52,8 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:support-v4:20.0.+'
 
+    implementation 'org.apache.httpcomponents:httpclient:4.2.1'
+
 
 }
 apply plugin: 'com.google.gms.google-services'

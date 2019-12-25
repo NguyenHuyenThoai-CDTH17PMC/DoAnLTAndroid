@@ -1,6 +1,5 @@
 package com.example.doanltandroid;
 
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,13 +13,21 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
+
 import android.provider.MediaStore;
 import android.util.Base64;
+
+import android.provider.MediaStore;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.documentfile.provider.DocumentFile;
 
 import com.squareup.picasso.Picasso;
 
@@ -54,8 +61,6 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quan_ly_tai_khoan_form);
 
-
-
         mk = findViewById(R.id.edtdoimatkhau);
         mknew = findViewById(R.id.edtXacnhanMK);
 
@@ -80,7 +85,6 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
 
 
         String url = "http://192.168.56.1:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
-
         Picasso.with(this).load(url).into(img);
 
         btnCN.setOnClickListener(new View.OnClickListener() {
