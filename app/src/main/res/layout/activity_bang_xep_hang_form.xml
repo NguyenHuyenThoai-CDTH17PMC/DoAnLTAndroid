@@ -10,7 +10,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="150dp">
 
         <TextView
             android:id="@+id/txtbangxephang"
@@ -20,7 +20,7 @@
             android:background="@drawable/atp__dialog_confirm_background_button"
             android:gravity="center"
             android:text="Bảng xếp hạng"
-            android:textColor="#F44336"
+            android:textColor="#FFC107"
             android:textSize="40dp" />
     </FrameLayout>
 
@@ -55,31 +55,9 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewxh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Legend"
-            android:textColor="#F4F3F7"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="9999"
-            android:textColor="#F4F3F7"
-            android:textSize="18sp" />
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

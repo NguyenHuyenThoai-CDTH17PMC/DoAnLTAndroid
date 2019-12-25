@@ -2,9 +2,7 @@ package com.example.doanltandroid;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -13,18 +11,17 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class GetAPINguoiChoi extends AsyncTask<String,String,String> {
+public class GetAPINguoiChoiEP extends AsyncTask<String,String,String> {
     private Context context;
     String ten_dap_nhap;
-    String mat_khau;
-    String duongdan;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+    String Email;
+    String matkhaunew;
     ArrayList<NguoiChoi> nguoiChois;
-    public GetAPINguoiChoi(Context context, String ten_dap_nhap, String mat_khau){
+    public GetAPINguoiChoiEP(Context context, String ten_dap_nhap, String email,String matkhaunew){
         nguoiChois=new ArrayList<>();
         this.ten_dap_nhap=ten_dap_nhap;
-        this.mat_khau=mat_khau;
+        this.Email=email;
+        this.matkhaunew=matkhaunew;
         this.context=context;
     }
     @Override
@@ -62,26 +59,14 @@ public class GetAPINguoiChoi extends AsyncTask<String,String,String> {
             }
             int x=0;
             for(int i=0;i<nguoiChois.size();i++){
-
-                    if(ten_dap_nhap.equals(nguoiChois.get(i).ten_dang_nhap) && mat_khau.equals(nguoiChois.get(i).mat_khau)){
-                        sharedPreferences=context.getSharedPreferences("nguoichoi",context.MODE_PRIVATE);
-                        editor=sharedPreferences.edit();
-                        editor.putString("id_nguoichoi",nguoiChois.get(i).id);
-                        editor.putString("ten_dang_nhap",nguoiChois.get(i).ten_dang_nhap);
-                        editor.putString("credit",nguoiChois.get(i).credit);
-                        editor.putString("email",nguoiChois.get(i).email);
-                        editor.putString("diem_cao_nhat",nguoiChois.get(i).diem_cao_nhat);
-                        editor.putString("hinh_dai_dien",nguoiChois.get(i).hinh_dai_dien);
-                        editor.commit();
-
-                        Intent intent = new Intent(context,ManHinhChinh_form.class);
-
-                        context.startActivity(intent);
-                    }
-                    else
-                    {
-                        x++;
-                    }
+                if(ten_dap_nhap.equals(nguoiChois.get(i).ten_dang_nhap) && Email.equals(nguoiChois.get(i).email)){
+                    String duongdan="http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/quen-mat-khau/"+nguoiChois.get(i).id;
+                    PostAPIQuenMatKhau postAPINguoiChoi = (PostAPIQuenMatKhau) new PostAPIQuenMatKhau(context, duongdan,matkhaunew).execute();
+                }
+                else
+                {
+                    x++;
+                }
             }
             if(x == nguoiChois.size())
             {

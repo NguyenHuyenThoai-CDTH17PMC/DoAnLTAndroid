@@ -83,6 +83,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:background="@drawable/atp__activity_player_layout_play_answer_background_true"
+            android:onClick="quenmatkhau"
             android:text="Quên mật khẩu"
             android:textColor="#FCF8F8"
             android:textSize="16sp"

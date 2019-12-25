@@ -15,6 +15,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 
 public class PostAPIChinhSuaNguoiChoi extends AsyncTask<Void,Void,String> {
+
     Context context;
     String duongdan;
     String Tendangnhap;
@@ -25,9 +26,6 @@ public class PostAPIChinhSuaNguoiChoi extends AsyncTask<Void,Void,String> {
     String credit;
 
     NguoiChoi nguoiChoi;
-
-
-
 
     public PostAPIChinhSuaNguoiChoi(Context context ,String duongdan,String edtTendangnhap, String edtEmail, String edtMatkhau,String hinh_dai_dien,String diem_cao_nhat,String credit) {
         this.context = context;
@@ -40,6 +38,7 @@ public class PostAPIChinhSuaNguoiChoi extends AsyncTask<Void,Void,String> {
         this.credit=credit;
 
         nguoiChoi = new NguoiChoi();
+
         nguoiChoi.setTen_dang_nhap(edtTendangnhap);
         nguoiChoi.setMat_khau(edtMatkhau);
         nguoiChoi.setEmail(edtEmail);
@@ -47,14 +46,10 @@ public class PostAPIChinhSuaNguoiChoi extends AsyncTask<Void,Void,String> {
         nguoiChoi.setDiem_cao_nhat(diem_cao_nhat);
         nguoiChoi.setCredit(credit);
     }
-
-
-
     @Override
     protected String doInBackground(Void... voids) {
         return this.send();
     }
-
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
@@ -63,15 +58,15 @@ public class PostAPIChinhSuaNguoiChoi extends AsyncTask<Void,Void,String> {
         }
         else {
             if(s=="error"){
-                Toast.makeText(context, "Không thành công", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Toang", Toast.LENGTH_SHORT).show();
             }
             else {
-                Toast.makeText(context, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Thành công!!", Toast.LENGTH_SHORT).show();
             }
         }
     }
-    private  String send(){
-        HttpURLConnection connection=ReadAPI.connectionPOST(duongdan);
+    private String send(){
+        final HttpURLConnection connection = ReadAPI.connectionPOST(duongdan);
         if(connection==null){
             return null;
         }
@@ -84,7 +79,7 @@ public class PostAPIChinhSuaNguoiChoi extends AsyncTask<Void,Void,String> {
             bufferedWriter.close();
             outputStream.close();
             int response_thanhcong=connection.getResponseCode();
-            if(response_thanhcong==connection.HTTP_OK){
+            if(response_thanhcong == connection.HTTP_OK){
                 BufferedReader bufferedReader =new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 StringBuilder stringBuilder=new StringBuilder();
                 String line;
@@ -95,7 +90,7 @@ public class PostAPIChinhSuaNguoiChoi extends AsyncTask<Void,Void,String> {
                 return stringBuilder.toString();
             }
             else {
-                return "error";
+                return String.valueOf(response_thanhcong);
             }
         } catch (IOException e) {
             e.printStackTrace();

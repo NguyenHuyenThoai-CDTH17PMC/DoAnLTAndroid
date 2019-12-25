@@ -28,7 +28,17 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/edtEmail"
+            android:id="@+id/edtTendangnhapqm"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/atp__activity_player_layout_play_order_question"
+            android:gravity="center"
+            android:hint="Tên đăng nhập"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edtEmailqm"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -39,14 +49,25 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/edtTendangnhap"
+            android:id="@+id/edtmatkhauqm"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/atp__activity_player_layout_play_order_question"
             android:gravity="center"
-            android:hint="Tên đăng nhập"
+            android:hint="Mật khẩu mới"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edtxn_matkhauqm"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/atp__activity_player_layout_play_order_question"
+            android:gravity="center"
+            android:hint="Xác nhận mật khẩu mới"
             android:inputType="textPersonName" />
 
         <Button
@@ -57,6 +78,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/atp__dialog_confirm_background_button_active"
             android:gravity="center"
+            android:onClick="laymk"
             android:text="Lấy lại mật khẩu"
             android:textColor="#FCF8F8" />
 

@@ -14,18 +14,11 @@
         android:layout_weight="1">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imghinhdaidienql"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/atp__activity_player_layout_help_call_04_active" />
-        <Button
-            android:id="@+id/btnalbum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="chonanh"
-            android:text="Album"
-            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/txtdoianh"
@@ -38,8 +31,8 @@
             android:textColor="#FFC107"
             android:textSize="24sp"
             app:layout_constraintTop_toBottomOf="@+id/imghinhdaidienql" />
+
         <Button
-            android:id="@+id/btnalbum"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="290dp"
@@ -54,6 +47,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical">
+
         <EditText
             android:id="@+id/edtTendangnhap"
             android:layout_width="300dp"
@@ -65,8 +59,7 @@
             android:gravity="center"
             android:hint="Tên đăng nhập"
             android:inputType="textPersonName"
-            android:textColor="#233ED5"
-            app:layout_constraintTop_toBottomOf="@+id/txtdoianh" />
+            android:textColor="#233ED5" />
 
         <EditText
             android:id="@+id/edtEmail"
@@ -79,8 +72,7 @@
             android:gravity="center"
             android:hint="Email"
             android:inputType="textPersonName"
-            android:textColor="#030303"
-            app:layout_constraintTop_toBottomOf="@+id/edtTendangnhap" />
+            android:textColor="#030303" />
 
         <EditText
             android:id="@+id/edtdoimatkhau"
@@ -93,8 +85,7 @@
             android:gravity="center"
             android:hint=" Đổi mật khẩu"
             android:inputType="textPersonName"
-            android:password="true"
-            app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+            android:password="false" />
 
         <EditText
             android:id="@+id/edtXacnhanMK"
@@ -106,8 +97,7 @@
             android:gravity="center"
             android:hint="Xác nhận mật khẩu"
             android:inputType="textPersonName"
-            android:password="true"
-            app:layout_constraintTop_toBottomOf="@+id/edtdoimatkhau" />
+            android:password="false" />
 
         <Button
             android:id="@+id/btnCapnhat"
@@ -119,8 +109,7 @@
             android:text="Cập nhật"
             android:textColor="#FCF8F8"
             android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/edtXacnhanMK" />
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

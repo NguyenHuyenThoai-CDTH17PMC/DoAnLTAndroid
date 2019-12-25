@@ -54,6 +54,7 @@ public class ReadAPI {
             connection.setRequestMethod("POST");
             connection.setConnectTimeout(20000);
             connection.setReadTimeout(20000);
+
             connection.setDoOutput(true);
             connection.setDoInput(true);
             return connection;
