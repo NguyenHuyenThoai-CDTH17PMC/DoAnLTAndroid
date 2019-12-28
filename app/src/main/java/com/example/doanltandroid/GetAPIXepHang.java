@@ -40,7 +40,8 @@ public class GetAPIXepHang extends AsyncTask<String,String,String> {
                 JSONObject jsonObject=jsonarraydata.getJSONObject(i);
                 String ten_dang_nhap=jsonObject.getString("ten_dang_nhap");
                 String diem_cao_nhat=String.valueOf(jsonObject.getInt("diem_cao_nhat"));
-                xepHangs.add(new XepHang(ten_dang_nhap,diem_cao_nhat));
+                String hinh_dai_dien = jsonObject.getString("hinh_dai_dien");
+                xepHangs.add(new XepHang(ten_dang_nhap,diem_cao_nhat, hinh_dai_dien));
             }
             LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);
             recyclerView.setLayoutManager(linearLayoutManager);

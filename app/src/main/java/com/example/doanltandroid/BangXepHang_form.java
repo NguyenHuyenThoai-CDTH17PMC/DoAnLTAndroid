@@ -9,8 +9,6 @@ import java.util.ArrayList;
 
 public class BangXepHang_form extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private XepHangAdapter xepHangAdapter;
-    private ArrayList<XepHang> xepHangs;
     private String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi";
     @Override
     protected void onCreate(Bundle savedInstanceState) {

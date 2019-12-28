@@ -75,7 +75,6 @@ public class GetAPIFacebook extends AsyncTask<String,String,String> {
                     editor.putString("hinh_dai_dien",nguoiChois.get(i).hinh_dai_dien);
                     editor.putString("mxh_id",nguoiChois.get(i).mxh_id);
                     editor.commit();
-
                     Intent intent = new Intent(context,ManHinhChinh_form.class);
 
                     context.startActivity(intent);
@@ -94,6 +93,23 @@ public class GetAPIFacebook extends AsyncTask<String,String,String> {
                 userID = sharedPreferences.getString("id_facebook","");
                 hinh_dai_dien_fb = sharedPreferences.getString("hinh_dai_dien","");
                 PostAPIFacebook postAPIFacebook= (PostAPIFacebook) new PostAPIFacebook(context,duongdan,firstname,Email,userID,hinh_dai_dien_fb).execute();
+                for(int i=0;i<nguoiChois.size();i++) {
+                    if (email.equals(nguoiChois.get(i).getEmail())) {
+                        sharedPreferences = context.getSharedPreferences("nguoichoi", context.MODE_PRIVATE);
+                        editor = sharedPreferences.edit();
+                        editor.putString("id_nguoichoi", nguoiChois.get(i).id);
+                        editor.putString("ten_dang_nhap", nguoiChois.get(i).ten_dang_nhap);
+                        editor.putString("credit", nguoiChois.get(i).credit);
+                        editor.putString("email", nguoiChois.get(i).email);
+                        editor.putString("matkhau", nguoiChois.get(i).mat_khau);
+                        editor.putString("diem_cao_nhat", nguoiChois.get(i).diem_cao_nhat);
+                        editor.putString("hinh_dai_dien", nguoiChois.get(i).hinh_dai_dien);
+                        editor.putString("mxh_id", nguoiChois.get(i).mxh_id);
+                        editor.commit();
+                        Intent intent = new Intent(context, ManHinhChinh_form.class);
+                        context.startActivity(intent);
+                    }
+                }
             }
         }catch (JSONException e) {
             e.printStackTrace();
