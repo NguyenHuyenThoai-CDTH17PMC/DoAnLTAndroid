@@ -63,7 +63,7 @@ public class GetAPIUpDiem extends AsyncTask<String,String,String> {
             int x=0;
             for(int i=0;i<nguoiChois.size();i++) {
                 if (id.equals(nguoiChois.get(i).id) && Integer.parseInt(diem_cao_nhat) > Integer.parseInt(nguoiChois.get(i).diem_cao_nhat)) {
-                    String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/update-diem/5";
+                    String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/update-diem/"+id;
                     PostUpDiem postAPINguoiChoi = (PostUpDiem) new PostUpDiem(context, duongdan, diem_cao_nhat).execute();
                 }
             }

@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
 public class DangKy_form extends AppCompatActivity {
-    private String duongdan="http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi/them-nguoi-choi";
+    private String duongdan="http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/them-nguoi-choi";
     private EditText edit_tendangnhap;
     private EditText edit_email;
     private EditText edit_matkhau;

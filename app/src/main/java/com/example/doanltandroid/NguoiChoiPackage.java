@@ -28,6 +28,7 @@ public class NguoiChoiPackage {
             jsonNguoiChoi.put("diem_cao_nhat",nguoiChoi.getDiem_cao_nhat());
             jsonNguoiChoi.put("credit",nguoiChoi.getCredit());
             Log.d("hinhanh",nguoiChoi.getHinh_dai_dien());
+            jsonNguoiChoi.put("mxh_id",nguoiChoi.getMxh_id());
             Boolean giatridau=true;
             Iterator iterator=jsonNguoiChoi.keys();
              do {

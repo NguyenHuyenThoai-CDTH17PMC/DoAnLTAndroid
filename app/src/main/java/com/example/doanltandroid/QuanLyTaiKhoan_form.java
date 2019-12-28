@@ -7,17 +7,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
-
 import android.provider.MediaStore;
 import android.util.Base64;
-
-import android.provider.MediaStore;
 
 import android.view.View;
 import android.widget.Button;
@@ -25,15 +22,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.documentfile.provider.DocumentFile;
-
 import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.security.NoSuchAlgorithmException;
 
 public class QuanLyTaiKhoan_form extends AppCompatActivity {
     EditText ten_dang_nhap;
@@ -63,7 +57,6 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
 
         mk = findViewById(R.id.edtdoimatkhau);
         mknew = findViewById(R.id.edtXacnhanMK);
-
         email=findViewById(R.id.edtEmailqm);
         ten_dang_nhap=findViewById(R.id.edtTendangnhapqm);
         btnCN=findViewById(R.id.btnCapnhat);
@@ -94,7 +87,11 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
                 xn_maukhau = mknew.getText().toString();
                 if(matkhau.equals(xn_maukhau) && hinhmoi!=null){
                     String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
-                    PostAPIChinhSuaNguoiChoi postAPINguoiChoi = (PostAPIChinhSuaNguoiChoi) new PostAPIChinhSuaNguoiChoi(QuanLyTaiKhoan_form.this, duongdan, ten_dang_nhap.getText().toString(), email.getText().toString(), mk.getText().toString(),hinhmoi,diem_cao_nhat,credit).execute();
+                    try {
+                        PostAPIChinhSuaNguoiChoi postAPINguoiChoi = (PostAPIChinhSuaNguoiChoi) new PostAPIChinhSuaNguoiChoi(QuanLyTaiKhoan_form.this, duongdan, ten_dang_nhap.getText().toString(), email.getText().toString(), mk.getText().toString(),hinhmoi,diem_cao_nhat,credit).execute();
+                    } catch (NoSuchAlgorithmException e) {
+                        e.printStackTrace();
+                    }
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "2 mật khẩu không trùng khớp!!!", Toast.LENGTH_SHORT).show();

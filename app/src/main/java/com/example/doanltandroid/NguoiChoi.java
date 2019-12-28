@@ -8,6 +8,15 @@ public class NguoiChoi {
     String hinh_dai_dien;
     String diem_cao_nhat;
     String credit;
+    String mxh_id;
+
+    public String getMxh_id() {
+        return mxh_id;
+    }
+
+    public void setMxh_id(String mxh_id) {
+        this.mxh_id = mxh_id;
+    }
 
     public String getTen_dang_nhap() {
         return ten_dang_nhap;
@@ -32,7 +41,6 @@ public class NguoiChoi {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
     public String getDiem_cao_nhat() {
         return diem_cao_nhat;

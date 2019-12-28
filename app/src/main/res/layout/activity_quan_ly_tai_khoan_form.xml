@@ -49,7 +49,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/edtTendangnhap"
+            android:id="@+id/edtTendangnhapqm"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -62,7 +62,7 @@
             android:textColor="#233ED5" />
 
         <EditText
-            android:id="@+id/edtEmail"
+            android:id="@+id/edtEmailqm"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
