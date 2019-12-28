@@ -30,6 +30,18 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/atp__dialog_confirm_background"
+            android:gravity="center"
+            android:text="Hình đại diện"
+            android:textColor="#FF9800"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="50dp"

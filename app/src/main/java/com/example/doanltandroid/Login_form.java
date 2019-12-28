@@ -118,7 +118,7 @@ public class Login_form extends AppCompatActivity {
                 editor.putString("email",Email);
                 editor.putString("firstname",firstname);
                 editor.commit();
-                GetAPIFacebook getAPIFacebook = (GetAPIFacebook) new GetAPIFacebook(Login_form.this,"tyiker10@gmail.com").execute(duongdan);
+                GetAPIFacebook getAPIFacebook = (GetAPIFacebook) new GetAPIFacebook(Login_form.this,Email).execute(duongdan);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
