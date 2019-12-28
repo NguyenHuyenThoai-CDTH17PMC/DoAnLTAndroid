@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -22,11 +25,6 @@ import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.common.SignInButton;
-import com.squareup.picasso.Picasso;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,7 +53,7 @@ public class Login_form extends AppCompatActivity {
     String firstname;
     String userID;
     String convert;
-    String duongdan="http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi";
+    String duongdan="http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,8 +147,8 @@ public class Login_form extends AppCompatActivity {
         super.onStart();
     }
     public void Dangky(View view) {
-        Intent intent = new Intent(Login_form.this, DangKy_form.class);
-        startActivity(intent);
+       Intent intent = new Intent(Login_form.this, DangKy_form.class);
+       startActivity(intent);
     }
     public void quenmatkhau(View view) {
         Intent intent = new Intent(Login_form.this, QuenMatKhau_form.class);
