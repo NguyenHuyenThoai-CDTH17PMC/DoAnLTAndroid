@@ -29,6 +29,7 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Random;
 
@@ -52,18 +53,20 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private TextView txtTongThoiGian;
     CountDownTimer countDownTimer;
     SharedPreferences sharedPreferences;
-
+// m load cau hoi o dau
     ArrayList<LuuChiTietLuotChoi>luuChiTietLuotChois;
     ArrayList<LuotChoi>luotChois;
-
+    ArrayList<Integer> mRandom;
     public CauHoiLayTheoIDLinhVuc() {
         this.cauHois =new ArrayList<>();
         this.luuChiTietLuotChois=new ArrayList<>();
+        mRandom = new ArrayList<>();
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cau_hoi_lay_theo_idlinh_vuc);
+
         txtscore=findViewById(R.id.txtScore);
         cauhoi_id=findViewById(R.id.txtid);
         cauhoi=findViewById(R.id.txtCauHoi);
@@ -77,7 +80,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String ten_dang_nhap_get = sharedPreferences.getString("ten_dang_nhap","");
         String hinh_dai_dien_get = sharedPreferences.getString("hinh_dai_dien","");
         ten_dang_nhap.setText(ten_dang_nhap_get);
-        String url = "http://192.168.56.1:8080/Do_An_PHP/public/img/"+hinh_dai_dien_get;
+        String url = "http://10.0.2.2:8080/Do_An_PHP/public/img/"+hinh_dai_dien_get;
         Picasso.with(this).load(url).into(hinh_dai_dien_min);
         Intent intent=getIntent();
         String JSON = intent.getStringExtra("JSON");
@@ -99,17 +102,18 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 dialogketthuc();
             }
         }.start();
-        if(kiemtraJSON(JSON)==true){
-           cauhoi_id.setText(""+stt);
-           cauhoi.setText(cauHois.get( vitri).getNoi_dung());
-           Button1.setText("A: "+cauHois.get( vitri).getPhuong_an_a());
-           Button2.setText("B: "+cauHois.get( vitri).getPhuong_an_b());
-           Button3.setText("C: "+cauHois.get( vitri).getPhuong_an_c());
-           Button4.setText("D: "+cauHois.get( vitri).getPhuong_an_d());
+        if(kiemtraJSON(JSON)==true){ RandomCauHoi();
+           cauhoi_id.setText(""+stt); //
+           cauhoi.setText(cauHois.get( mRandom.get(vitri)).getNoi_dung());
+           Button1.setText("A: "+cauHois.get( mRandom.get(vitri)).getPhuong_an_a());
+           Button2.setText("B: "+cauHois.get( mRandom.get(vitri)).getPhuong_an_b());
+           Button3.setText("C: "+cauHois.get( mRandom.get(vitri)).getPhuong_an_c());
+           Button4.setText("D: "+cauHois.get( mRandom.get(vitri)).getPhuong_an_d());
            vitri++;
            stt++;
         }
-        txtscore.setText(String.valueOf(socaudung));
+
+        txtscore.setText(String.valueOf(socaudung));//sao ko lam recycleverview ?
     }
     public void trogiup(View view){
 
@@ -226,11 +230,11 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         luuChiTietLuotChois.add(new LuuChiTietLuotChoi(cauHois.get(vitri-1).getId(),chon,String.valueOf(socaudung)));
         try {
                 cauhoi_id.setText(""+stt);
-                cauhoi.setText(cauHois.get( vitri).getNoi_dung());
-                Button1.setText("A: "+cauHois.get( vitri).getPhuong_an_a());
-                Button2.setText("B: "+cauHois.get( vitri).getPhuong_an_b());
-                Button3.setText("C: "+cauHois.get( vitri).getPhuong_an_c());
-                Button4.setText("D: "+cauHois.get( vitri).getPhuong_an_d());
+                cauhoi.setText(cauHois.get( mRandom.get(vitri)).getNoi_dung());
+                Button1.setText("A: "+cauHois.get( mRandom.get(vitri)).getPhuong_an_a());
+                Button2.setText("B: "+cauHois.get( mRandom.get(vitri)).getPhuong_an_b());
+                Button3.setText("C: "+cauHois.get( mRandom.get(vitri)).getPhuong_an_c());
+                Button4.setText("D: "+cauHois.get( mRandom.get(vitri)).getPhuong_an_d());
                 vitri++;
                 stt++;
             }catch (Exception e){
@@ -318,18 +322,20 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String thoigianhientai;
         SimpleDateFormat laythoigianhientai=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         thoigianhientai=laythoigianhientai.format(new Date());
-        String duongdanluotchoi="http://192.168.56.1:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
-        String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi";
+        String duongdanluotchoi="http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
+        String duongdan = "http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi";
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
         GetAPIUpDiem getAPIUpDiem = (GetAPIUpDiem) new GetAPIUpDiem(this,String.valueOf(socaudung),nguoichoi_id).execute(duongdan);
-    }
-
-        String duongdanluotchoi="http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
-        PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
         //Lấy danh sách lượt chơi của người này -- sau đó duyệt lấy lượt chơi cuối cùng là lượt chơi vừa chơi xong post từng cái chi tiết lên
         GetAPILuotChoiTheoNguoiChoi layid= (GetAPILuotChoiTheoNguoiChoi) new GetAPILuotChoiTheoNguoiChoi(CauHoiLayTheoIDLinhVuc.this,luotChois).execute("http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/lay-luot-choi?nguoichoi_id="+nguoichoi_id);
+   }
 
-}
+    public void RandomCauHoi(){
+        for(int i=0;i<cauHois.size();i++){
+            mRandom.add(i);
+        }
+        Collections.shuffle(mRandom);
+    }
     public class GetAPILuotChoiTheoNguoiChoi extends AsyncTask<String,String,String> {
         ArrayList<LuotChoi> list_luotchoi;
         LuotChoi luotChoi;
@@ -375,4 +381,6 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
             }
         }
     }
+
+
 }

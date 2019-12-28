@@ -27,7 +27,6 @@ public class PostAPINguoiChoi extends AsyncTask<Void,Void,String> {
 
     ProgressDialog progressDialog;
 
-
     public PostAPINguoiChoi(Context context, String duongdan, EditText edtTendangnhap, EditText edtEmail, EditText edtMatkhau, String hinhanh) throws NoSuchAlgorithmException {
         this.context = context;
         this.duongdan = duongdan;
@@ -41,6 +40,7 @@ public class PostAPINguoiChoi extends AsyncTask<Void,Void,String> {
         nguoiChoi.setHinh_dai_dien(hinhanh);
         nguoiChoi.setDiem_cao_nhat("0");
         nguoiChoi.setCredit("0");
+        nguoiChoi.setMxh_id("0");
 
     }
 

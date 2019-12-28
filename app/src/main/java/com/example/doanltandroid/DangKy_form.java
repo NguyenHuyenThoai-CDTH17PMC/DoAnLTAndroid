@@ -17,9 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DangKy_form extends AppCompatActivity {
-    private String duongdan="http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/them-nguoi-choi";
+    private String duongdan="http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi/them-nguoi-choi";
     private EditText edit_tendangnhap;
     private EditText edit_email;
     private EditText edit_matkhau;
@@ -56,8 +58,17 @@ public class DangKy_form extends AppCompatActivity {
        String xacnhanlaimatkhau=edit_xacnhanmatkhau.getText().toString();
        if(makhau.equals(xacnhanlaimatkhau)){
 
-           PostAPINguoiChoi postAPINguoiChoi= (PostAPINguoiChoi) new PostAPINguoiChoi(DangKy_form.this,duongdan,edit_tendangnhap,edit_email,edit_matkhau,hinhanh).execute();
+ //          PostAPINguoiChoi postAPINguoiChoi= (PostAPINguoiChoi) new PostAPINguoiChoi(DangKy_form.this,duongdan,edit_tendangnhap,edit_email,edit_matkhau,hinhanh).execute();
+           Map<String,String> jsonNguoiChoi= new HashMap<>();
 
+           jsonNguoiChoi.put("ten_dang_nhap","concu");
+           jsonNguoiChoi.put("mat_khau","1234566");
+           jsonNguoiChoi.put("email","concu8.35cm@gmail.com");
+           jsonNguoiChoi.put("hinh_dai_dien", ReadAPI.encodeBitmapToString(bitmap)); // hình đại diện thì nó truyền sao? don gian, may nen chuoi base 64 thoi
+           jsonNguoiChoi.put("diem_cao_nhat","835");
+           jsonNguoiChoi.put("credit","835");
+           jsonNguoiChoi.put("mxh_id","0");
+           ReadAPI.PostAPI(this,jsonNguoiChoi,duongdan);
        }
        else {
            Toast.makeText(this, "Mật khẩu không khớp", Toast.LENGTH_SHORT).show();
