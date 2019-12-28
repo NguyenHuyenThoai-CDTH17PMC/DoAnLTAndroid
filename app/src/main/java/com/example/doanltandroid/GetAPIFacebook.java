@@ -87,7 +87,7 @@ public class GetAPIFacebook extends AsyncTask<String,String,String> {
             }
             if(x == nguoiChois.size())
             {
-                String duongdan="http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/them-nguoi-choi";
+                String duongdan="http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi/them-nguoi-choi";
                 sharedPreferences=context.getSharedPreferences("nguoichoifacebook",context.MODE_PRIVATE);
                 Email = sharedPreferences.getString("email","");
                 firstname = sharedPreferences.getString("firstname","");
