@@ -4,10 +4,13 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -53,10 +56,13 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     private TextView txtTongThoiGian;
     CountDownTimer countDownTimer;
     SharedPreferences sharedPreferences;
+    AnimationDrawable animationDrawable;
 // m load cau hoi o dau
     ArrayList<LuuChiTietLuotChoi>luuChiTietLuotChois;
     ArrayList<LuotChoi>luotChois;
     ArrayList<Integer> mRandom;
+    Animation animationchondung;
+    ImageView img_hinhcheck;
     public CauHoiLayTheoIDLinhVuc() {
         this.cauHois =new ArrayList<>();
         this.luuChiTietLuotChois=new ArrayList<>();
@@ -66,6 +72,10 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cau_hoi_lay_theo_idlinh_vuc);
+        //xử lí animation chọn đúng
+        animationchondung= AnimationUtils.loadAnimation(this,R.anim.animation_hinhcheck);
+        img_hinhcheck=findViewById(R.id.img_daucheck);
+
 
         txtscore=findViewById(R.id.txtScore);
         cauhoi_id=findViewById(R.id.txtid);
@@ -131,7 +141,6 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         img.setImageResource(R.drawable.atp__activity_player_button_image_help_audience_x);
         img.setEnabled(false);
     }
-
     //trợ giúp từ người thân
     public void dialog_goinguoithan(){
         final Dialog dialog=new Dialog(this);
@@ -237,6 +246,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 Button4.setText("D: "+cauHois.get( mRandom.get(vitri)).getPhuong_an_d());
                 vitri++;
                 stt++;
+
             }catch (Exception e){
                dialogketthuc();
             }
@@ -247,13 +257,16 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 chon="1";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
+                    img_hinhcheck.startAnimation(animationchondung);
                     return true;
                 }
+
                 break;
             case R.id.btnB:
                 chon="2";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
+                    img_hinhcheck.startAnimation(animationchondung);
                     return true;
                 }
                 break;
@@ -261,6 +274,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 chon="3";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
+                    img_hinhcheck.startAnimation(animationchondung);
                     return true;
                 }
                 break;
@@ -268,6 +282,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                 chon="4";
                 if(chon.equals(cauHois.get(vitri).getDap_an())) {
                     socaudung++;
+                    img_hinhcheck.startAnimation(animationchondung);
                     return true;
                 }
                 break;
@@ -329,7 +344,6 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         //Lấy danh sách lượt chơi của người này -- sau đó duyệt lấy lượt chơi cuối cùng là lượt chơi vừa chơi xong post từng cái chi tiết lên
         GetAPILuotChoiTheoNguoiChoi layid= (GetAPILuotChoiTheoNguoiChoi) new GetAPILuotChoiTheoNguoiChoi(CauHoiLayTheoIDLinhVuc.this,luotChois).execute("http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/lay-luot-choi?nguoichoi_id="+nguoichoi_id);
    }
-
     public void RandomCauHoi(){
         for(int i=0;i<cauHois.size();i++){
             mRandom.add(i);

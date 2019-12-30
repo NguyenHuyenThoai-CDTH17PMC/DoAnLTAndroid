@@ -1,7 +1,5 @@
 package com.example.doanltandroid;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,13 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.squareup.picasso.Picasso;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import com.squareup.picasso.Picasso;
 
 public class ManHinhChinh_form extends AppCompatActivity {
     TextView txt;
@@ -50,7 +44,7 @@ public class ManHinhChinh_form extends AppCompatActivity {
         txt.setText(ten_dang_nhap);
         txt2.setText(credit);
         img = findViewById(R.id.imghinhdaidienql);
-        url = "http://192.168.56.1:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
+        url = "http://10.0.2.2:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
         Picasso.with(this).load(url).into(img);
     }
     public void QuanLiTaiKhoan(View view){
@@ -61,4 +55,13 @@ public class ManHinhChinh_form extends AppCompatActivity {
         Intent intent=new Intent(ManHinhChinh_form.this,LinhVucCauHoi_form.class);
         startActivity(intent);
     }
+    public void BangXepHang(View view){
+        Intent intent=new Intent(ManHinhChinh_form.this,BangXepHang_form.class);
+        startActivity(intent);
+    }
+    public void MuaThemCredit(View view){
+        Intent intent=new Intent(ManHinhChinh_form.this,Credit_form.class);
+        startActivity(intent);
+    }
+
 }

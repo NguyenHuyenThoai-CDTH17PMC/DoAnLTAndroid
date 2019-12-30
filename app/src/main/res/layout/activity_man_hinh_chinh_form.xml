@@ -93,7 +93,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/atp__activity_player_layout_play_answer_background_selected"
-                android:text="Bảng xếp hạng" />
+                android:text="Bảng xếp hạng"
+                android:onClick="BangXepHang"/>
 
             <Button
                 android:id="@+id/btnBuycredit"
@@ -102,7 +103,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/atp__activity_player_layout_play_answer_background_selected"
-                android:text="Mua thêm Credit" />
+                android:text="Mua thêm Credit"
+                android:onClick="MuaThemCredit"/>
 
             <Button
 
