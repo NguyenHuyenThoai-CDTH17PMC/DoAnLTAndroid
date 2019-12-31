@@ -1,7 +1,9 @@
 package com.example.doanltandroid;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
@@ -54,10 +56,11 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     final String jokes[] = {"A","B","C","D"};
     private ProgressBar progressBar;
     private TextView txtTongThoiGian;
-    CountDownTimer countDownTimer;
+    private int thoigiantieptuc=0;
+    CountDownTimer counter;
     SharedPreferences sharedPreferences;
     AnimationDrawable animationDrawable;
-// m load cau hoi o dau
+
     ArrayList<LuuChiTietLuotChoi>luuChiTietLuotChois;
     ArrayList<LuotChoi>luotChois;
     ArrayList<Integer> mRandom;
@@ -95,23 +98,9 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         Intent intent=getIntent();
         String JSON = intent.getStringExtra("JSON");
         progressBar=findViewById(R.id.progressBar);
-        final CountDownTimer countDownTimer=new CountDownTimer(60000,1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                progressBar.setMax(60);
-                progressBar.setProgress((int) (millisUntilFinished / 1000));
-                txtTongThoiGian=findViewById(R.id.txttongthoigian);
-                txtTongThoiGian.setText(String.valueOf(millisUntilFinished / 1000));
+        txtTongThoiGian=findViewById(R.id.txttongthoigian);
+        demthoigian(60000);
 
-
-            }
-            @Override
-            public void onFinish() {
-
-                Toast.makeText(CauHoiLayTheoIDLinhVuc.this, "Over time !", Toast.LENGTH_SHORT).show();
-                dialogketthuc();
-            }
-        }.start();
         if(kiemtraJSON(JSON)==true){ RandomCauHoi();
            cauhoi_id.setText(""+stt); //
            cauhoi.setText(cauHois.get( mRandom.get(vitri)).getNoi_dung());
@@ -136,7 +125,13 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     //trợ giúp từ người thân
     public void trogiupkhangia(View view)
     {
-        dialog_khangia();
+        switch (  cauHois.get(mRandom.get(vitri-1)).getDap_an()){
+            case "1": dialog_khangia("A"); break;
+            case "2": dialog_khangia("B"); break;
+            case "3": dialog_khangia("C"); break;
+            case "4": dialog_khangia("D"); break;
+        }
+
         ImageView img = (ImageView) findViewById(R.id.btnpeople);
         img.setImageResource(R.drawable.atp__activity_player_button_image_help_audience_x);
         img.setEnabled(false);
@@ -160,22 +155,62 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         });
     }
     //trợ giúp khán giả
-    public void dialog_khangia(){
+    public void randomm(int[] a,String b){
+        switch (b){
+            case "A":
+                a[0]= new Random().nextInt(15)+10;
+                a[1]= new Random().nextInt(15)+5;
+                a[2]= new Random().nextInt(15)+5;
+                a[3]= new Random().nextInt(15)+5;
+                break;
+            case "B":
+                a[0]= new Random().nextInt(15)+5;
+                a[1]= new Random().nextInt(15)+10;
+                a[2]= new Random().nextInt(15)+5;
+                a[3]= new Random().nextInt(15)+5;
+                break;
+            case "C":
+                a[0]= new Random().nextInt(15)+5;
+                a[1]= new Random().nextInt(15)+5;
+                a[2]= new Random().nextInt(15)+10;
+                a[3]= new Random().nextInt(15)+5;
+                break;
+            case "D":
+                a[0]= new Random().nextInt(15)+5;
+                a[1]= new Random().nextInt(15)+5;
+                a[2]= new Random().nextInt(15)+5;
+                a[3]= new Random().nextInt(15)+10;
+                break;
+        }
+        int sum=0;
+        do{
+            sum=a[0]+a[1]+a[2]+a[3];
+            if(sum==100){break;}
+            a[0]++;
+            a[1]++;
+            a[2]++;
+            a[3]++;
+            System.out.println("A" + a[0]);
+            System.out.println("B" +a[1]);
+            System.out.println("C" +a[2]);
+            System.out.println("D" +a[3]+"\n");
+        }
+        while(sum<100);
+    }
+
+    public void dialog_khangia(String b){
         final Dialog dialog=new Dialog(this);
         dialog.setContentView(R.layout.dialog_khangia);
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
         BarChart barChart = dialog.findViewById(R.id.barchart);
-        Random random = new Random();
-        int a = random.nextInt(100);
-        int b = random.nextInt(100);
-        int c = random.nextInt(100);
-        int d = random.nextInt(100);
+       int[] a = new int[4]; //cho nao choi?la sao luc nhan nut cho nao nhan' ? class dau
+       randomm(a,b);
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(a, 0));
-        entries.add(new BarEntry(b, 1));
-        entries.add(new BarEntry(c, 2));
-        entries.add(new BarEntry(d, 3));
+        entries.add(new BarEntry(a[0], 0));
+        entries.add(new BarEntry(a[1], 1));
+        entries.add(new BarEntry(a[2], 2));
+        entries.add(new BarEntry(a[3], 3));
         BarDataSet bardataset = new BarDataSet(entries, "Cells");
         ArrayList<String> labels = new ArrayList<String>();
         labels.add("A");
@@ -251,6 +286,37 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
                dialogketthuc();
             }
     }
+    //Tạm dừng cuộc chơi
+    public void stop(View view){
+        thoigiantieptuc=Integer.parseInt(txtTongThoiGian.getText().toString())*1000;
+        counter.cancel();
+
+        final AlertDialog.Builder dialog=new AlertDialog.Builder(this);
+        dialog.setTitle("Thông báo");
+        dialog.setMessage("Tạm ngưng");
+        dialog.setPositiveButton("tiếp tục", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                     demthoigian(thoigiantieptuc);
+            }
+        });
+        dialog.show();
+    }
+    public void demthoigian(long thoigian){
+       counter=new CountDownTimer(thoigian,1000) {
+           @Override
+           public void onTick(long millisUntilFinished) {
+               txtTongThoiGian.setText(String.valueOf(millisUntilFinished / 1000));
+
+           }
+           @Override
+           public void onFinish() {
+
+               Toast.makeText(CauHoiLayTheoIDLinhVuc.this, "Over time !", Toast.LENGTH_SHORT).show();
+               dialogketthuc();
+           }
+       }.start();
+   }
     public boolean ChonDung(int vitri,View view){
         switch (view.getId()){
             case R.id.btnA:
