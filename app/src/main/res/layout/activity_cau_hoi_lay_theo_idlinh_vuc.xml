@@ -125,11 +125,12 @@
             android:layout_weight="1">
 
             <ImageView
+                android:id="@+id/img_daucheck"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/txtScore"
-                android:src="@drawable/atp__activity_profile_icon_money" />
+                android:src="@drawable/icdiem" />
 
             <TextView
                 android:id="@+id/txtScore"

@@ -1,15 +1,13 @@
 package com.example.doanltandroid;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-
-import java.util.ArrayList;
-
 public class BangXepHang_form extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi";
+    private String duongdan = "http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
