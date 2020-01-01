@@ -75,7 +75,6 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/atp__activity_player_layout_play_answer_background_selected"
-                android:onClick="QuanLiTaiKhoan"
                 android:text="Quản lí tài khoản" />
 
             <Button

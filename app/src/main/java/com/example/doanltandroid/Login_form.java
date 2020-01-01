@@ -98,7 +98,6 @@ public class Login_form extends AppCompatActivity {
             public void onCompleted(JSONObject object, GraphResponse response) {
                 Log.d("JSON",response.getJSONObject().toString());
                 try {
-
                 Email = object.getString("email");
                 firstname = object.getString("first_name");
                 userID = object.getString("id");

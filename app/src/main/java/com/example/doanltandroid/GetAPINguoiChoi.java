@@ -50,7 +50,7 @@ public class GetAPINguoiChoi extends AsyncTask<String,String,String> {
                 String hinh_dai_dien = jsonObject.getString("hinh_dai_dien");
                 String diem_cao_nhat = String.valueOf(jsonObject.getInt("diem_cao_nhat"));
                 String credit = String.valueOf(jsonObject.getInt("credit"));
-
+                String mxh_id = String.valueOf(jsonObject.getInt("MXH_ID"));
                 nguoiChoi.setId(id);
                 nguoiChoi.setTen_dang_nhap(ten_dang_nhap);
                 nguoiChoi.setMat_khau(mat_khau);
@@ -58,6 +58,7 @@ public class GetAPINguoiChoi extends AsyncTask<String,String,String> {
                 nguoiChoi.setCredit(credit);
                 nguoiChoi.setDiem_cao_nhat(diem_cao_nhat);
                 nguoiChoi.setHinh_dai_dien(hinh_dai_dien);
+                nguoiChoi.setMxh_id(mxh_id);
                 nguoiChois.add(nguoiChoi);
             }
             int x=0;
