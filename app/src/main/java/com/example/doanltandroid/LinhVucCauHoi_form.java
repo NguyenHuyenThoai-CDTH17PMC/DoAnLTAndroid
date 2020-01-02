@@ -1,37 +1,26 @@
 package com.example.doanltandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 
 public class LinhVucCauHoi_form extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     ImageButton btnplay;
+    AnimationDrawable background;
     private RecyclerView recyclerView;
     private LinhVucAdapter linhVucAdapter;
     private ArrayList<LinhVuc>linhVucs;
@@ -45,7 +34,22 @@ public class LinhVucCauHoi_form extends AppCompatActivity {
         setContentView(R.layout.activity_linh_vuc_cau_hoi_form);
         recyclerView=findViewById(R.id.recyclerviewdslinhvuc);
         GetAPILinhVuc getAPILinhVuc= (GetAPILinhVuc) new GetAPILinhVuc(LinhVucCauHoi_form.this,recyclerView).execute(duongdan);
-        btnplay = (ImageButton) findViewById(R.id.btnplay);
+        btnplay = (ImageButton) findViewById(R.id.ImageButton);
+        //animation translate
+        Button btn = (Button) findViewById(R.id.button);
+        //final Animation animation = AnimationUtils.loadAnimation(this,R.anim.anim_translate);
+        //btn.startAnimation(animation);
+        //animation background
+        btn.setBackgroundResource(R.drawable.anim_background_red);
+        background =(AnimationDrawable) btn.getBackground();
+        background.start();
+        //animation rorate
+        ImageView imageView = findViewById(R.id.imglogo);
+        Animation animImage = AnimationUtils.loadAnimation(this,R.anim.anim_rotate);
+        imageView.startAnimation(animImage);
+
+
+
 
     }
     public void play(View view){

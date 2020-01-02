@@ -14,7 +14,7 @@
         android:layout_weight="1">
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/imglogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -23,12 +23,12 @@
             app:srcCompat="@drawable/c3" />
 
         <ImageButton
-            android:id="@+id/btnplay"
+            android:id="@+id/ImageButton"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="350dp"
             android:layout_weight="1"
-            android:background="@drawable/mute"
+            android:background="@drawable/play"
             android:onClick="play" />
 
         <Button

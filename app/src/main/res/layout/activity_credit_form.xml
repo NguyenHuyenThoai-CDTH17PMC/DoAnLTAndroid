@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/atp__activity_home_background"
     android:orientation="vertical"
-    tools:context=".LichSuChoi_form">
+  >
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -45,18 +45,18 @@
                 app:srcCompat="@drawable/atp__activity_profile_icon_money" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/txtcredit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="9999"
+                android:text="500"
                 android:textColor="#F8F4F8"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btnmuacredit"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -85,13 +85,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="9999"
+                android:text="1000"
                 android:textColor="#F8F4F8"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button5"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -119,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="9999"
+                android:text="1500"
                 android:textColor="#F8F4F8"
                 android:textSize="18sp"
                 android:textStyle="bold" />

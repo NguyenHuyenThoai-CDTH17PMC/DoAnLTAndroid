@@ -15,12 +15,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".BangXepHang_form"></activity>
-        <activity android:name=".LichSuChoi_form" />
+        <activity android:name=".LinhVucCauHoi_form" />
         <activity android:name=".Credit_form" />
         <activity android:name=".CauHoiLayTheoIDLinhVuc" />
         <activity android:name=".MainActivity" />
         <activity android:name=".QuanLyTaiKhoan_form" />
-        <activity android:name=".LinhVucCauHoi_form" />
+        <activity android:name=".LichSuChoi_form" />
         <activity android:name=".Login_form">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

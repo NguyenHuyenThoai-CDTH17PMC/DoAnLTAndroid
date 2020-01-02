@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +28,7 @@ public class ManHinhChinh_form extends AppCompatActivity {
     ImageView img;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    String text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +57,10 @@ public class ManHinhChinh_form extends AppCompatActivity {
             txt.setText(personName);
         }
 
+
+
+
+
     }
     public void QuanLiTaiKhoan(View view){
         Intent intent = new Intent(ManHinhChinh_form.this,QuanLyTaiKhoan_form.class);
@@ -63,9 +71,16 @@ public class ManHinhChinh_form extends AppCompatActivity {
         intent.putExtra("hinh_dai_dien",hinh_dai_dien);
         intent.putExtra("credit",credit);
         startActivity(intent);
+
     }
     public void TroChoiMoi(View view){
         Intent intent=new Intent(ManHinhChinh_form.this,LinhVucCauHoi_form.class);
         startActivity(intent);
+    }
+    public void LichSuChoi(View view){
+        Intent intent=new Intent(ManHinhChinh_form.this,LichSuChoi_form.class);
+        intent.putExtra("id_nguoichoi",sharedPreferences.getString("id_nguoichoi",""));
+        startActivity(intent);
+
     }
 }

@@ -6,10 +6,13 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -71,6 +74,10 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         Button4=findViewById(R.id.btnD);
         Intent intent=getIntent();
         String JSON = intent.getStringExtra("JSON");
+
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.anim_scale);
+        cauhoi.startAnimation(animation);
+
         progressBar=findViewById(R.id.progressBar);
         final CountDownTimer countDownTimer=new CountDownTimer(60000,1000) {
             @Override
@@ -104,7 +111,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
 
         dialog_goinguoithan();
         ImageView img = (ImageView) findViewById(R.id.btnCall);
-        img.setImageResource(R.drawable.atp__activity_player_button_image_help_call_x);
+        img.setImageResource(R.drawable.atp__activity_player_button_image_help_call_active);
         img.setEnabled(false);
 
     }
@@ -112,7 +119,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     {
         dialog_khangia();
         ImageView img = (ImageView) findViewById(R.id.btnpeople);
-        img.setImageResource(R.drawable.atp__activity_player_button_image_help_audience_x);
+        img.setImageResource(R.drawable.atp__activity_player_button_image_help_audience_active);
         img.setEnabled(false);
     }
 
@@ -131,6 +138,8 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 dialog.cancel();
+                ImageView img = (ImageView) findViewById(R.id.btnCall);
+                img.setImageResource(R.drawable.atp__activity_player_button_image_help_call_x);
             }
         });
     }
@@ -166,8 +175,11 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 dialog.cancel();
+                ImageView img = (ImageView) findViewById(R.id.btnpeople);
+                img.setImageResource(R.drawable.atp__activity_player_button_image_help_audience_x);
             }
         });
+
     }
     //trợ giúp 50/50
     public void TroGiup5050(View view){
@@ -223,6 +235,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
             }catch (Exception e){
                dialogketthuc();
             }
+
     }
     public boolean ChonDung(int vitri,View view){
         switch (view.getId()){

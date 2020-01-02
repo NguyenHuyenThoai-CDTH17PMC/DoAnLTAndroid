@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "189065146963",
+    "firebase_url": "https://nguyenthoai-1ea5d.firebaseio.com",
+    "project_id": "nguyenthoai-1ea5d",
+    "storage_bucket": "nguyenthoai-1ea5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189065146963:android:cb97b386de6c98bda3cca6",
+        "android_client_info": {
+          "package_name": "com.example.doanltandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189065146963-jem02qrgbecemt1ku50iipbkeht26qrv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.doanltandroid",
+            "certificate_hash": "0d1b5a76f9757c173a29d5ba667743162983b5ba"
+          }
+        },
+        {
+          "client_id": "189065146963-gpfksb7b3cmlv7pkogn3b37fa9rbblb1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKG10lX9RvWSJN7-ka3fB71JaEBA6sX-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189065146963-gpfksb7b3cmlv7pkogn3b37fa9rbblb1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
