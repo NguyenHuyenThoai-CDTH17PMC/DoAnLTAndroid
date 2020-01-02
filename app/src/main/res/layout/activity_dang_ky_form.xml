@@ -14,11 +14,20 @@
         android:layout_weight="1">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imganhdaidien"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            android:background="@drawable/atp__activity_player_layout_help_call_04_active" />
+            app:srcCompat="@drawable/atp__activity_player_layout_help_call_03_active" />
+        <Button
+            android:id="@+id/btnalbum"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/common_full_open_on_phone"
+            android:onClick="chonanh"
+            tools:ignore="MissingConstraints" />
     </FrameLayout>
 
     <LinearLayout

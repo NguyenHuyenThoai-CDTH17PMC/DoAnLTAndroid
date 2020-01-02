@@ -23,7 +23,7 @@
             app:srcCompat="@drawable/c3" />
 
         <ImageButton
-            android:id="@+id/ImageButton"
+            android:id="@+id/btnplay"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="350dp"

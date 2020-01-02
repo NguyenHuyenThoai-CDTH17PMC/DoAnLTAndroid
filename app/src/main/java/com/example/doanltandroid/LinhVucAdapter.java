@@ -70,6 +70,8 @@ public class LinhVucAdapter extends  RecyclerView.Adapter<LinhVucAdapter.ViewHol
                     new GetAPICauHoi(context).execute("http://192.168.56.1/Do_An_PHP/public/api/cau-hoi?linh_vuc="+i);
 
                     //new GetAPICauHoi(context).execute("http://10.0.2.2:8080/Do_An_PHP/public/api/cau-hoi?linh_vuc="+i);
+                    new GetAPICauHoi(context).execute("http://192.168.56.1:8080/Do_An_PHP/public/api/cau-hoi?linh_vuc="+i);
+
                     break;
                 }
             }

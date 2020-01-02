@@ -28,6 +28,7 @@ public class PostAPIChiTietLuotChoi extends AsyncTask<Void,Void,String> {
         this.cau_hoi_id = cau_hoi_id;
         this.phuong_an = phuong_an;
         this.diem = diem;
+
         chiTietLuotChoi=new ChiTietLuotChoi();
         chiTietLuotChoi.setLuot_choi_id(luot_choi_id);
         chiTietLuotChoi.setCau_hoi_id(cau_hoi_id);

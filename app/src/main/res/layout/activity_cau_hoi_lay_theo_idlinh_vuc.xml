@@ -17,7 +17,8 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/level_dung" />
+            android:background="@drawable/level_dung"
+            android:onClick="stop" />
 
         <ImageView
             android:id="@+id/btnchuyencau"
@@ -85,6 +86,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txtgido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/name_play"
@@ -125,11 +127,12 @@
             android:layout_weight="1">
 
             <ImageView
+                android:id="@+id/img_daucheck"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/txtScore"
-                android:src="@drawable/atp__activity_profile_icon_money" />
+                android:src="@drawable/icdiem" />
 
             <TextView
                 android:id="@+id/txtScore"
