@@ -46,7 +46,7 @@ public class LinhVucCauHoi_form extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerviewdslinhvuc);
         GetAPILinhVuc getAPILinhVuc= (GetAPILinhVuc) new GetAPILinhVuc(LinhVucCauHoi_form.this,recyclerView).execute(duongdan);
         btnplay = (ImageButton) findViewById(R.id.btnplay);
-
+        GetApiCauHinhApp getApiCauHinhApp = (GetApiCauHinhApp) new GetApiCauHinhApp(this).execute("http://192.168.56.1:8080/Do_An_PHP/public/api/cau-hinh-app");
     }
     public void play(View view){
             if (mediaPlayer == null) {

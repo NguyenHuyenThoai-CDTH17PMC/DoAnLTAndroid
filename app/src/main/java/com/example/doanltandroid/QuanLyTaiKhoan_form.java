@@ -85,12 +85,21 @@ public class QuanLyTaiKhoan_form extends AppCompatActivity {
             public void onClick(View v) {
                 matkhau = mk.getText().toString();
                 xn_maukhau = mknew.getText().toString();
-                if(matkhau.equals(xn_maukhau) && hinhmoi!=null){
-                    String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
-                    try {
-                        PostAPIChinhSuaNguoiChoi postAPINguoiChoi = (PostAPIChinhSuaNguoiChoi) new PostAPIChinhSuaNguoiChoi(QuanLyTaiKhoan_form.this, duongdan, ten_dang_nhap.getText().toString(), email.getText().toString(), mk.getText().toString(),hinhmoi,diem_cao_nhat,credit).execute();
-                    } catch (NoSuchAlgorithmException e) {
-                        e.printStackTrace();
+                if(matkhau.equals(xn_maukhau)){
+                    if(hinhmoi!=null){
+                        String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
+                        try {
+                            PostAPIChinhSuaNguoiChoi postAPINguoiChoi = (PostAPIChinhSuaNguoiChoi) new PostAPIChinhSuaNguoiChoi(QuanLyTaiKhoan_form.this, duongdan, ten_dang_nhap.getText().toString(), email.getText().toString(), mk.getText().toString(),hinhmoi,diem_cao_nhat,credit).execute();
+                        } catch (NoSuchAlgorithmException e) {
+                            e.printStackTrace();
+                        }
+                    }else{
+                        String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi/chinhsua-nguoichoi/"+id;
+                        try {
+                            PostAPIChinhSuaNguoiChoi postAPINguoiChoi = (PostAPIChinhSuaNguoiChoi) new PostAPIChinhSuaNguoiChoi(QuanLyTaiKhoan_form.this, duongdan, ten_dang_nhap.getText().toString(), email.getText().toString(), mk.getText().toString(),hinh_dai_dien,diem_cao_nhat,credit).execute();
+                        } catch (NoSuchAlgorithmException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
                 else{

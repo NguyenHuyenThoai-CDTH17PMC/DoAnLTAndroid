@@ -32,6 +32,7 @@ public class ManHinhChinh_form extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man_hinh_chinh_form);
+        GetApiCauHinhApp getApiCauHinhApp = (GetApiCauHinhApp) new GetApiCauHinhApp(this).execute("http://192.168.56.1:8080/Do_An_PHP/public/api/cau-hinh-app");
         txt=findViewById(R.id.txtUsername);
         txt2=findViewById(R.id.txtCredit);
         button=findViewById(R.id.btnAccountmanagerment);
@@ -46,7 +47,7 @@ public class ManHinhChinh_form extends AppCompatActivity {
         txt.setText(ten_dang_nhap);
         txt2.setText(credit);
         img = findViewById(R.id.imghinhdaidienql);
-        url = "http://10.0.2.2:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
+        url = "http://192.168.56.1:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
         Picasso.with(this).load(url).into(img);
         if(mxh_id.equals("0")){
             button.setOnClickListener(new View.OnClickListener() {

@@ -65,10 +65,13 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     String nguoichoi_id;
     int demlansai;
     String duongdannguoichoionclick = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi";
+    String duongdancauhinh;
     AnimationDrawable animationDrawable;
     ArrayList<Integer> mRandom;
     Animation animationchondung;
     ImageView img_hinhcheck;
+    String co_hoi_sai;
+    String thoi_gian_tra_loi;
     public CauHoiLayTheoIDLinhVuc() {
         this.cauHois =new ArrayList<>();
         this.luuChiTietLuotChois=new ArrayList<>();
@@ -78,11 +81,10 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cau_hoi_lay_theo_idlinh_vuc);
+        GetApiCauHinhApp getApiCauHinhApp = (GetApiCauHinhApp) new GetApiCauHinhApp(this).execute("http://192.168.56.1:8080/Do_An_PHP/public/api/cau-hinh-app");
         //xử lí animation chọn đúng
         animationchondung= AnimationUtils.loadAnimation(this,R.anim.animation_hinhcheck);
         img_hinhcheck=findViewById(R.id.img_daucheck);
-
-
         txtscore=findViewById(R.id.txtScore);
         cauhoi_id=findViewById(R.id.txtid);
         cauhoi=findViewById(R.id.txtCauHoi);
@@ -97,13 +99,18 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String hinh_dai_dien_get = sharedPreferences.getString("hinh_dai_dien","");
         nguoichoi_id= sharedPreferences.getString("id_nguoichoi","");
         ten_dang_nhap.setText(ten_dang_nhap_get);
-        String url = "http://10.0.2.2:8080/Do_An_PHP/public/img/"+hinh_dai_dien_get;
+        String url = "http://192.168.56.1:8080/Do_An_PHP/public/img/"+hinh_dai_dien_get;
         Picasso.with(this).load(url).into(hinh_dai_dien_min);
         Intent intent=getIntent();
         String JSON = intent.getStringExtra("JSON");
         progressBar=findViewById(R.id.progressBar);
         txtTongThoiGian=findViewById(R.id.txttongthoigian);
-        demthoigian(60000);
+
+        sharedPreferences = getSharedPreferences("cauhinhapp",MODE_PRIVATE);
+        co_hoi_sai = sharedPreferences.getString("co_hoi_sai","");
+        thoi_gian_tra_loi = sharedPreferences.getString("thoi_gian_tra_loi","");
+        int thoigian = Integer.parseInt(thoi_gian_tra_loi)*1000;
+        demthoigian(thoigian);
         if(kiemtraJSON(JSON)==true){ RandomCauHoi();
            cauhoi_id.setText(""+stt); //
            cauhoi.setText(cauHois.get( mRandom.get(vitri)).getNoi_dung());
@@ -154,13 +161,12 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
     //trợ giúp từ người thân
     public void trogiupkhangia(View view)
     {
-        switch (  cauHois.get(mRandom.get(vitri-1)).getDap_an()){
+        switch ( cauHois.get(mRandom.get(vitri-1)).getDap_an()){
             case "1": dialog_khangia("A"); break;
             case "2": dialog_khangia("B"); break;
             case "3": dialog_khangia("C"); break;
             case "4": dialog_khangia("D"); break;
         }
-
         ImageView img = (ImageView) findViewById(R.id.btnpeople);
         img.setImageResource(R.drawable.atp__activity_player_button_image_help_audience_x);
         img.setEnabled(false);
@@ -249,6 +255,7 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         BarData data = new BarData(labels,bardataset);
         barChart.setData(data);
         bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
+        bardataset.setValueTextSize(20);
         barChart.animateY(1000);
         Button btnendkhangia = dialog.findViewById(R.id.btnendkhangia);
         btnendkhangia.setOnClickListener(new View.OnClickListener() {
@@ -302,6 +309,9 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         }
         else
         {
+            demlansai++;
+        }
+        if(demlansai==Integer.parseInt(co_hoi_sai)){
             dialogsaicauhoi();
         }
         luuChiTietLuotChois.add(new LuuChiTietLuotChoi(cauHois.get(vitri-1).getId(),chon,String.valueOf(socaudung)));
@@ -463,10 +473,10 @@ public class CauHoiLayTheoIDLinhVuc extends AppCompatActivity  {
         String duongdanluotchoi="http://192.168.56.1:8080/Do_An_PHP/public/api/luot-choi/them-luot-choi";
         String duongdan = "http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi";
         PostAPILuotChoi postAPILuotChoi= (PostAPILuotChoi) new PostAPILuotChoi(this,duongdanluotchoi,nguoichoi_id,String.valueOf(socaudung),String.valueOf(socaudung),thoigianhientai).execute();
-        GetAPIUpDiem getAPIUpDiem = (GetAPIUpDiem) new GetAPIUpDiem(this,String.valueOf(socaudung),nguoichoi_id).execute(duongdan);
+        GetAPIUpDiem getAPIUpDiem = (GetAPIUpDiem) new GetAPIUpDiem(this,String.valueOf(socaudung*10),nguoichoi_id).execute(duongdan);
         //Lấy danh sách lượt chơi của người này -- sau đó duyệt lấy lượt chơi cuối cùng là lượt chơi vừa chơi xong post từng cái chi tiết lên
         //Lấy danh sách lượt chơi của người này -- sau đó duyệt lấy lượt chơi cuối cùng là lượt chơi vừa chơi xong post từng cái chi tiết lên
-        GetAPILuotChoiTheoNguoiChoi layid= (GetAPILuotChoiTheoNguoiChoi) new GetAPILuotChoiTheoNguoiChoi(CauHoiLayTheoIDLinhVuc.this,luotChois).execute("http://10.0.2.2:8080/Do_An_PHP/public/api/luot-choi/lay-luot-choi?nguoichoi_id="+nguoichoi_id);
+        GetAPILuotChoiTheoNguoiChoi layid= (GetAPILuotChoiTheoNguoiChoi) new GetAPILuotChoiTheoNguoiChoi(CauHoiLayTheoIDLinhVuc.this,luotChois).execute("http://192.168.56.1:8080/Do_An_PHP/public/api/luot-choi/lay-luot-choi?nguoichoi_id="+nguoichoi_id);
    }
     public void RandomCauHoi(){
         for(int i=0;i<cauHois.size();i++){

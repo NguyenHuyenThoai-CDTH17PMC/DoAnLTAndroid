@@ -53,7 +53,7 @@ public class Login_form extends AppCompatActivity {
     String firstname;
     String userID;
     String convert;
-    String duongdan="http://10.0.2.2:8080/Do_An_PHP/public/api/nguoi-choi";
+    String duongdan="http://192.168.56.1:8080/Do_An_PHP/public/api/nguoi-choi";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
