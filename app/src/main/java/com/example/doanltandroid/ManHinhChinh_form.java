@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ public class ManHinhChinh_form extends AppCompatActivity {
     String diem_cao_nhat;
     String mxh_id;
     ImageView img;
+    Button button;
     String hinhanhfacebook;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -32,7 +34,7 @@ public class ManHinhChinh_form extends AppCompatActivity {
         setContentView(R.layout.activity_man_hinh_chinh_form);
         txt=findViewById(R.id.txtUsername);
         txt2=findViewById(R.id.txtCredit);
-
+        button=findViewById(R.id.btnAccountmanagerment);
         sharedPreferences=getSharedPreferences("nguoichoi",MODE_PRIVATE);
         id = sharedPreferences.getString("id_nguoichoi","");
         hinh_dai_dien = sharedPreferences.getString("hinh_dai_dien","");
@@ -46,10 +48,20 @@ public class ManHinhChinh_form extends AppCompatActivity {
         img = findViewById(R.id.imghinhdaidienql);
         url = "http://10.0.2.2:8080/Do_An_PHP/public/img/"+hinh_dai_dien;
         Picasso.with(this).load(url).into(img);
+        if(mxh_id.equals("0")){
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(ManHinhChinh_form.this,QuanLyTaiKhoan_form.class);
+                    startActivity(intent);
+                }
+            });
+        }if(mxh_id.equals("1")){
+            button.setEnabled(false);
+        }
     }
     public void QuanLiTaiKhoan(View view){
-        Intent intent = new Intent(ManHinhChinh_form.this,QuanLyTaiKhoan_form.class);
-        startActivity(intent);
+
     }
     public void TroChoiMoi(View view){
         Intent intent=new Intent(ManHinhChinh_form.this,LinhVucCauHoi_form.class);
