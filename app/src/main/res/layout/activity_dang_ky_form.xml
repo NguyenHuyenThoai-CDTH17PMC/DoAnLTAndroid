@@ -18,7 +18,7 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/atp__activity_player_layout_help_call_03_active" />
+            app:srcCompat="@drawable/atp__activity_player_layout_help_call_04_active" />
         <Button
             android:id="@+id/btnalbum"
             android:layout_width="80dp"

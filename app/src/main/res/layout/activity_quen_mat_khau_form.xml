@@ -18,7 +18,7 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            android:background="@drawable/atp__activity_player_layout_help_call_04_active" />
+            app:srcCompat="@drawable/atp__activity_player_layout_help_call_04_active" />
     </FrameLayout>
 
     <LinearLayout
@@ -42,7 +42,6 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
             android:background="@drawable/atp__activity_player_layout_play_order_question"
             android:gravity="center"
             android:hint="Email"
@@ -53,7 +52,6 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
             android:background="@drawable/atp__activity_player_layout_play_order_question"
             android:gravity="center"
             android:hint="Mật khẩu mới"
@@ -64,7 +62,6 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
             android:background="@drawable/atp__activity_player_layout_play_order_question"
             android:gravity="center"
             android:hint="Xác nhận mật khẩu mới"

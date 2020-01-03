@@ -24,14 +24,6 @@
             android:paddingBottom="0dp"
             app:srcCompat="@drawable/c3" />
 
-        <ImageButton
-            android:id="@+id/btnplay"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="350dp"
-            android:layout_weight="1"
-            android:background="@drawable/mute" />
-
     </FrameLayout>
 
     <LinearLayout
@@ -43,7 +35,7 @@
         <EditText
             android:id="@+id/edtTendangnhap"
             android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:background="@drawable/atp__activity_player_layout_play_order_question"
@@ -54,7 +46,7 @@
         <EditText
             android:id="@+id/edtMatkhau"
             android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:background="@drawable/atp__activity_player_layout_play_order_question"
@@ -68,7 +60,6 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"
             android:background="@drawable/atp__activity_player_layout_play_answer_background_selected"
             android:onClick="Login"
             android:text="Đăng nhập"
@@ -81,7 +72,6 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"
             android:background="@drawable/atp__activity_player_layout_play_answer_background_true"
             android:onClick="quenmatkhau"
             android:text="Quên mật khẩu"
@@ -94,7 +84,6 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"
             android:background="@drawable/atp__activity_player_layout_play_answer_background_wrong"
             android:onClick="Dangky"
             android:text="Đăng ký"
@@ -114,13 +103,13 @@
                 android:layout_gravity="center">
 
             </com.google.android.gms.common.SignInButton>
+
             <com.facebook.login.widget.LoginButton
                 android:id="@+id/login_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp" />
+                android:layout_gravity="center"
+                android:gravity="center_horizontal" />
 
 
         </LinearLayout>

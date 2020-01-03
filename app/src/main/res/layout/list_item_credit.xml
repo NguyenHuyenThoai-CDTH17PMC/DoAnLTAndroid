@@ -16,17 +16,20 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:background="@drawable/atp__dialog_confirm_background"
             app:srcCompat="@drawable/atp__activity_profile_icon_money" />
 
         <TextView
             android:id="@+id/txtso_tien"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:background="@drawable/atp__dialog_confirm_background"
+            android:gravity="center"
             android:text="9999"
-            android:textColor="#881F88"
-            android:textSize="70dp"
+            android:textColor="#FAF6F6"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
     </LinearLayout>

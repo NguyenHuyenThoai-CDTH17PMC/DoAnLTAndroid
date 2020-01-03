@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -52,6 +54,8 @@ public class XepHangAdapter extends  RecyclerView.Adapter<XepHangAdapter.ViewHol
             this.ten_dang_nhap = itemView.findViewById(R.id.txttendangnhapxh);
             this.diem_cao_nhat = itemView.findViewById(R.id.txtdiemxh);
             this.hinh_dai_dien=itemView.findViewById(R.id.imgxephang);
+            Animation animation = AnimationUtils.loadAnimation(context,R.anim.anim_scale);
+            itemView.startAnimation(animation);
         }
         void BindTo(XepHang currentLinhvuc){
             ten_dang_nhap.setText(currentLinhvuc.getTen_dang_nhap());

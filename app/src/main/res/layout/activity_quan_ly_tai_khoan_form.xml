@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/imghinhdaidienql"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/atp__activity_player_layout_help_call_04_active" />
 
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="130dp"
             android:onClick="chupanh"
             android:text="Đổi hình đại diện"
             android:textColor="#FFC107"
@@ -43,8 +43,10 @@
     </FrameLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -53,7 +55,6 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
             android:background="@drawable/atp__activity_player_layout_play_order_question"
             android:ems="10"
             android:gravity="center"
@@ -66,7 +67,6 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
             android:background="@drawable/atp__activity_player_layout_play_order_question"
             android:ems="10"
             android:gravity="center"
@@ -79,7 +79,6 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
             android:background="@drawable/atp__activity_player_layout_play_order_question"
             android:ems="10"
             android:gravity="center"
@@ -92,7 +91,6 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
             android:background="@drawable/atp__activity_player_layout_play_order_question"
             android:gravity="center"
             android:hint="Xác nhận mật khẩu"
@@ -104,7 +102,6 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
             android:background="@drawable/atp__activity_player_layout_play_answer_background_selected"
             android:text="Cập nhật"
             android:textColor="#FCF8F8"

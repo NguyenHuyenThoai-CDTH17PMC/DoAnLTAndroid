@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/imgxephang"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/atp__activity_player_layout_help_call_02_active" />
 
@@ -25,8 +25,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Legend"
-            android:textColor="#F4F3F7"
-            android:textSize="18sp" />
+            android:textColor="#FCFCFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtdiemxh"
@@ -35,8 +36,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="9999"
-            android:textColor="#F4F3F7"
-            android:textSize="18sp" />
+            android:textColor="#FCFCFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

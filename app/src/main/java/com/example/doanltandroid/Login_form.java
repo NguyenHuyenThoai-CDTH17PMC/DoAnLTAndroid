@@ -92,21 +92,6 @@ public class Login_form extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.imglogo);
         Animation animImage = AnimationUtils.loadAnimation(this,R.anim.anim_rotate);
         imageView.startAnimation(animImage);
-
-    }
-    public void Login(View view) {
-        Animation animation = AnimationUtils.loadAnimation(this,R.anim.anim_alpha);
-        view.startAnimation(animation);
-        String tendn = edt.getText().toString();
-        String mk = edt2.getText().toString();
-        GetAPINguoiChoi nguoiChoi = (GetAPINguoiChoi) new GetAPINguoiChoi(this, tendn, mk).execute(đuongdan); }
-
-    public void Dangky(View view) {
-        Animation animation = AnimationUtils.loadAnimation(this,R.anim.anim_alpha);
-        view.startAnimation(animation);
-        Intent intent = new Intent(Login_form.this, DangKy_form.class);
-        startActivity(intent);
-    }
         loginButton.setReadPermissions(Arrays.asList("public_profile","email"));
         set_loginbutton();
     }
@@ -172,6 +157,8 @@ public class Login_form extends AppCompatActivity {
     }
 
     public void Login(View view) throws NoSuchAlgorithmException {
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.anim_alpha);
+        view.startAnimation(animation);
         String tendn = edt.getText().toString();
         String mk = StringMD5.convertHashToString(edt2.getText().toString());
         GetAPINguoiChoi nguoiChoi = (GetAPINguoiChoi) new GetAPINguoiChoi(this, tendn, mk).execute(duongdan);
@@ -187,10 +174,14 @@ public class Login_form extends AppCompatActivity {
         super.onStart();
     }
     public void Dangky(View view) {
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.anim_alpha);
+        view.startAnimation(animation);
        Intent intent = new Intent(Login_form.this, DangKy_form.class);
        startActivity(intent);
     }
     public void quenmatkhau(View view) {
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.anim_alpha);
+        view.startAnimation(animation);
         Intent intent = new Intent(Login_form.this, QuenMatKhau_form.class);
         startActivity(intent);
     }

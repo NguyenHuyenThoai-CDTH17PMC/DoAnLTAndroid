@@ -28,7 +28,7 @@
             android:layout_height="60dp"
             android:layout_marginLeft="350dp"
             android:layout_weight="1"
-            android:background="@drawable/play"
+            android:background="@drawable/mute"
             android:onClick="play" />
 
         <Button

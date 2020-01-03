@@ -21,6 +21,7 @@ public class LinhVucCauHoi_form extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     ImageButton btnplay;
     AnimationDrawable background;
+    private SoundManager mSoundManager;
     private RecyclerView recyclerView;
     private LinhVucAdapter linhVucAdapter;
     private ArrayList<LinhVuc>linhVucs;
@@ -40,6 +41,7 @@ public class LinhVucCauHoi_form extends AppCompatActivity {
         //final Animation animation = AnimationUtils.loadAnimation(this,R.anim.anim_translate);
         //btn.startAnimation(animation);
         //animation background
+
         btn.setBackgroundResource(R.drawable.anim_background_red);
         background =(AnimationDrawable) btn.getBackground();
         background.start();
@@ -53,14 +55,12 @@ public class LinhVucCauHoi_form extends AppCompatActivity {
     }
     public void play(View view){
             if (mediaPlayer == null) {
-                mediaPlayer = MediaPlayer.create(this, R.raw.song);
+                mediaPlayer = MediaPlayer.create(this, R.raw.bgmusic);
                 mediaPlayer.start();
-                btnplay.setImageResource(R.drawable.play);
-                Toast.makeText(this,"Đã bật âm thanh",Toast.LENGTH_SHORT).show();
-
+                view.setBackgroundResource(R.drawable.play);
             }else {
                stopplayer();
-               btnplay.setImageResource(R.drawable.mute);
+                view.setBackgroundResource(R.drawable.mute);
             }
 
     }
@@ -68,7 +68,6 @@ public class LinhVucCauHoi_form extends AppCompatActivity {
         if(mediaPlayer != null){
             mediaPlayer.release();
             mediaPlayer=null;
-            Toast.makeText(this,"Đã tắt âm thanh",Toast.LENGTH_SHORT).show();
         }
     }
     @Override
